@@ -45,13 +45,24 @@ Les 31 pages services ont été réécrites au format « problème → nous le r
 - Variables d'environnement posées : `LEADAPP_URL`, `LEADAPP_SITE` (`s-toiture`), `LEADAPP_TYPE` (`t-toiture`). **`LEADAPP_SECRET` reste à poser par le client** (même valeur que sur les autres sites, à copier depuis Netlify → Environment variables d'un site existant). Tant qu'elle manque, le relais vers l'app Suivi Leads ne part pas, mais Netlify Forms enregistre quand même les demandes.
 - Détection de formulaires activée, formulaire `devis` reconnu après redéploiement. Notification par e-mail créée le 13/10/2026 : toute nouvelle soumission part vers borenxdaniel@gmail.com, objet « Nouvelle demande de devis — Toiture Veryroof ». À rebasculer vers contact@toiture-veryroof.be dès que la boîte existe.
 
-### Domaine — point bloquant
+### Domaine (réglé le 13/10/2026 au soir)
 
-`toiture-veryroof.be` n'est PAS enregistré (whois : AVAILABLE au 13/10/2026). Or le `canonical`, le sitemap et le schema pointent tous vers ce domaine. Tant qu'il n'est pas acheté et raccordé :
-- ne pas soumettre le site à la Search Console ;
-- ne pas diffuser l'adresse `.netlify.app` (les moteurs y verraient un canonical mort) ;
-- l'adresse e-mail `contact@toiture-veryroof.be` n'existe pas non plus.
+`toiture-veryroof.be` figurait dans le portefeuille Hostinger avec le statut « Not registered » : l'enregistrement n'avait jamais été finalisé (le registre DNS Belgium le donnait encore libre). Le client a complété le formulaire d'enregistrement chez Hostinger après correction des données de titulaire.
 
-Au 13/10/2026 au soir, le registre DNS Belgium répond encore `Status: AVAILABLE` pour `toiture-veryroof.be` (variantes `toitureveryroof.be` et `veryroof.be` également libres) et Netlify refuse de l'ajouter (« isn't registered yet »). L'enregistrement doit donc être finalisé chez le registrar avant toute suite.
+État : domaine **actif**, enregistré le 13/10/2026 via Realtime Register B.V. (registrar de Hostinger), expiration 31/10/2027, renouvellement automatique activé.
 
-Une fois le domaine actif : Netlify → `toiture-veryroof` → Domain management → Add a domain you already own → `toiture-veryroof.be`. Netlify crée alors une zone DNS et donne quatre serveurs de noms du type `dns1.p0X.nsone.net` à `dns4.p0X.nsone.net` — c'est le montage utilisé par tous les autres sites du client (avocat-penaliste p08, helpcar p03, peintre-batiment p09). Ces quatre serveurs sont à coller dans le panneau du registrar, à la place des serveurs par défaut. Le certificat HTTPS Let's Encrypt est ensuite émis automatiquement par Netlify.
+Montage DNS retenu — identique aux autres sites du client : **Netlify DNS**.
+- Zone DNS créée dans Netlify (équipe bcdd) avec deux enregistrements NETLIFY, l'apex et le `www`, pointant sur `toiture-veryroof.netlify.app`.
+- Domaine ajouté au projet Netlify comme domaine principal, `www.toiture-veryroof.be` redirige automatiquement vers lui.
+- Serveurs de noms posés chez Hostinger (Domaines → toiture-veryroof.be → DNS / Nameservers → Change nameservers) :
+  `dns1.p04.nsone.net`, `dns2.p04.nsone.net`, `dns3.p04.nsone.net`, `dns4.p04.nsone.net`.
+
+Propagation : de quinze minutes à vingt-quatre heures. Le certificat HTTPS Let's Encrypt est émis automatiquement par Netlify dès que la délégation est visible ; si après vingt-quatre heures il manque toujours, cliquer « Verify DNS configuration » puis « Renew certificate » dans Domain management → HTTPS.
+
+### Reste à faire côté client
+
+1. `LEADAPP_SECRET` dans les variables d'environnement Netlify (valeur identique aux autres sites).
+2. Numéro BCE/TVA (`site.vat`) et forme juridique (`pending.legalForm`) — obligation légale.
+3. Une fois le domaine résolu : créer la boîte `contact@toiture-veryroof.be` et rebasculer la notification de formulaire dessus.
+4. Search Console + sitemap, fiche Google Business Profile, annuaires.
+5. Facultatif : raccorder le dépôt GitHub en déploiement continu (Project configuration → Build & deploy → Link repository), ce qui évite de déployer depuis le dossier iCloud.
