@@ -43,7 +43,7 @@ Les 31 pages services ont été réécrites au format « problème → nous le r
 - Déploiement par le CLI (`netlify deploy --prod --build`). Le dépôt GitHub n'est PAS encore raccordé en déploiement continu (l'autorisation OAuth GitHub doit être donnée par le client dans l'interface Netlify : Project configuration → Build & deploy → Link repository).
 - `pending.host` et `pending.hostTransferNote` renseignés (Netlify, Inc. + clauses contractuelles types).
 - Variables d'environnement posées : `LEADAPP_URL`, `LEADAPP_SITE` (`s-toiture`), `LEADAPP_TYPE` (`t-toiture`). **`LEADAPP_SECRET` reste à poser par le client** (même valeur que sur les autres sites, à copier depuis Netlify → Environment variables d'un site existant). Tant qu'elle manque, le relais vers l'app Suivi Leads ne part pas, mais Netlify Forms enregistre quand même les demandes.
-- Détection de formulaires activée, formulaire `devis` reconnu après redéploiement. Notification par e-mail encore à créer (Forms → Add notification).
+- Détection de formulaires activée, formulaire `devis` reconnu après redéploiement. Notification par e-mail créée le 13/10/2026 : toute nouvelle soumission part vers borenxdaniel@gmail.com, objet « Nouvelle demande de devis — Toiture Veryroof ». À rebasculer vers contact@toiture-veryroof.be dès que la boîte existe.
 
 ### Domaine — point bloquant
 
@@ -52,4 +52,6 @@ Les 31 pages services ont été réécrites au format « problème → nous le r
 - ne pas diffuser l'adresse `.netlify.app` (les moteurs y verraient un canonical mort) ;
 - l'adresse e-mail `contact@toiture-veryroof.be` n'existe pas non plus.
 
-Après achat du domaine : Netlify → Domain management → Add domain, puis pointer les DNS chez le registrar.
+Au 13/10/2026 au soir, le registre DNS Belgium répond encore `Status: AVAILABLE` pour `toiture-veryroof.be` (variantes `toitureveryroof.be` et `veryroof.be` également libres) et Netlify refuse de l'ajouter (« isn't registered yet »). L'enregistrement doit donc être finalisé chez le registrar avant toute suite.
+
+Une fois le domaine actif : Netlify → `toiture-veryroof` → Domain management → Add a domain you already own → `toiture-veryroof.be`. Netlify crée alors une zone DNS et donne quatre serveurs de noms du type `dns1.p0X.nsone.net` à `dns4.p0X.nsone.net` — c'est le montage utilisé par tous les autres sites du client (avocat-penaliste p08, helpcar p03, peintre-batiment p09). Ces quatre serveurs sont à coller dans le panneau du registrar, à la place des serveurs par défaut. Le certificat HTTPS Let's Encrypt est ensuite émis automatiquement par Netlify.
