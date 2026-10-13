@@ -1,0 +1,34 @@
+---
+import Icon from '../Icon.astro';
+import { activeZones } from '../../data/zones';
+import { linkText } from '../../lib/phone';
+
+interface Props {
+  heading: string;
+  paragraph: string;
+}
+
+const { heading, paragraph } = Astro.props;
+// Le paragraphe validé doit contenir cette expression : linkText échoue au build sinon (pas de lien perdu en silence).
+const html = linkText(paragraph, "toutes nos zones d'intervention", '/zones-d-intervention');
+---
+<section id="zones" class="section area">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Zones desservies</p>
+      <h2 class="section-title">{heading}</h2>
+    </div>
+    <p class="section-lead" set:html={html} />
+    <ul class="chips">
+      {activeZones.map((z) => <li><a href={`/${z.slug}`}><Icon name="pin" size={16} /> Couvreur {z.name}</a></li>)}
+      <li><a class="chips__all" href="/zones-d-intervention">Toutes les communes <Icon name="arrow" size={16} /></a></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .chips a { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 44px; padding: 0.5rem 1rem; border: 1px solid var(--color-line); border-radius: 999px; text-decoration: none; font-weight: 600; background: #fff; }
+  .chips a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .chips__all { color: var(--color-accent-dark); }
+</style>

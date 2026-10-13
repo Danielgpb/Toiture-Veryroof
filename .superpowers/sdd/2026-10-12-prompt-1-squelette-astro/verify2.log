@@ -1,0 +1,101 @@
+
+> toiture-veryroof@0.1.0 verify
+> npm test && astro build && node scripts/check-links.mjs
+
+
+> toiture-veryroof@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ la hiérarchie des services respecte les comptages de la spec (0.392042ms)
+✔ chaque page enfant connaît son parent, les autres n’en ont pas (0.095416ms)
+✔ tous les slugs sont uniques et propres (0.156166ms)
+✔ les pages communes sont des zones desservies et 4 au lancement (0.074833ms)
+✔ les titres H1 suivent « [Service] Bruxelles » (0.04775ms)
+✔ les données NAP sont présentes (0.04375ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64.475625
+14:46:02 [content] Syncing content
+14:46:02 [content] Synced content
+14:46:02 [types] Generated 14ms
+14:46:02 [build] output: "static"
+14:46:02 [build] mode: "static"
+14:46:02 [build] directory: /Users/macbook/Desktop/Sites/site /Toiture Veryroof/dist/
+14:46:02 [build] Collecting build info...
+14:46:02 [build] ✓ Completed in 20ms.
+14:46:02 [build] Building static entrypoints...
+14:46:03 [vite] ✓ built in 257ms
+14:46:03 [build] ✓ Completed in 271ms.
+
+ building client (vite) 
+14:46:03 [vite] transforming...
+14:46:03 [vite] ✓ 1 modules transformed.
+14:46:03 [vite] rendering chunks...
+14:46:03 [vite] ✓ built in 4ms
+
+ generating static routes 
+14:46:03 ▶ src/pages/404.astro
+14:46:03   └─ /404.html (+3ms) 
+14:46:03 ▶ src/pages/[slug].astro
+14:46:03   ├─ /reparation-toiture-bruxelles.html (+1ms) 
+14:46:03   ├─ /reparation-fuite-toiture-bruxelles.html (+1ms) 
+14:46:03   ├─ /remplacement-tuiles-ardoises-bruxelles.html (+1ms) 
+14:46:03   ├─ /reparation-toiture-tempete-bruxelles.html (+0ms) 
+14:46:03   ├─ /reparation-faitage-solins-bruxelles.html (+0ms) 
+14:46:03   ├─ /reparation-cheminee-bruxelles.html (+0ms) 
+14:46:03   ├─ /isolation-toiture-bruxelles.html (+1ms) 
+14:46:03   ├─ /isolation-combles-bruxelles.html (+1ms) 
+14:46:03   ├─ /isolation-sarking-bruxelles.html (+1ms) 
+14:46:03   ├─ /isolation-toiture-plate-bruxelles.html (+0ms) 
+14:46:03   ├─ /zinguerie-gouttieres-bruxelles.html (+0ms) 
+14:46:03   ├─ /pose-gouttieres-bruxelles.html (+0ms) 
+14:46:03   ├─ /reparation-gouttieres-bruxelles.html (+0ms) 
+14:46:03   ├─ /nettoyage-gouttieres-bruxelles.html (+0ms) 
+14:46:03   ├─ /cheneaux-descentes-eau-bruxelles.html (+0ms) 
+14:46:03   ├─ /renovation-toiture-bruxelles.html (+0ms) 
+14:46:03   ├─ /toiture-tuiles-bruxelles.html (+0ms) 
+14:46:03   ├─ /toiture-ardoises-bruxelles.html (+0ms) 
+14:46:03   ├─ /toiture-zinc-bruxelles.html (+0ms) 
+14:46:03   ├─ /charpente-bruxelles.html (+0ms) 
+14:46:03   ├─ /enlevement-ardoises-amiante-bruxelles.html (+0ms) 
+14:46:03   ├─ /toiture-plate-bruxelles.html (+0ms) 
+14:46:03   ├─ /etancheite-epdm-bruxelles.html (+0ms) 
+14:46:03   ├─ /roofing-bitumineux-bruxelles.html (+0ms) 
+14:46:03   ├─ /reparation-toiture-plate-bruxelles.html (+0ms) 
+14:46:03   ├─ /toiture-vegetalisee-bruxelles.html (+0ms) 
+14:46:03   ├─ /depannage-toiture-urgence-bruxelles.html (+0ms) 
+14:46:03   ├─ /pose-velux-bruxelles.html (+0ms) 
+14:46:03   ├─ /demoussage-toiture-bruxelles.html (+0ms) 
+14:46:03   ├─ /inspection-toiture-bruxelles.html (+0ms) 
+14:46:03   ├─ /toiture-copropriete-bruxelles.html (+0ms) 
+14:46:03   ├─ /couvreur-uccle.html (+0ms) 
+14:46:03   ├─ /couvreur-watermael-boitsfort.html (+0ms) 
+14:46:03   ├─ /couvreur-rhode-saint-genese.html (+0ms) 
+14:46:03   └─ /couvreur-waterloo.html (+0ms) 
+14:46:03 ▶ src/pages/a-propos.astro
+14:46:03   └─ /a-propos.html (+0ms) 
+14:46:03 ▶ src/pages/contact.astro
+14:46:03   └─ /contact.html (+0ms) 
+14:46:03 ▶ src/pages/couvreur-bruxelles.astro
+14:46:03   └─ /couvreur-bruxelles.html (+0ms) 
+14:46:03 ▶ src/pages/mentions-legales.astro
+14:46:03   └─ /mentions-legales.html (+0ms) 
+14:46:03 ▶ src/pages/politique-de-confidentialite.astro
+14:46:03   └─ /politique-de-confidentialite.html (+0ms) 
+14:46:03 ▶ src/pages/services.astro
+14:46:03   └─ /services.html (+0ms) 
+14:46:03 ▶ src/pages/zones-d-intervention.astro
+14:46:03   └─ /zones-d-intervention.html (+0ms) 
+14:46:03 ▶ /
+14:46:03   └─ /index.html (+0ms) 
+14:46:03 ✓ Completed in 25ms.
+
+14:46:03 [build] 43 page(s) built in 329ms
+14:46:03 [build] Complete!
+44 pages HTML, 1285 liens internes vérifiés
+OK : aucun lien cassé, aucune ancre, aucun slash final, aucune page orpheline

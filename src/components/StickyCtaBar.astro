@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<div class="sticky-cta">
+  <a class="sticky-cta__call" href={site.phoneHref}><Icon name="phone" size={20} /> Appeler</a>
+  <a class="sticky-cta__quote" href="#devis">Devis gratuit</a>
+</div>
+
+<style>
+  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: none; gap: 0.5rem; padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--color-line); box-shadow: 0 -8px 24px rgba(17, 24, 39, 0.12); }
+  .sticky-cta a { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 52px; border-radius: var(--radius); font-family: var(--font-heading); font-weight: 700; text-decoration: none; }
+  .sticky-cta__call { background: var(--color-accent-dark); color: #fff; }
+  .sticky-cta__quote { background: var(--color-primary); color: #fff; }
+  @media (max-width: 900px) { .sticky-cta { display: flex; } }
+</style>

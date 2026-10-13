@@ -1,0 +1,114 @@
+{
+  "slug": "inspection-toiture-bruxelles",
+  "name": "Inspection et expertise de toiture",
+  "metaTitle": "Inspection et expertise de toiture Bruxelles | Rapport écrit",
+  "metaDescription": "Expertise de toiture à Bruxelles : contrôle depuis le toit et le grenier, photos et rapport écrit, avant achat ou après tempête. Tél. +32 460 22 99 60.",
+  "h1": "Inspection et expertise de toiture à Bruxelles : un avis clair et écrit avant de décider",
+  "heroSubheadline": "Vous achetez une maison, le vent vient de souffler fort, ou vous ne savez simplement pas dans quel état est votre toit ? Nous montons voir et nous vous remettons un rapport écrit, à Bruxelles et en périphérie.",
+  "opening": [
+    "Toiture Veryroof inspecte et expertise les toitures à Bruxelles : montée sur le toit, photos de chaque défaut, combles contrôlés, rapport écrit. Avant un achat, après une tempête, pour un syndic ou pour planifier des travaux."
+  ],
+  "problems": {
+    "h2": "Vous voulez connaître l'état réel de votre toit ? Nous l'inspectons",
+    "items": [
+      {
+        "problem": "Une maison à acheter dont le toit vous inquiète ?",
+        "solution": "Nous montons, photographions couverture, zinguerie et charpente, et vous remettons un rapport avec les travaux à prévoir et leur urgence."
+      },
+      {
+        "problem": "Une tache au plafond sans fuite évidente ?",
+        "solution": "Nous cherchons à la caméra et au test à l'eau, et nous distinguons condensation, infiltration et remontée : [[Réparation de fuite de toiture]]."
+      },
+      {
+        "problem": "Un syndic qui veut planifier les travaux sur dix ans ?",
+        "solution": "Nous dressons l'état des lieux de la toiture de l'immeuble et un calendrier de travaux par priorité : [[Toiture pour copropriétés et syndics]]."
+      },
+      {
+        "problem": "Une tempête passée et une assurance qui demande un constat ?",
+        "solution": "Nous relevons les dégâts, datons les photos et rédigeons le rapport pour votre déclaration."
+      },
+      {
+        "problem": "Un toit refait par une autre entreprise, avec des doutes sur la pose ?",
+        "solution": "Nous contrôlons sous-toiture, fixations, ventilation et zinguerie, et nous écrivons ce que nous voyons."
+      },
+      {
+        "problem": "Un simple contrôle annuel pour éviter les surprises ?",
+        "solution": "Nous passons chaque automne, vérifions les points sensibles et nettoyons les gouttières au passage."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Méthode et matériel d'inspection",
+    "items": [
+      {
+        "label": "Montée sur le toit",
+        "text": "harnais et échelle de toit, chaque versant parcouru, pas d'inspection depuis le trottoir."
+      },
+      {
+        "label": "Photos et drone",
+        "text": "photos de chaque défaut, drone pour les toits inaccessibles ou les immeubles."
+      },
+      {
+        "label": "Caméra et humidimètre",
+        "text": "caméra dans les descentes et sous les ardoises, humidité mesurée dans les bois."
+      },
+      {
+        "label": "Combles",
+        "text": "sous-toiture, chevrons, pannes, traces d'eau et d'insectes contrôlés de l'intérieur."
+      },
+      {
+        "label": "Rapport écrit",
+        "text": "défauts classés par urgence, photos, travaux conseillés, remis sous quelques jours."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une inspection de toiture à Bruxelles",
+    "items": [
+      "La taille du toit et le nombre de versants ou de bâtiments.",
+      "Le moyen d'accès au toit : échelle, drone ou nacelle.",
+      "Le niveau du rapport : simple compte rendu ou expertise détaillée pour un acte ou une assurance.",
+      "Prix annoncé à l'avance ; l'inspection est déduite si vous nous confiez les travaux qu'elle révèle."
+    ]
+  },
+  "faq": [
+    {
+      "question": "J'achète une maison, comment savoir si le toit tiendra encore des années ?",
+      "answer": "En montant dessus, ou au moins dans le grenier. Nous regardons la rectitude du faîtage, la planéité des versants, la présence d'une sous-toiture, l'état des crochets, des solins et des corniches, et les traces d'eau sur les chevrons. Vous recevez un rapport avec photos avant de faire votre offre. La visite du grenier à elle seule en dit long."
+    },
+    {
+      "question": "L'agent immobilier affirme que la toiture est en bon état, puis-je m'y fier ?",
+      "answer": "Pas sans vérification : l'agent n'est pas couvreur et regarde depuis la rue. Un toit peut sembler net et cacher une sous-toiture absente ou une charpente attaquée. Une expertise indépendante coûte une fraction d'une rénovation, et son rapport sert à négocier le prix."
+    },
+    {
+      "question": "Utilisez-vous un drone pour inspecter les toits ?",
+      "answer": "Oui, pour les versants inaccessibles ou pour un premier coup d'œil sans échafaudage, dans le respect des règles de vol à Bruxelles. Le drone montre les ardoises déplacées et les mousses, pas l'état des crochets ni de la sous-toiture. Nous complétons toujours par le grenier et, si possible, par un passage sur le toit."
+    },
+    {
+      "question": "Le rapport d'expertise est-il utilisable face à mon assureur ou au tribunal ?",
+      "answer": "Oui, c'est un constat technique daté, avec photos et description des désordres, que vous pouvez joindre à une déclaration de sinistre ou à une mise en demeure. Pour une procédure, un expert judiciaire désigné par le tribunal garde le dernier mot. Notre rapport sert alors de base."
+    },
+    {
+      "question": "Après l'expertise, êtes-vous obligé de faire les travaux ?",
+      "answer": "Non, et vous non plus. Le rapport est indépendant du devis : vous pouvez le confier à un autre couvreur ou attendre. Si vous nous choisissez, les travaux nécessaires sont chiffrés séparément, par exemple une [[Réparation de toiture]] ou une [[Rénovation de toiture]]."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Un toit à faire contrôler ? Appelez le +32 460 22 99 60 : nous montons, photographions et vous remettons un rapport clair."
+    ]
+  },
+  "parentLink": "L'expertise est souvent la première étape avant de confier un chantier à [[home:notre entreprise de couverture à Bruxelles]].",
+  "summary": "Avant achat, après un coup de vent ou en cas de doute : contrôle depuis le toit et le grenier, photos et rapport écrit avec priorités.",
+  "sources": [
+    {
+      "label": "Notaire.be — achat d'un bien et règles de la copropriété",
+      "url": "https://www.notaire.be/"
+    },
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

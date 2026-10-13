@@ -1,0 +1,234 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { site, pending } from '../data/site';
+import { activeZones, serviceAreas, regionLabels } from '../data/zones';
+import { getPhoto } from '../lib/photos';
+
+const title = 'À propos de Toiture Veryroof | Couvreur à Bruxelles';
+const description = `Toiture Veryroof, couvreur installé à Bruxelles : entreprise locale et assurée, devis gratuit sous 48 h, dépannage 24h/24, 7j/7.`;
+const regions = Object.keys(serviceAreas) as (keyof typeof serviceAreas)[];
+// Éléments affichés seulement quand le client a fourni l'information (src/data/site.ts → pending)
+const hasStory = pending.story.length > 0;
+const manager = pending.manager.name ? pending.manager : null;
+const managerPhoto = manager?.photo ? getPhoto(manager.photo) : null;
+const socials = [
+  { label: 'Facebook', short: 'f', url: pending.social.facebook },
+  { label: 'Google', short: 'G', url: pending.social.google },
+  { label: 'LinkedIn', short: 'in', url: pending.social.linkedin },
+  { label: 'Instagram', short: 'ig', url: pending.social.instagram },
+].filter((s) => s.url);
+const zoneByName = new Map(activeZones.map((z) => [z.name, z.slug]));
+// Vraies photos de chantier reçues le 12/10/2026 (toits plats) ; à compléter par une photo du gérant ou de l'équipe quand elle existera
+const chantier1 = getPhoto('camionnettes-toiture-veryroof-devant-chantier');
+const chantier2 = getPhoto('equipe-couvreurs-sur-chantier-sarking');
+const orgId = `${site.domain}/#organisation`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'RoofingContractor',
+      '@id': orgId,
+      name: site.name,
+      url: `${site.domain}/${site.homeSlug}`,
+      telephone: site.phoneHref.replace('tel:', ''),
+      email: site.email,
+      priceRange: '€€',
+      address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country },
+      areaServed: Object.values(serviceAreas).flat().map((name) => ({ '@type': 'City', name })),
+      ...(manager ? { founder: { '@type': 'Person', name: manager.name, jobTitle: manager.role } } : {}),
+    },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}/${site.homeSlug}` }, { '@type': 'ListItem', position: 2, name: 'À propos', item: `${site.domain}/a-propos` }] },
+  ],
+};
+const trust = [
+  { icon: 'shield', label: 'Assurance RC professionnelle' },
+  { icon: 'document', label: 'Responsabilité décennale' },
+  { icon: 'euro', label: 'Devis gratuit sous 48 h' },
+  { icon: 'clock', label: 'Dépannage 24h/24, 7j/7' },
+] as const;
+---
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  </Fragment>
+  <section id="hero" class="page-head about-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={`/${site.homeSlug}`}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">À propos</span></li></ol></nav>
+      <h1>À propos de Toiture Veryroof : votre couvreur à Bruxelles</h1>
+      <p class="about-head__sub">Entreprise locale, assurée, là quand vous en avez besoin.</p>
+      <div class="about-head__cta">
+        <a class="btn btn--accent btn--lg" href={site.phoneHref}><Icon name="phone" size={20} /> Appeler le {site.phoneDisplay}</a>
+        <a class="btn btn--outline btn--lg" href="/contact">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="histoire" class="section">
+    <div class="container about__two">
+      <div class="prose">
+        <p class="eyebrow">{hasStory ? 'Notre histoire' : 'Qui nous sommes'}</p>
+        <h2>{hasStory ? 'Comment Toiture Veryroof a commencé' : 'Toiture Veryroof, couvreur installé à Bruxelles'}</h2>
+        <!-- Remplacer par l’histoire authentique de l’entreprise (150 à 200 mots) : comment êtes-vous arrivé dans le métier ? pourquoi avoir créé l’entreprise ? quel est votre lien avec Bruxelles ? Soyez sincère et précis : dates, lieux, premiers chantiers. → pending.story dans src/data/site.ts -->
+        {pending.story.map((paragraph) => <p>{paragraph}</p>)}
+        <p><strong class="brand">{site.name}</strong> est installée à Bruxelles et intervient dans les 19 communes bruxelloises ainsi qu'en Brabant wallon et en Brabant flamand. Nous assurons la <a href="/reparation-toiture-bruxelles">réparation</a>, la <a href="/renovation-toiture-bruxelles">rénovation</a> et l'<a href="/isolation-toiture-bruxelles">isolation</a> des toitures inclinées, les <a href="/toiture-plate-bruxelles">toits plats</a> et la <a href="/zinguerie-gouttieres-bruxelles">zinguerie et les gouttières</a>. <a href="/services">Tous nos services</a>.</p>
+      </div>
+      <div class="about__photos">
+        <!-- Remplacer par deux vraies photos : le gérant sur un chantier, l’équipe ou la camionnette (en attendant : deux photos de nos chantiers, provenance confirmée le 13/10/2026) -->
+        <figure><Image src={chantier1.image} alt={chantier1.alt} width={640} height={420} format="webp" quality={78} /><figcaption>Sur nos chantiers : {chantier1.caption ?? chantier1.alt}</figcaption></figure>
+        <figure><Image src={chantier2.image} alt={chantier2.alt} width={640} height={420} format="webp" quality={78} /><figcaption>Sur nos chantiers : {chantier2.caption ?? chantier2.alt}</figcaption></figure>
+      </div>
+      <!-- Sections suivantes, masquées tant que l'information n'est pas fournie (src/data/site.ts → pending) : -->
+    <!-- Remplacer par les informations réelles du gérant / de l’équipe : nom, fonction, qualifications vérifiables, années de métier, vraie photo (jamais une photo de banque d’images) → pending.manager dans src/data/site.ts ; la section s’affiche dès que le nom est renseigné. -->
+      <!-- Intégrer ici une vidéo de présentation du gérant (60 secondes suffisent, filmée au téléphone sur un chantier) : elle prouve qu’une vraie personne est derrière l’entreprise → pending.videoEmbed dans src/data/site.ts. -->
+    </div>
+  </section>
+
+  {manager && (
+    <section id="equipe" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Qui monte sur votre toit</p>
+          <h2 class="section-title">Rencontrez le gérant</h2>
+        </div>
+        <article class="card bio">
+          {managerPhoto && <Image class="bio__photo" src={managerPhoto.image} alt={managerPhoto.alt} width={320} height={320} format="webp" quality={80} />}
+          <div class="bio__body">
+            <h3>{manager.name}</h3>
+            <p class="bio__role">{manager.role}</p>
+            <ul class="bio__facts">
+              {manager.qualifications && <li><Icon name="document" size={18} /> {manager.qualifications}</li>}
+              {manager.years > 0 && <li><Icon name="clock" size={18} /> {manager.years} ans de métier</li>}
+              <li><Icon name="pin" size={18} /> Basé à Bruxelles</li>
+            </ul>
+            {manager.bio && <p>{manager.bio}</p>}
+          </div>
+        </article>
+      </div>
+    </section>
+  )}
+
+  {pending.videoEmbed && (
+    <section id="video" class="section">
+      <div class="container about__video">
+        <div class="section-head">
+          <p class="eyebrow">En vidéo</p>
+          <h2 class="section-title">Regardez la présentation de Toiture Veryroof</h2>
+        </div>
+        <div class="about__video-embed" set:html={pending.videoEmbed} />
+      </div>
+    </section>
+  )}
+
+  <section id="zones" class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Zones desservies</p>
+        <h2 class="section-title">Nous intervenons à Bruxelles et dans sa périphérie</h2>
+        <p class="section-lead">Depuis Bruxelles, nous nous déplaçons dans les 19 communes bruxelloises et dans la périphérie. Dépannage 24h/24, 7j/7, visite puis devis gratuit sous 48 h. Si votre commune n'est pas citée, appelez-nous : nous vous répondons rapidement.</p>
+      </div>
+      <div class="grid grid--3">
+        {regions.map((region) => (
+          <div class="card">
+            <h3>{regionLabels[region]}</h3>
+            <p class="zones__list">
+              {serviceAreas[region].map((name, i) => (
+                <Fragment>{i > 0 && ' · '}{zoneByName.has(name) ? <a href={`/${zoneByName.get(name)}`}>{name}</a> : name}</Fragment>
+              ))}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p class="zones__all"><a class="link-arrow" href="/zones-d-intervention">Toutes nos zones d'intervention <Icon name="arrow" size={18} /></a></p>
+    </div>
+  </section>
+
+  <section id="confiance" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Confiance</p>
+        <h2 class="section-title">Assurés, déclarés, garantis</h2>
+      </div>
+      <div class="grid grid--4">
+        {trust.map((t) => <div class="card trust-card"><span class="icon-badge"><Icon name={t.icon} size={26} /></span><p>{t.label}</p></div>)}
+      </div>
+      <ul class="creds">
+        <!-- Ajouter le numéro d’entreprise (BCE) et le numéro de TVA → site.vat dans src/data/site.ts -->
+        {site.vat && <li><strong>Numéro d'entreprise :</strong> {site.vat}</li>}
+        <!-- Ajouter les détails de l’assurance : compagnie, numéro de police RC professionnelle et responsabilité décennale -->
+        <li><strong>Assurance :</strong> responsabilité civile professionnelle et responsabilité décennale, l'assurance prévue par la loi Peeters-Borsus pour les travaux de logement soumis à architecte ; attestation remise avant chaque chantier.</li>
+        <!-- Ajouter les certifications et formations (fabricants, sécurité, amiante) → pending.certifications -->
+        {pending.certifications && <li><strong>Certifications :</strong> {pending.certifications}</li>}
+        <!-- Ajouter l’année de création → pending.founded -->
+        {pending.founded && <li><strong>En activité depuis :</strong> {pending.founded}</li>}
+        <li><strong>Garantie :</strong> écrite, avec sa durée inscrite sur chaque devis.</li>
+      </ul>
+      <!-- COLLER ICI LE CODE D’INTÉGRATION DE LA FICHE GOOGLE BUSINESS PROFILE (carte ou avis) → pending.gbpEmbed dans src/data/site.ts. Pour une entreprise qui se déplace chez le client, lier la fiche à cette page À propos est acceptable ; sinon, la lier à l’accueil. -->
+      <!-- Ajouter l’URL de la page Facebook, de la fiche Google, de LinkedIn et d’Instagram → pending.social dans src/data/site.ts. Ne liez que des profils réellement tenus à jour : un profil inactif fait plus de mal que de bien. -->
+    </div>
+  </section>
+
+  {pending.gbpEmbed && (
+    <section id="google" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Fiche Google</p>
+          <h2 class="section-title">Retrouvez-nous sur Google</h2>
+        </div>
+        <div class="gbp-embed" set:html={pending.gbpEmbed} />
+      </div>
+    </section>
+  )}
+
+  {socials.length > 0 && (
+    <section id="reseaux" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Réseaux</p>
+          <h2 class="section-title">Suivez-nous</h2>
+        </div>
+        <ul class="social-list" aria-label="Réseaux sociaux">
+          {socials.map((s) => <li><a href={s.url} rel="noopener" target="_blank"><span class="social__item" aria-hidden="true">{s.short}</span> {s.label}</a></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .about-head .crumbs ol { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; gap: 0.35rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); }
+  .about-head .crumbs li { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .about-head .crumbs a { color: #fff; text-decoration: none; }
+  .about-head__sub { font-size: 1.1rem; margin: 0 0 1.5rem !important; }
+  .about-head__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .about__two { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 900px) { .about__two { grid-template-columns: 1.1fr 1fr; gap: 4rem; } }
+  .about__photos { display: grid; gap: 1rem; }
+  .about__photos figure { margin: 0; }
+  .about__photos :global(img) { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .about__photos figcaption { margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-muted); }
+  .bio { display: grid; gap: 1.5rem; grid-template-columns: 1fr; max-width: 860px; }
+  @media (min-width: 700px) { .bio { grid-template-columns: 220px 1fr; } }
+  .bio :global(.bio__photo) { width: 100%; max-width: 220px; height: auto; border-radius: var(--radius); }
+  .bio__role { color: var(--color-accent-dark); font-weight: 700; margin: 0 0 0.75rem; }
+  .bio__facts { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.4rem; }
+  .bio__facts li { display: flex; align-items: center; gap: 0.5rem; }
+  .bio__facts :global(svg) { color: var(--color-accent-dark); flex: none; }
+  .about__video .section-head { margin-bottom: 1rem; }
+  .about__video-embed { max-width: 760px; border-radius: var(--radius); overflow: hidden; }
+  .about__video-embed :global(iframe), .about__video-embed :global(video) { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; }
+  .zones__list { margin: 0; color: var(--color-muted); }
+  .zones__list a { font-weight: 600; }
+  .zones__all { margin: 1.5rem 0 0; }
+  .trust-card { text-align: center; }
+  .trust-card p { margin: 0; font-weight: 600; }
+  .trust-card .icon-badge { margin-bottom: 0.75rem; }
+  .creds { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 0.6rem; max-width: 760px; }
+  .creds li { padding: 0.8rem 1rem; background: var(--color-bg-alt); border-radius: 8px; }
+  .gbp-embed { max-width: 860px; }
+  .social-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  .social-list li a { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 44px; color: var(--color-primary); font-weight: 600; text-decoration: none; }
+  .social-list li a:hover { text-decoration: underline; }
+  .social__item { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-line); font-weight: 700; color: var(--color-primary); }
+</style>

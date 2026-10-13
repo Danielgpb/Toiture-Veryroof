@@ -1,0 +1,110 @@
+{
+  "slug": "etancheite-epdm-bruxelles",
+  "name": "Toiture EPDM",
+  "metaTitle": "Toiture EPDM Bruxelles | Étanchéité d'un seul tenant",
+  "metaDescription": "Annexe ou extension à Bruxelles ? Toiture EPDM d'un seul tenant, collée sur support sec, garantie par écrit. Devis gratuit sous 48 h : +32 460 22 99 60.",
+  "h1": "Toiture EPDM à Bruxelles : une membrane d'un seul tenant, posée et garantie par écrit",
+  "heroSubheadline": "Annexe neuve, extension côté jardin ou vieille étanchéité à bout de souffle : une toiture EPDM se pose en une seule pièce, sur un support sec, et nous la garantissons par écrit.",
+  "opening": [
+    "Toiture Veryroof pose l'EPDM sur les toits plats à Bruxelles : une seule membrane en caoutchouc, sans joint sur la surface, collée ou lestée. Souple au gel, stable au soleil, garantie longue par écrit."
+  ],
+  "problems": {
+    "h2": "Vous voulez une toiture plate qui ne fuit plus ? Nous posons l'EPDM",
+    "items": [
+      {
+        "problem": "Un roofing qui a déjà été réparé trois fois ?",
+        "solution": "Nous déposons ou préparons le support et posons une membrane EPDM en une pièce, sans joint sur la surface."
+      },
+      {
+        "problem": "Une annexe où personne ne veut remonter avant vingt ans ?",
+        "solution": "Nous collons l'EPDM en plein sur un panneau sain, relevés remontés et profilés de finition posés."
+      },
+      {
+        "problem": "Une terrasse accessible au-dessus du salon ?",
+        "solution": "Nous posons l'EPDM puis des dalles sur plots, la membrane protégée du soleil et des pas."
+      },
+      {
+        "problem": "Un toit plat froid à isoler en même temps ?",
+        "solution": "Nous enchaînons pare-vapeur, panneaux PIR et EPDM, en toiture chaude : [[Isolation de toiture plate]]."
+      },
+      {
+        "problem": "Une membrane EPDM existante qui fuit à un relevé ?",
+        "solution": "Nous nettoyons, apprêtons et réparons avec un ruban EPDM autocollant : [[Réparation de toiture plate]]."
+      },
+      {
+        "problem": "Une petite surface où le bitume reste plus logique ?",
+        "solution": "Nous vous le disons : sur un garage de quelques mètres carrés, le [[Roofing bitumineux]] reste une option sérieuse."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "EPDM et accessoires de pose",
+    "items": [
+      {
+        "label": "Membrane EPDM",
+        "text": "caoutchouc synthétique, grande largeur, découpée à la dimension du toit pour éviter les joints."
+      },
+      {
+        "label": "Collage",
+        "text": "colle de contact sur les relevés, colle en plein ou en bandes sur la surface, lestage possible."
+      },
+      {
+        "label": "Joints et raccords",
+        "text": "rubans autovulcanisants, pièces préformées pour angles et sorties."
+      },
+      {
+        "label": "Support",
+        "text": "panneaux OSB ou isolant PIR à parement adapté, ancien roofing préparé si conservé."
+      },
+      {
+        "label": "Finitions",
+        "text": "profilés alu de rive, relevés sous solins, avaloirs et trop-pleins EPDM."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une toiture EPDM à Bruxelles",
+    "items": [
+      "La surface et le nombre de détails : relevés, coupoles, évacuations.",
+      "Pose collée ou lestée, avec ou sans isolation.",
+      "La préparation du support : dépose, panneaux à remplacer.",
+      "Devis gratuit poste par poste, garantie écrite sur l'étanchéité ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "La membrane EPDM se pose-t-elle vraiment d'une seule pièce ?",
+      "answer": "Oui, sur la plupart des toits bruxellois : les rouleaux existent en grandes largeurs, et une annexe ou un garage se couvrent sans aucun joint. Sur un grand immeuble, quelques raccords sont vulcanisés à chaud ou collés en usine. Moins de joints, c'est moins de points faibles."
+    },
+    {
+      "question": "Peut-on poser l'EPDM directement sur l'ancien bitume ?",
+      "answer": "Parfois, si le bitume est sec, adhérent et sans cloques, et après vérification de l'isolant en dessous. S'il est gorgé d'eau ou s'il faut isoler, on dépose tout et on repart sur un support sain. Poser sur un support douteux, c'est enfermer l'humidité sous la membrane neuve."
+    },
+    {
+      "question": "EPDM collé ou lesté par du gravier ?",
+      "answer": "Collé en plein sur les petites surfaces et les toits exposés au vent, c'est la pose la plus sûre. Le lestage au gravier convient aux grandes toitures capables de porter le poids, et protège la membrane du soleil. Nous choisissons selon la structure et l'exposition."
+    },
+    {
+      "question": "Un EPDM percé par un outil ou une chute se répare-t-il ?",
+      "answer": "Oui, facilement, avec une pièce de la même membrane collée à froid ou vulcanisée. C'est l'un de ses avantages par rapport à d'autres matériaux. La réparation est détaillée sur notre page [[Réparation de toiture plate]]."
+    },
+    {
+      "question": "L'EPDM est-il compatible avec une toiture végétalisée ou des panneaux solaires ?",
+      "answer": "Oui, c'est même le support le plus courant pour les deux : la membrane résiste aux racines et les panneaux se posent sur des lests sans la percer. Il faut vérifier la portance de la structure avant d'ajouter du poids. Voyez notre [[Toiture végétalisée]]."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Un toit plat à refaire pour longtemps ? Appelez le +32 460 22 99 60 : nous mesurons la surface, et le devis gratuit suit."
+    ]
+  },
+  "parentLink": "Pour comparer les membranes et comprendre le déroulement complet d'une réfection, lisez notre page [[Toiture plate]].",
+  "summary": "Membrane de caoutchouc collée en une seule pièce sur le toit plat : le choix simple pour une annexe, une extension ou un garage.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

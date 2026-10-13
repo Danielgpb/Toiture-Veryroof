@@ -1,0 +1,39 @@
+---
+/** « Comment ça se passe » : les 4 étapes (src/data/process.ts) avec leur visuel. `place` complète le titre de la visite
+ *  (« Visite sur place à Uccle ») ; sans lieu : « Visite sur place chez vous ». `standalone` : section pleine largeur (accueil). */
+import { Image } from 'astro:assets';
+import { site } from '../data/site';
+import { processSteps, processHeading } from '../data/process';
+import { getPhoto } from '../lib/photos';
+import { linkPhone } from '../lib/phone';
+
+interface Props {
+  place?: string;
+  standalone?: boolean;
+}
+const { place, standalone = false } = Astro.props;
+const steps = processSteps.map((st) => {
+  const ph = getPhoto(st.photo);
+  return { title: st.title.replace(' à {commune}', place ? ` à ${place}` : ' chez vous'), textHtml: linkPhone(st.text, site.phoneDisplay, site.phoneHref), image: ph.image, alt: ph.alt };
+});
+---
+<section id="etapes" class:list={['steps', standalone ? 'section steps--standalone' : 'prose-block']} aria-labelledby="etapes-title">
+  <div class={standalone ? 'container' : undefined}>
+    {standalone ? <p class="eyebrow">Notre méthode</p> : null}
+    <h2 class={standalone ? 'section-title' : undefined} id="etapes-title">{processHeading}</h2>
+    <ol>
+      {steps.map((st) => <li><Image class="steps__img" src={st.image} alt={st.alt} width={480} height={270} format="webp" quality={74} loading="lazy" /><strong>{st.title}</strong><p set:html={st.textHtml} /></li>)}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .steps ol { list-style: none; counter-reset: etape; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .steps--standalone ol { margin-bottom: 0; }
+  .steps li { counter-increment: etape; position: relative; display: flex; flex-direction: column; gap: 0.5rem; border: 1px solid var(--color-line); border-radius: var(--radius); background: #fff; padding: 0 0 1.25rem; overflow: hidden; }
+  .steps li::before { content: counter(etape); position: absolute; top: 0.75rem; left: 0.75rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--color-accent); color: #fff; font-family: var(--font-heading); font-weight: 700; display: grid; place-items: center; box-shadow: var(--shadow); }
+  .steps :global(.steps__img) { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+  .steps strong, .steps p { padding: 0 1.25rem; }
+  .steps strong { font-family: var(--font-heading); color: var(--color-primary); font-size: 1.05rem; }
+  .steps p { margin: 0; color: var(--color-muted); }
+</style>

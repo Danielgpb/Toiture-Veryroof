@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Icon from '../Icon.astro';
+
+interface Props {
+  heading: string;
+  items: { name: string; slug: string; description: string; photo: { image: ImageMetadata; alt: string } }[];
+}
+
+const { heading, items } = Astro.props;
+---
+<section id="categories" class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Nos services</p>
+      <h2 class="section-title">{heading}</h2>
+    </div>
+    <div class="grid grid--3">
+      {items.map((it) => (
+        <article class="card cat">
+          <div class="cat__visual"><Image class="cat__img" src={it.photo.image} alt={it.photo.alt} width={640} height={400} format="webp" quality={78} /></div>
+          <h3><a href={it.slug}>{it.name}</a></h3>
+          <p>{it.description}</p>
+          <a class="link-arrow" href={it.slug}>En savoir plus <Icon name="arrow" size={18} /></a>
+        </article>
+      ))}
+    </div>
+    <p class="cat__all"><a class="btn btn--primary" href="/services">Voir tous nos services</a></p>
+  </div>
+</section>
+
+<style>
+  .cat { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+  .cat__visual { height: 200px; background: var(--color-primary-soft); }
+  .cat__img { width: 100%; height: 100%; object-fit: cover; }
+  .cat h3, .cat p, .cat .link-arrow { margin-left: 1.5rem; margin-right: 1.5rem; }
+  .cat h3 { margin-top: 1.4rem; font-size: 1.2rem; }
+  .cat h3 a { text-decoration: none; color: var(--color-primary); }
+  .cat h3 a:hover { color: var(--color-accent); }
+  .cat p { color: var(--color-muted); flex: 1; }
+  .cat .link-arrow { margin-bottom: 1.5rem; }
+  .cat__all { margin: 2rem 0 0; text-align: center; }
+</style>

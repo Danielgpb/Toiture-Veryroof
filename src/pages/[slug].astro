@@ -1,0 +1,21 @@
+---
+import PlaceholderPage from '../components/PlaceholderPage.astro';
+import HubPage from '../components/service/HubPage.astro';
+import ChildPage from '../components/service/ChildPage.astro';
+import ZonePage from '../components/ZonePage.astro';
+import { allServicePages, serviceH1 } from '../data/services';
+import { activeZones, zoneH1 } from '../data/zones';
+import { getPageContent } from '../lib/pages';
+
+export function getStaticPaths() {
+  return [
+    ...allServicePages().map((page) => ({ params: { slug: page.slug }, props: { h1: serviceH1(page.name), kind: page.kind } })),
+    ...activeZones.map((zone) => ({ params: { slug: zone.slug }, props: { h1: zoneH1(zone), kind: 'zone' } })),
+  ];
+}
+
+const { slug } = Astro.params;
+const { h1, kind } = Astro.props;
+const content = getPageContent(slug!);
+---
+{content && kind === 'zone' ? <ZonePage content={content as any} /> : content && (kind === 'category' || kind === 'core') ? <HubPage content={content as any} /> : content && (kind === 'child' || kind === 'general') ? <ChildPage content={content as any} /> : <PlaceholderPage h1={h1} slug={slug} breadcrumb={kind === 'zone' ? [{ label: "Zones d'intervention", href: '/zones-d-intervention' }] : []} />}

@@ -1,0 +1,34 @@
+---
+import Icon from '../Icon.astro';
+
+interface Props {
+  heading: string;
+  items: { headline: string; explanation: string }[];
+}
+
+const { heading, items } = Astro.props;
+const icons = ['shield', 'document', 'building', 'storm'] as const;
+---
+<section id="pourquoi-nous" class="section why">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Pourquoi nous</p>
+      <h2 class="section-title">{heading}</h2>
+    </div>
+    <div class="grid grid--4">
+      {items.map((it, i) => (
+        <article class="card why__card">
+          <span class="icon-badge"><Icon name={icons[i % icons.length]} size={26} /></span>
+          <h3>{it.headline}</h3>
+          <p>{it.explanation}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .why__card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .why__card p { margin: 0; color: var(--color-muted); font-size: 0.97rem; }
+</style>

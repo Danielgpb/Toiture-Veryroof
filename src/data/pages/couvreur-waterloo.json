@@ -1,0 +1,103 @@
+{
+  "slug": "couvreur-waterloo",
+  "name": "Waterloo",
+  "metaTitle": "Couvreur Waterloo, toiturier : toiture, tuiles, isolation",
+  "metaDescription": "Couvreur à Waterloo : tuiles béton en fin de vie, faîtages, isolation des combles, permis wallon et Prime Habitation. Visite, devis gratuit sous 48 h.",
+  "h1": "Couvreur à Waterloo, toiturier : toiture en tuiles, faîtages, isolation et dépannage",
+  "heroSubheadline": "Du Chenois à Mont-Saint-Jean, faîtages au vent, tuiles béton poreuses, combles froids : un appel, une visite, un devis gratuit sous 48 h.",
+  "opening": [
+    "Besoin d'un couvreur à Waterloo ? Toiture Veryroof, c'est le couvreur de référence des villas quatre façades, du Chenois à Joli-Bois. Des tuiles faîtières dans la pelouse après un vent d'ouest, une laine de combles qui ne retient plus rien, un roofing cloqué sur le garage ? Appelez le +32 460 22 99 60 : nous venons voir, devis sous 48 h.",
+    "[[Toiture en tuiles]], [[Réparation de faîtage et de solins]], [[Isolation des combles par l'intérieur]], [[Réparation de toiture après tempête]] : avec les règles wallonnes, permis communal et Prime Habitation, nous réglons ça."
+  ],
+  "rules": {
+    "h2": "Permis wallon et primes à Waterloo",
+    "paragraphs": [
+      "Wallonie : le Code du développement territorial s'applique, la commune délivre le permis. Sans permis : remplacement à l'identique, isolation par l'intérieur. Avec permis : changement de matériau ou de teinte, lucarne, rehausse, isolation extérieure qui change l'aspect. Certains lotissements imposent une teinte de tuile.",
+      "Aides : Prime Habitation (Wallonie) pour l'isolation, selon revenus et âge du logement, vérifiée avant le devis. TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "quartiers": [
+    "Centre",
+    "Chenois",
+    "Joli-Bois",
+    "Mont-Saint-Jean",
+    "Faubourg"
+  ],
+  "faq": [
+    {
+      "question": "Mes tuiles béton ont quarante ans, réparer ou tout refaire ?",
+      "answer": "Si elles s'effritent au gel et se cassent une à une, refaire revient moins cher que de courir après chaque fuite, surtout si la sous-toiture manque. Si elles sont grises mais entières, un démoussage et quelques remplacements suffisent. Nous vous le disons après être montés, pas avant, voyez la [[Toiture en tuiles]]."
+    },
+    {
+      "question": "Faut-il un permis pour isoler mes combles à Waterloo ?",
+      "answer": "Non, pas pour une isolation par l'intérieur, qui ne change pas l'aspect du toit. Le permis devient nécessaire si vous isolez par l'extérieur et que la toiture monte, ou si vous ajoutez une lucarne. Nous vérifions les prescriptions de votre lotissement avant de commencer."
+    },
+    {
+      "question": "La Prime Habitation wallonne couvre-t-elle ma toiture ?",
+      "answer": "Elle soutient l'isolation du toit, pas le remplacement de la couverture seul. Le montant dépend de vos revenus et de l'âge du logement, et il change régulièrement. Nous faisons le calcul ensemble avant de parler de l'[[Isolation de toiture]], pour éviter une mauvaise surprise."
+    },
+    {
+      "question": "Après une tempête, des tuiles sont parties, que faire en premier ?",
+      "answer": "Photographier les dégâts depuis le sol, appeler votre assureur pour ouvrir le dossier, puis nous appeler pour bâcher. Ne montez pas sur le toit. La [[Réparation de toiture après tempête]] fournit les photos et la facture de mise hors d'eau pour votre déclaration."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Une tuile dans la pelouse, un faîtage qui bouge, des combles glacés ? Appelez le +32 460 22 99 60 ou remplissez le formulaire : nous venons voir, devis gratuit sous 48 h, garantie écrite."
+    ]
+  },
+  "homeLink": "Nos prestations complètes : [[home:entreprise de toiture à Bruxelles]].",
+  "summary": "Villas quatre façades, tuiles béton en fin de vie, combles à isoler, règles wallonnes : nos interventions à Waterloo.",
+  "sources": [
+    {
+      "label": "Commune de Waterloo — site officiel (urbanisme)",
+      "url": "https://www.waterloo.be/"
+    },
+    {
+      "label": "SPW Logement — primes Habitation en Wallonie",
+      "url": "https://logement.wallonie.be/"
+    }
+  ],
+  "updated": "2026-10-13",
+  "problems": {
+    "h2": "Vous avez un problème de toiture à Waterloo ? Nous le réglons",
+    "items": [
+      {
+        "problem": "Trois tuiles faîtières dans la pelouse d'une villa quatre façades du Chenois après un vent d'ouest ?",
+        "solution": "Nous reposons le faîtage à sec sous un closoir ventilé, pour qu'il ne bouge plus : [[Réparation de faîtage et de solins]]."
+      },
+      {
+        "problem": "Des tuiles béton de quarante ans, grises et poreuses, qui se fendent au gel sur un toit de Joli-Bois ?",
+        "solution": "Nous démoussons et hydrofugeons si la couverture tient encore ; sinon nous posons une couverture neuve en terre cuite avec sous-toiture : [[Démoussage et traitement hydrofuge]] et [[Toiture en tuiles]]."
+      },
+      {
+        "problem": "Une laine de combles tassée des années quatre-vingt et une facture de chauffage qui grimpe, dans un lotissement de Mont-Saint-Jean ?",
+        "solution": "Nous isolons par l'intérieur avec pare-vapeur, à l'épaisseur demandée en Wallonie, sans permis : [[Isolation des combles par l'intérieur]]."
+      },
+      {
+        "problem": "Un roofing cloqué sur le garage accolé, des relevés décollés du mur, et l'eau qui passe derrière ?",
+        "solution": "Nous découpons et recouvrons les cloques, ou refaisons le complexe avec isolant : [[Réparation de toiture plate]] et [[Roofing bitumineux]]."
+      },
+      {
+        "problem": "Des ardoises artificielles des années septante sur une maison du Faubourg, et un doute sur l'amiante avant de rénover ?",
+        "solution": "Nous déposons sans casse, en sacs étiquetés, et vous remettons le bordereau d'élimination : [[Enlèvement d'ardoises amiante-ciment]]."
+      },
+      {
+        "problem": "Un assureur qui demande des photos et une facture de bâchage, et un toit encore ouvert au-dessus de la chaussée de Bruxelles ?",
+        "solution": "Nous bâchons, photographions, facturons la mise hors d'eau pour le dossier, puis réparons définitivement : [[Réparation de toiture après tempête]]."
+      }
+    ]
+  },
+  "landmarks": [
+    "Chaussée de Bruxelles",
+    "Église Saint-Joseph",
+    "Musée Wellington",
+    "Gare de Waterloo",
+    "Ferme de Mont-Saint-Jean",
+    "Domaine d'Argenteuil",
+    "Drève Richelle",
+    "Parc Jules Descampe"
+  ],
+  "areaHeading": "Du Chenois à Mont-Saint-Jean : nos quartiers à Waterloo",
+  "areaIntro": "Waterloo, nous connaissons : les lotissements de villas du Chenois et de Joli-Bois, les maisons de rangée de la chaussée de Bruxelles, les grands terrains vers Argenteuil. Nos lieux habituels :"
+}

@@ -1,0 +1,12 @@
+---
+interface Props {
+  h2?: string;
+  /** Paragraphes déjà rendus en HTML. */
+  paragraphsHtml: string[];
+}
+const { h2, paragraphsHtml } = Astro.props;
+---
+<section class="prose-block">
+  {h2 && <h2>{h2}</h2>}
+  {paragraphsHtml.map((html) => <p set:html={html} />)}
+</section>

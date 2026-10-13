@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import accueil from '../data/accueil.json';
+import { site, pending } from '../data/site';
+import { activeZones, serviceAreas, regionLabels } from '../data/zones';
+
+const title = 'Contact Toiture Veryroof | Couvreur à Bruxelles';
+const description = `Contactez Toiture Veryroof, couvreur à Bruxelles : +32 460 22 99 60, dépannage 24h/24, 7j/7. Devis gratuit sous 48 h après visite, formulaire en ligne.`;
+const regions = Object.keys(serviceAreas) as (keyof typeof serviceAreas)[];
+const zoneByName = new Map(activeZones.map((z) => [z.name, z.slug]));
+const mapsQuery = encodeURIComponent(`${site.address.street}, ${site.address.postalCode} ${site.address.city}`);
+const orgId = `${site.domain}/#organisation`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'RoofingContractor',
+      '@id': orgId,
+      name: site.name,
+      url: `${site.domain}/${site.homeSlug}`,
+      telephone: site.phoneHref.replace('tel:', ''),
+      email: site.email,
+      address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country },
+      contactPoint: { '@type': 'ContactPoint', telephone: site.phoneHref.replace('tel:', ''), contactType: 'customer service', availableLanguage: 'fr', areaServed: 'BE' },
+    },
+    { '@type': 'ContactPage', '@id': `${site.domain}/contact#page`, url: `${site.domain}/contact`, name: title, mainEntity: { '@id': orgId } },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}/${site.homeSlug}` }, { '@type': 'ListItem', position: 2, name: 'Contact', item: `${site.domain}/contact` }] },
+  ],
+};
+---
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  </Fragment>
+  <section id="hero" class="page-head contact-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={`/${site.homeSlug}`}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">Contact</span></li></ol></nav>
+      <h1>Contactez Toiture Veryroof</h1>
+      <p class="contact-head__sub">Prêts à vous aider : appelez-nous ou envoyez-nous un message.</p>
+      <a class="contact-head__phone" href={site.phoneHref}><Icon name="phone" size={30} /> {site.phoneDisplay}</a>
+      <div class="contact-head__cta"><a class="btn btn--outline" href="#devis">Demander un devis en ligne</a></div>
+      <ul class="trust">{accueil.trustStrip.map((t) => <li><Icon name="check" size={18} /> {t}</li>)}</ul>
+    </div>
+  </section>
+
+  <section id="coordonnees" class="section">
+    <div class="container contact__two">
+      <div class="contact__info">
+        <div class="info-block">
+          <span class="icon-badge"><Icon name="phone" size={24} /></span>
+          <h2>Appelez-nous</h2>
+          <a class="info-block__big" href={site.phoneHref}>{site.phoneDisplay}</a>
+          <p>Dépannage 24h/24, 7j/7 pour les urgences. Pour un devis, nous fixons une visite et vous recevez le devis sous 48 h.</p>
+        </div>
+        <div class="info-block">
+          <span class="icon-badge"><Icon name="document" size={24} /></span>
+          <h2>Écrivez-nous</h2>
+          <a class="info-block__big info-block__big--small" href={`mailto:${site.email}`}>{site.email}</a>
+          <p>Nous répondons aux e-mails en heures ouvrables. Pour une urgence, appelez.</p>
+        </div>
+        <div class="info-block">
+          <span class="icon-badge"><Icon name="pin" size={24} /></span>
+          <h2>Notre adresse</h2>
+          <p class="info-block__address">{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
+          <p>Nous nous déplaçons chez vous : l'adresse est celle du siège, pas un magasin.</p>
+        </div>
+        <div class="info-block">
+          <span class="icon-badge"><Icon name="clock" size={24} /></span>
+          <h2>Horaires</h2>
+          <!-- Ajouter les horaires du bureau : pending.officeHours dans src/data/site.ts (ex. Lundi–vendredi, 8h–18h) ; les urgences restent 24h/24, 7j/7 -->
+          <p>{pending.officeHours && <>Bureau : {pending.officeHours}<br /></>}Urgences toiture : 24h/24, 7j/7</p>
+        </div>
+      </div>
+      <div id="devis" class="contact__form">
+        <p class="eyebrow">Devis gratuit</p>
+        <h2>Demandez votre devis gratuit</h2>
+        <p class="contact__reassurance">Sans engagement. Nous vous rappelons pour fixer la visite, et vous recevez un devis détaillé sous 48 h après celle-ci. Vos coordonnées servent uniquement à vous répondre.</p>
+        <QuoteForm action="/contact" submitLabel="Demander mon devis" />
+        <p class="contact__alt">Vous préférez parler ? Appelez le <a href={site.phoneHref}>{site.phoneDisplay}</a>, nous répondons rapidement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="zones" class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Zones desservies</p>
+        <h2 class="section-title">Où nous intervenons</h2>
+        <p class="section-lead">Pas sûr que nous couvrions votre commune ? Appelez-nous, nous vous le dirons rapidement.</p>
+      </div>
+      <div class="grid grid--3">
+        {regions.map((region) => (
+          <div class="card">
+            <h3>{regionLabels[region]}</h3>
+            <p class="zones__list">
+              {serviceAreas[region].map((name, i) => (
+                <Fragment>{i > 0 && ' · '}{zoneByName.has(name) ? <a href={`/${zoneByName.get(name)}`}>{name}</a> : name}</Fragment>
+              ))}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="carte" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Nous trouver</p>
+        <h2 class="section-title">Chaussée de La Hulpe, Bruxelles</h2>
+      </div>
+      <!-- COLLER ICI LE CODE D’INTÉGRATION GOOGLE MAPS (iframe) : pour une entreprise qui se déplace, le centre de Bruxelles ou le siège conviennent. Attention au RGPD : une carte intégrée charge des cookies Google ; prévoir le consentement ou garder le lien ci-dessous. -->
+      <div class="card map-placeholder">
+        <p><Icon name="pin" size={22} /> {site.address.street}, {site.address.postalCode} {site.address.city}</p>
+        <a class="btn btn--primary" href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`} rel="noopener">Itinéraire sur Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="confiance" class="section section--alt">
+    <div class="container">
+      <ul class="trust trust--dark">{accueil.trustStrip.map((t) => <li><Icon name="check" size={18} /> {t}</li>)}</ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-head .crumbs ol { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; gap: 0.35rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); }
+  .contact-head .crumbs li { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .contact-head .crumbs a { color: #fff; text-decoration: none; }
+  .contact-head__sub { font-size: 1.1rem; margin: 0 0 1rem !important; }
+  .contact-head__phone { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.8rem); color: #fff; text-decoration: none; margin: 0.25rem 0 1.25rem; }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; font-weight: 600; font-size: 0.95rem; }
+  .trust li { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .trust svg { color: #F3B48F; }
+  .trust--dark { justify-content: center; color: var(--color-primary); }
+  .trust--dark svg { color: var(--color-accent-dark); }
+  .contact__two { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 960px) { .contact__two { grid-template-columns: 1fr 1.15fr; gap: 4rem; } }
+  .contact__info { display: grid; gap: 1.5rem; }
+  .info-block h2 { font-size: 1.2rem; margin: 0.25rem 0 0.4rem; }
+  .info-block p { margin: 0; color: var(--color-muted); }
+  .info-block__big { display: inline-block; font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; color: var(--color-primary); text-decoration: none; margin-bottom: 0.4rem; }
+  .info-block__big--small { font-size: 1.15rem; }
+  .info-block__address { color: var(--color-text) !important; font-weight: 600; }
+  .contact__form { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .contact-head__cta { margin-bottom: 1.25rem; }
+  .contact__form h2 { margin-bottom: 0.5rem; }
+  .contact__reassurance { color: var(--color-muted); }
+  .contact__alt { margin: 1rem 0 0; color: var(--color-muted); }
+  .contact__alt a { font-weight: 700; color: var(--color-accent-dark); }
+  .zones__list { margin: 0; color: var(--color-muted); }
+  .zones__list a { font-weight: 600; }
+  .map-placeholder { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+  .map-placeholder p { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; font-weight: 600; }
+</style>

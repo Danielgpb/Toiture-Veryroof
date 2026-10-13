@@ -1,0 +1,42 @@
+---
+import { getImage } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceHero from './service/ServiceHero.astro';
+import accueil from '../data/accueil.json';
+import { site } from '../data/site';
+import { pagePhotos } from '../data/photos';
+import { getPhoto } from '../lib/photos';
+import { linkPhone } from '../lib/phone';
+
+interface Props {
+  h1: string;
+  title?: string;
+  description?: string;
+  /** Slug de la page : si le registre photos lui attribue un visuel (pagePhotos), le hero illustré est affiché. */
+  slug?: string;
+  /** Libellés du fil d'Ariane entre l'accueil et la page (ex. Zones d'intervention). */
+  breadcrumb?: { label: string; href: string }[];
+}
+
+// Description unique par page (anti-doublon) tant que le contenu n'est pas rédigé.
+const { h1, slug, breadcrumb = [], title = `${h1} | ${site.name}`, description = `${h1} par ${site.name}, couvreur à Bruxelles : devis gratuit sous 48 h, dépannage 24h/24. Appelez le ${site.phoneDisplay}.` } = Astro.props;
+const photo = slug && pagePhotos[slug] ? getPhoto(pagePhotos[slug]) : null;
+const hero = photo ? await getImage({ src: photo.image, width: 1600, height: 900, widths: [768, 1200, 1600], sizes: '100vw', format: 'webp', quality: 72 }) : null;
+const preloads = hero ? [{ href: hero.src, imagesrcset: hero.srcSet.attribute, imagesizes: '100vw' }] : [];
+const subheadline = `${h1} : réparation, rénovation, isolation et dépannage de toiture 24h/24. Devis gratuit sous 48 h après notre visite. Appelez le ${site.phoneDisplay}.`;
+---
+<BaseLayout title={title} description={description} preloads={preloads} ogImage={hero?.src}>
+  {hero && photo ? (
+    <ServiceHero h1={h1} subheadlineHtml={linkPhone(subheadline, site.phoneDisplay, site.phoneHref)} image={hero} imageAlt={photo.alt} trustStrip={accueil.trustStrip} breadcrumb={[{ label: 'Accueil', href: `/${site.homeSlug}` }, ...breadcrumb, { label: h1 }]} />
+  ) : (
+    <section class="page-head">
+      <div class="container"><h1>{h1}</h1></div>
+    </section>
+  )}
+  <section class="section">
+    <div class="container">
+      <p class="placeholder">Contenu en cours de rédaction.</p>
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

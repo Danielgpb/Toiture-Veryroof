@@ -1,0 +1,296 @@
+
+> toiture-veryroof@0.1.0 verify
+> npm test && astro build && node scripts/check-links.mjs && node --test tests/built/*.test.mjs
+
+
+> toiture-veryroof@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ la teinte accent foncée (texte, boutons) atteint AA 4,5:1 sur blanc et sur fond gris (0.570791ms)
+✔ boutons accent, eyebrows, liens fléchés et badges utilisent la teinte accent foncée (0.2105ms)
+✔ les bordures de champs de formulaire atteignent 3:1 sur blanc (WCAG 1.4.11) et l’accent foncé reste lisible sur le fond primaire doux (3.120834ms)
+✔ la hiérarchie des services respecte les comptages de la spec (0.454125ms)
+✔ chaque page enfant connaît son parent, les autres n’en ont pas (0.090583ms)
+✔ tous les slugs sont uniques et propres (0.180084ms)
+✔ les pages communes sont des zones desservies, au moins 4 au lancement (0.076417ms)
+✔ les titres H1 suivent « [Service] Bruxelles » (0.061542ms)
+✔ les données NAP sont présentes (0.044666ms)
+✔ chaque page du site a un mot-clé principal, et un seul (0.487666ms)
+✔ aucun mot-clé principal n’est partagé par deux pages (anti-cannibalisation) (0.298292ms)
+✔ un mot-clé principal n’est jamais contenu tel quel dans celui d’une page sœur (seul le parent générique peut l’être) (1.070667ms)
+✔ au moins une page rédigée existe (0.512667ms)
+✔ contenu validé : charpente-bruxelles (5.208916ms)
+✔ contenu validé : cheneaux-descentes-eau-bruxelles (1.191833ms)
+✔ contenu validé : demoussage-toiture-bruxelles (0.923291ms)
+✔ contenu validé : depannage-toiture-urgence-bruxelles (1.10325ms)
+✔ contenu validé : enlevement-ardoises-amiante-bruxelles (0.658209ms)
+✔ contenu validé : etancheite-epdm-bruxelles (0.5835ms)
+✔ contenu validé : inspection-toiture-bruxelles (0.665292ms)
+✔ contenu validé : isolation-combles-bruxelles (0.59625ms)
+✔ contenu validé : isolation-sarking-bruxelles (0.59975ms)
+✔ contenu validé : isolation-toiture-bruxelles (0.974458ms)
+✔ contenu validé : isolation-toiture-plate-bruxelles (0.461583ms)
+✔ contenu validé : nettoyage-gouttieres-bruxelles (0.4375ms)
+✔ contenu validé : pose-gouttieres-bruxelles (0.43875ms)
+✔ contenu validé : pose-velux-bruxelles (0.394167ms)
+✔ contenu validé : remplacement-tuiles-ardoises-bruxelles (0.417791ms)
+✔ contenu validé : renovation-toiture-bruxelles (0.784875ms)
+✔ contenu validé : reparation-cheminee-bruxelles (0.40675ms)
+✔ contenu validé : reparation-faitage-solins-bruxelles (0.431666ms)
+✔ contenu validé : reparation-fuite-toiture-bruxelles (0.455417ms)
+✔ contenu validé : reparation-gouttieres-bruxelles (0.390792ms)
+✔ contenu validé : reparation-toiture-bruxelles (0.611584ms)
+✔ contenu validé : reparation-toiture-plate-bruxelles (0.579708ms)
+✔ contenu validé : reparation-toiture-tempete-bruxelles (0.404375ms)
+✔ contenu validé : roofing-bitumineux-bruxelles (0.340917ms)
+✔ contenu validé : toiture-ardoises-bruxelles (0.410125ms)
+✔ contenu validé : toiture-copropriete-bruxelles (0.403542ms)
+✔ contenu validé : toiture-plate-bruxelles (0.53475ms)
+✔ contenu validé : toiture-tuiles-bruxelles (0.564209ms)
+✔ contenu validé : toiture-vegetalisee-bruxelles (0.429208ms)
+✔ contenu validé : toiture-zinc-bruxelles (0.378125ms)
+✔ contenu validé : zinguerie-gouttieres-bruxelles (0.477459ms)
+✔ cleanPath retire le suffixe .html produit par build.format "file" (0.468333ms)
+✔ cleanPath retire un slash final superflu (0.058875ms)
+✔ linkPhone enveloppe chaque occurrence du numéro dans un lien tel: (0.594375ms)
+✔ linkPhone échappe le HTML du texte source (0.068375ms)
+✔ linkText enveloppe une expression dans un lien (0.062833ms)
+✔ linkText refuse une expression absente du texte (erreur de build plutôt qu’un lien perdu) (0.187458ms)
+✔ linkPhone reste silencieux quand le numéro est absent (0.0645ms)
+✔ chaque photo du registre existe dans src/assets/photos et a un texte alternatif descriptif (4.288208ms)
+✔ les attributions de photos pointent vers des photos et des pages connues, et chaque page service a une photo (0.291708ms)
+✔ renderRich transforme [[Nom]] en lien vers la page et [[home:ancre]] en lien vers l’accueil (0.678542ms)
+✔ renderRich rend le numéro cliquable et échappe le HTML (0.060167ms)
+✔ renderRich refuse un nom de page inconnu (erreur de build, pas de lien perdu) (0.172791ms)
+✔ renderRich applique la typographie française (espaces insécables avant : ? ! et dans 48 h, 6 %) (0.049208ms)
+ℹ tests 57
+ℹ suites 0
+ℹ pass 57
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.27425
+20:44:48 [content] Syncing content
+20:44:48 [content] Synced content
+20:44:48 [types] Generated 14ms
+20:44:48 [build] output: "static"
+20:44:48 [build] mode: "static"
+20:44:48 [build] directory: /Users/macbook/Desktop/Sites/site /Toiture Veryroof/dist/
+20:44:48 [build] Collecting build info...
+20:44:48 [build] ✓ Completed in 22ms.
+20:44:48 [build] Building static entrypoints...
+20:44:48 [vite] ✓ built in 440ms
+20:44:48 [build] ✓ Completed in 453ms.
+
+ building client (vite) 
+20:44:48 [vite] transforming...
+20:44:48 [vite] ✓ 2 modules transformed.
+20:44:48 [vite] rendering chunks...
+20:44:48 [vite] ✓ built in 6ms
+
+ generating static routes 
+20:44:48 ▶ src/pages/404.astro
+20:44:48   └─ /404.html (+3ms) 
+20:44:48 ▶ src/pages/[slug].astro
+20:44:48   ├─ /reparation-toiture-bruxelles.html (+3ms) 
+20:44:48   ├─ /reparation-fuite-toiture-bruxelles.html (+1ms) 
+20:44:48   ├─ /remplacement-tuiles-ardoises-bruxelles.html (+1ms) 
+20:44:48   ├─ /reparation-toiture-tempete-bruxelles.html (+1ms) 
+20:44:48   ├─ /reparation-faitage-solins-bruxelles.html (+1ms) 
+20:44:48   ├─ /reparation-cheminee-bruxelles.html (+1ms) 
+20:44:48   ├─ /isolation-toiture-bruxelles.html (+1ms) 
+20:44:48   ├─ /isolation-combles-bruxelles.html (+1ms) 
+20:44:48   ├─ /isolation-sarking-bruxelles.html (+1ms) 
+20:44:48   ├─ /isolation-toiture-plate-bruxelles.html (+1ms) 
+20:44:48   ├─ /zinguerie-gouttieres-bruxelles.html (+1ms) 
+20:44:48   ├─ /pose-gouttieres-bruxelles.html (+1ms) 
+20:44:48   ├─ /reparation-gouttieres-bruxelles.html (+1ms) 
+20:44:48   ├─ /nettoyage-gouttieres-bruxelles.html (+1ms) 
+20:44:48   ├─ /cheneaux-descentes-eau-bruxelles.html (+1ms) 
+20:44:48   ├─ /renovation-toiture-bruxelles.html (+1ms) 
+20:44:48   ├─ /toiture-tuiles-bruxelles.html (+2ms) 
+20:44:48   ├─ /toiture-ardoises-bruxelles.html (+1ms) 
+20:44:48   ├─ /toiture-zinc-bruxelles.html (+1ms) 
+20:44:48   ├─ /charpente-bruxelles.html (+1ms) 
+20:44:48   ├─ /enlevement-ardoises-amiante-bruxelles.html (+1ms) 
+20:44:48   ├─ /toiture-plate-bruxelles.html (+1ms) 
+20:44:48   ├─ /etancheite-epdm-bruxelles.html (+1ms) 
+20:44:48   ├─ /roofing-bitumineux-bruxelles.html (+1ms) 
+20:44:48   ├─ /reparation-toiture-plate-bruxelles.html (+1ms) 
+20:44:48   ├─ /toiture-vegetalisee-bruxelles.html (+1ms) 
+20:44:48   ├─ /depannage-toiture-urgence-bruxelles.html (+4ms) 
+20:44:48   ├─ /pose-velux-bruxelles.html (+1ms) 
+20:44:48   ├─ /demoussage-toiture-bruxelles.html (+1ms) 
+20:44:48   ├─ /inspection-toiture-bruxelles.html (+1ms) 
+20:44:48   ├─ /toiture-copropriete-bruxelles.html (+0ms) 
+20:44:48   ├─ /couvreur-uccle.html (+0ms) 
+20:44:48   ├─ /couvreur-watermael-boitsfort.html (+0ms) 
+20:44:48   ├─ /couvreur-rhode-saint-genese.html (+0ms) 
+20:44:48   └─ /couvreur-waterloo.html (+0ms) 
+20:44:48 ▶ src/pages/a-propos.astro
+20:44:48   └─ /a-propos.html (+1ms) 
+20:44:48 ▶ src/pages/contact.astro
+20:44:48   └─ /contact.html (+1ms) 
+20:44:48 ▶ src/pages/couvreur-bruxelles.astro
+20:44:48   └─ /couvreur-bruxelles.html (+2ms) 
+20:44:48 ▶ src/pages/mentions-legales.astro
+20:44:48   └─ /mentions-legales.html (+0ms) 
+20:44:48 ▶ src/pages/politique-de-confidentialite.astro
+20:44:48   └─ /politique-de-confidentialite.html (+0ms) 
+20:44:48 ▶ src/pages/services.astro
+20:44:48   └─ /services.html (+1ms) 
+20:44:48 ▶ src/pages/zones-d-intervention.astro
+20:44:48   └─ /zones-d-intervention.html (+0ms) 
+20:44:48 ▶ /
+20:44:48   └─ /index.html (+0ms) 
+20:44:48 ✓ Completed in 55ms.
+
+ generating optimized images 
+20:44:48   ▶ /_astro/reparation-fuite-tuile-cassee.CbjFcO3B_Z1KV840.webp (reused cache entry) (+1ms) (1/94)
+20:44:48   ▶ /_astro/lucarne-solins-zinc-tuiles.Cv-qlGVQ_Z1vYXXW.webp (reused cache entry) (+1ms) (2/94)
+20:44:48   ▶ /_astro/toiture-ardoises-naturelles-maison-bruxelloise.EMgEFziQ_Za2Cqs.webp (reused cache entry) (+1ms) (3/94)
+20:44:48   ▶ /_astro/bachage-urgence-toiture-tempete.DNbS0KxV_ZtdXg6.webp (reused cache entry) (+1ms) (4/94)
+20:44:48   ▶ /_astro/pose-tuiles-faitage-sous-toiture.B4e5LBN5_ZKrUIy.webp (reused cache entry) (+2ms) (5/94)
+20:44:48   ▶ /_astro/isolation-combles-interieur-laine.BJl_6b8u_2g0FGf.webp (reused cache entry) (+4ms) (6/94)
+20:44:48   ▶ /_astro/souche-cheminee-solins-zinc.cKs3FU28_ZKHjxy.webp (reused cache entry) (+4ms) (7/94)
+20:44:48   ▶ /_astro/corniche-zinc-anthracite-toit-plat.BZnhRUSU_Z18df49.webp (reused cache entry) (+4ms) (8/94)
+20:44:48   ▶ /_astro/isolation-sarking-panneaux-contre-lattes.D5uXan9Q_Zktgcn.webp (reused cache entry) (+4ms) (9/94)
+20:44:48   ▶ /_astro/reparation-fuite-tuile-cassee.CbjFcO3B_Z4FLvf.webp (reused cache entry) (+5ms) (10/94)
+20:44:48   ▶ /_astro/isolation-toiture-plate-panneaux.DDeqNQZy_Z21R6qL.webp (reused cache entry) (+6ms) (11/94)
+20:44:48   ▶ /_astro/nettoyage-gouttieres-feuilles.lhaJ4IeY_2odwid.webp (reused cache entry) (+6ms) (12/94)
+20:44:48   ▶ /_astro/bandeau-corniche-gouttiere-echafaudage.BaW81Mrl_Z1Bmk57.webp (reused cache entry) (+6ms) (13/94)
+20:44:48   ▶ /_astro/lucarne-solins-zinc-tuiles.Cv-qlGVQ_ZDybsS.webp (reused cache entry) (+5ms) (14/94)
+20:44:48   ▶ /_astro/toiture-ardoises-naturelles-maison-bruxelloise.EMgEFziQ_Z11UwGW.webp (reused cache entry) (+5ms) (15/94)
+20:44:48   ▶ /_astro/bachage-urgence-toiture-tempete.DNbS0KxV_Z165gqp.webp (reused cache entry) (+5ms) (16/94)
+20:44:48   ▶ /_astro/pose-tuiles-faitage-sous-toiture.B4e5LBN5_2vv2VS.webp (reused cache entry) (+5ms) (17/94)
+20:44:48   ▶ /_astro/isolation-combles-interieur-laine.BJl_6b8u_Z1Wqtko.webp (reused cache entry) (+3ms) (18/94)
+20:44:48   ▶ /_astro/souche-cheminee-solins-zinc.cKs3FU28_Z1XbwEo.webp (reused cache entry) (+3ms) (19/94)
+20:44:48   ▶ /_astro/corniche-zinc-anthracite-toit-plat.BZnhRUSU_Z2ehbbN.webp (reused cache entry) (+3ms) (20/94)
+20:44:48   ▶ /_astro/isolation-sarking-panneaux-contre-lattes.D5uXan9Q_BHiVX.webp (reused cache entry) (+3ms) (21/94)
+20:44:48   ▶ /_astro/isolation-toiture-plate-panneaux.DDeqNQZy_Z1i8hHw.webp (reused cache entry) (+1ms) (22/94)
+20:44:48   ▶ /_astro/reparation-fuite-tuile-cassee.CbjFcO3B_Zbi8Bf.webp (reused cache entry) (+2ms) (23/94)
+20:44:48   ▶ /_astro/nettoyage-gouttieres-feuilles.lhaJ4IeY_Z15wozT.webp (reused cache entry) (+1ms) (24/94)
+20:44:48   ▶ /_astro/bandeau-corniche-gouttiere-echafaudage.BaW81Mrl_N25kS.webp (reused cache entry) (+1ms) (25/94)
+20:44:48   ▶ /_astro/toiture-ardoises-naturelles-maison-bruxelloise.EMgEFziQ_XYkEm.webp (reused cache entry) (+2ms) (26/94)
+20:44:48   ▶ /_astro/lucarne-solins-zinc-tuiles.Cv-qlGVQ_Z20fzPY.webp (reused cache entry) (+2ms) (27/94)
+20:44:48   ▶ /_astro/bachage-urgence-toiture-tempete.DNbS0KxV_Z15DHOK.webp (reused cache entry) (+2ms) (28/94)
+20:44:48   ▶ /_astro/pose-tuiles-faitage-sous-toiture.B4e5LBN5_ZsPTsQ.webp (reused cache entry) (+2ms) (29/94)
+20:44:48   ▶ /_astro/isolation-combles-interieur-laine.BJl_6b8u_jCCw.webp (reused cache entry) (+3ms) (30/94)
+20:44:48   ▶ /_astro/corniche-zinc-anthracite-toit-plat.BZnhRUSU_ZVTaT8.webp (reused cache entry) (+3ms) (31/94)
+20:44:48   ▶ /_astro/souche-cheminee-solins-zinc.cKs3FU28_Z1p91rt.webp (reused cache entry) (+3ms) (32/94)
+20:44:48   ▶ /_astro/isolation-sarking-panneaux-contre-lattes.D5uXan9Q_Zex3wp.webp (reused cache entry) (+3ms) (33/94)
+20:44:48   ▶ /_astro/nettoyage-gouttieres-feuilles.lhaJ4IeY_Z16kC3X.webp (reused cache entry) (+3ms) (34/94)
+20:44:48   ▶ /_astro/isolation-toiture-plate-panneaux.DDeqNQZy_Z1Jg5b4.webp (reused cache entry) (+3ms) (35/94)
+20:44:48   ▶ /_astro/bandeau-corniche-gouttiere-echafaudage.BaW81Mrl_Zu5iWM.webp (reused cache entry) (+3ms) (36/94)
+20:44:48   ▶ /_astro/cheneau-noue-zinc-gros-plan.DrUAg4J3_Z1fyCc.webp (reused cache entry) (+3ms) (37/94)
+20:44:48   ▶ /_astro/toiture-tuiles-anthracite-cheminee.BtEbWqRn_Z9vyEt.webp (reused cache entry) (+3ms) (38/94)
+20:44:48   ▶ /_astro/pose-tuiles-faitage-sous-toiture.B4e5LBN5_ZqbqhB.webp (reused cache entry) (+3ms) (39/94)
+20:44:48   ▶ /_astro/toiture-zinc-joint-debout-annexe.D5xv3I3n_Zw3Q5G.webp (reused cache entry) (+3ms) (40/94)
+20:44:48   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.Cr1CdWCK_14TrQh.webp (reused cache entry) (+4ms) (41/94)
+20:44:48   ▶ /_astro/souche-cheminee-solins-zinc.cKs3FU28_Z15BN1w.webp (reused cache entry) (+3ms) (42/94)
+20:44:48   ▶ /_astro/isolation-sarking-panneaux-contre-lattes.D5uXan9Q_ZCBpi4.webp (reused cache entry) (+3ms) (43/94)
+20:44:48   ▶ /_astro/enlevement-ardoises-amiante-ciment.CefhVmC1_Z1uo2kJ.webp (reused cache entry) (+3ms) (44/94)
+20:44:48   ▶ /_astro/charpente-pannes-bois-traite.DcZtBrB2_Z24QteO.webp (reused cache entry) (+3ms) (45/94)
+20:44:48   ▶ /_astro/bandeau-corniche-gouttiere-echafaudage.BaW81Mrl_Z2kI94H.webp (reused cache entry) (+4ms) (46/94)
+20:44:48   ▶ /_astro/toiture-tuiles-anthracite-cheminee.BtEbWqRn_14L7CU.webp (reused cache entry) (+3ms) (47/94)
+20:44:48   ▶ /_astro/cheneau-noue-zinc-gros-plan.DrUAg4J3_FnaKe.webp (reused cache entry) (+4ms) (48/94)
+20:44:48   ▶ /_astro/toiture-plate-etancheite-neuve.DnKPQ_7n_ZmlNSk.webp (reused cache entry) (+4ms) (49/94)
+20:44:48   ▶ /_astro/etancheite-epdm-toit-plat-pose.BvhSj7Uw_2eOrAB.webp (reused cache entry) (+4ms) (50/94)
+20:44:48   ▶ /_astro/toiture-zinc-joint-debout-annexe.D5xv3I3n_RTrMV.webp (reused cache entry) (+4ms) (51/94)
+20:44:48   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.Cr1CdWCK_1BnfOM.webp (reused cache entry) (+4ms) (52/94)
+20:44:48   ▶ /_astro/roofing-bitumineux-pose-toit-plat.DZ4AKyl5_Z1P70E5.webp (reused cache entry) (+3ms) (53/94)
+20:44:48   ▶ /_astro/enlevement-ardoises-amiante-ciment.CefhVmC1_1280No.webp (reused cache entry) (+2ms) (54/94)
+20:44:48   ▶ /_astro/etancheite-cheminee-toit-plat.D5ojXLlm_o3s11.webp (reused cache entry) (+3ms) (55/94)
+20:44:48   ▶ /_astro/charpente-pannes-bois-traite.DcZtBrB2_1GdP1B.webp (reused cache entry) (+3ms) (56/94)
+20:44:48   ▶ /_astro/toiture-tuiles-anthracite-cheminee.BtEbWqRn_1Muux.webp (reused cache entry) (+3ms) (57/94)
+20:44:48   ▶ /_astro/pose-velux-sous-toiture-lattes.C9kgm7mp_1ctMIR.webp (reused cache entry) (+3ms) (58/94)
+20:44:48   ▶ /_astro/toiture-vegetalisee-sedum-toit-plat.CL7zg9zR_25FdqK.webp (reused cache entry) (+5ms) (59/94)
+20:44:48   ▶ /_astro/cheneau-noue-zinc-gros-plan.DrUAg4J3_ZEGgw7.webp (reused cache entry) (+3ms) (60/94)
+20:44:48   ▶ /_astro/etancheite-epdm-toit-plat-pose.BvhSj7Uw_ZWQhHy.webp (reused cache entry) (+3ms) (61/94)
+20:44:48   ▶ /_astro/toiture-plate-etancheite-neuve.DnKPQ_7n_1J78el.webp (reused cache entry) (+4ms) (62/94)
+20:44:48   ▶ /_astro/toiture-zinc-joint-debout-annexe.D5xv3I3n_ZerOOY.webp (reused cache entry) (+4ms) (63/94)
+20:44:48   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.Cr1CdWCK_Z1aLAcr.webp (reused cache entry) (+5ms) (64/94)
+20:44:48   ▶ /_astro/enlevement-ardoises-amiante-ciment.CefhVmC1_Z1j4XaI.webp (reused cache entry) (+5ms) (65/94)
+20:44:48   ▶ /_astro/roofing-bitumineux-pose-toit-plat.DZ4AKyl5_ZBr8se.webp (reused cache entry) (+5ms) (66/94)
+20:44:48   ▶ /_astro/etancheite-cheminee-toit-plat.D5ojXLlm_27E2B5.webp (reused cache entry) (+5ms) (67/94)
+20:44:48   ▶ /_astro/charpente-pannes-bois-traite.DcZtBrB2_2gs2wG.webp (reused cache entry) (+5ms) (68/94)
+20:44:48   ▶ /_astro/toiture-tuiles-anthracite-cheminee.BtEbWqRn_1qxUWt.webp (reused cache entry) (+4ms) (69/94)
+20:44:48   ▶ /_astro/pose-velux-sous-toiture-lattes.C9kgm7mp_Nantw.webp (reused cache entry) (+4ms) (70/94)
+20:44:48   ▶ /_astro/toiture-vegetalisee-sedum-toit-plat.CL7zg9zR_1elL5R.webp (reused cache entry) (+4ms) (71/94)
+20:44:48   ▶ /_astro/etancheite-epdm-toit-plat-pose.BvhSj7Uw_ZwrES4.webp (reused cache entry) (+4ms) (72/94)
+20:44:48   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.Cr1CdWCK_31l7S.webp (reused cache entry) (+2ms) (73/94)
+20:44:48   ▶ /_astro/demoussage-toiture-avant-apres.CSv_dcCr_Z1TzV19.webp (reused cache entry) (+5ms) (74/94)
+20:44:48   ▶ /_astro/toiture-plate-etancheite-neuve.DnKPQ_7n_1VycqV.webp (reused cache entry) (+4ms) (75/94)
+20:44:48   ▶ /_astro/roofing-bitumineux-pose-toit-plat.DZ4AKyl5_Yo568.webp (reused cache entry) (+2ms) (76/94)
+20:44:48   ▶ /_astro/inspection-toiture-couvreur.DqRTCEHV_1mQT5H.webp (reused cache entry) (+2ms) (77/94)
+20:44:48   ▶ /_astro/toiture-immeuble-copropriete-echafaudage.CrZjRb7V_ZvsMFH.webp (reused cache entry) (+2ms) (78/94)
+20:44:48   ▶ /_astro/pose-velux-sous-toiture-lattes.C9kgm7mp_Z1yMjJN.webp (reused cache entry) (+2ms) (79/94)
+20:44:48   ▶ /_astro/etancheite-cheminee-toit-plat.D5ojXLlm_1XGrsL.webp (reused cache entry) (+3ms) (80/94)
+20:44:48   ▶ /_astro/hero-toiture-tuiles-bruxelles.Zr_zyBqB_Z1z1Byn.webp (reused cache entry) (+3ms) (81/94)
+20:44:48   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.Cr1CdWCK_Z14z6C9.webp (reused cache entry) (+3ms) (82/94)
+20:44:48   ▶ /_astro/demoussage-toiture-avant-apres.CSv_dcCr_ZB0L8s.webp (reused cache entry) (+3ms) (83/94)
+20:44:48   ▶ /_astro/toiture-tuiles-neuve-velux-bruxelles.C1qVRGlw_ZlhwCv.webp (reused cache entry) (+4ms) (84/94)
+20:44:48   ▶ /_astro/toiture-vegetalisee-sedum-toit-plat.CL7zg9zR_1I3MiC.webp (reused cache entry) (+4ms) (85/94)
+20:44:48   ▶ /_astro/inspection-toiture-couvreur.DqRTCEHV_Z1yWNm8.webp (reused cache entry) (+3ms) (86/94)
+20:44:48   ▶ /_astro/toiture-plate-etancheite-neuve.DnKPQ_7n_Z26JciT.webp (reused cache entry) (+4ms) (87/94)
+20:44:48   ▶ /_astro/toiture-immeuble-copropriete-echafaudage.CrZjRb7V_Lm4pb.webp (reused cache entry) (+3ms) (88/94)
+20:44:48   ▶ /_astro/hero-toiture-tuiles-bruxelles.Zr_zyBqB_Z1UtNB4.webp (reused cache entry) (+2ms) (89/94)
+20:44:48   ▶ /_astro/toiture-tuiles-neuve-velux-bruxelles.C1qVRGlw_nLRlX.webp (reused cache entry) (+1ms) (90/94)
+20:44:48   ▶ /_astro/demoussage-toiture-avant-apres.CSv_dcCr_ok5j7.webp (reused cache entry) (+1ms) (91/94)
+20:44:48   ▶ /_astro/inspection-toiture-couvreur.DqRTCEHV_IqcbM.webp (reused cache entry) (+1ms) (92/94)
+20:44:48   ▶ /_astro/toiture-immeuble-copropriete-echafaudage.CrZjRb7V_ZpwA0J.webp (reused cache entry) (+1ms) (93/94)
+20:44:48   ▶ /_astro/hero-toiture-tuiles-bruxelles.Zr_zyBqB_2kSVww.webp (reused cache entry) (+1ms) (94/94)
+20:44:48 ✓ Completed in 28ms.
+
+20:44:48 [build] 43 page(s) built in 579ms
+20:44:48 [build] Complete!
+44 pages HTML, 1975 liens internes vérifiés
+OK : aucun lien cassé, aucune ancre, aucun slash final, aucune page orpheline
+✔ À propos : title, H1, sections E-E-A-T dans l’ordre, placeholders commentés (4.142708ms)
+✔ À propos : schema organisation complet (NAP, zones, email) sans nom de gérant inventé (0.297834ms)
+✔ Contact : title, H1, téléphone très visible, deux colonnes (coordonnées + formulaire), zones, carte, confiance (0.523333ms)
+✔ Contact : formulaire complet qui poste vers /contact, liste des services, validation native, succès/erreur (0.352125ms)
+✔ Contact : schema ContactPage lié à l’organisation avec point de contact (0.100666ms)
+✔ RGPD et conversion : lien vers la politique de confidentialité près de chaque formulaire, champ source, CTA #devis sur Contact (1.142583ms)
+✔ À propos et Contact : seuls les placeholders documentés, aucun iframe, schema sans gérant inventé, canonique (0.873709ms)
+✔ Pages légales : mentions légales et politique de confidentialité rédigées (RGPD art. 13) (1.297583ms)
+✔ les 26 pages enfants et générales ont un contenu rédigé et construit (12.231042ms)
+✔ title, meta description, H1, canonique et mot-clé principal (1.865541ms)
+✔ hero, 4 H2 dans l’ordre, 600 à 1 000 mots (interface comprise), lien retour vers le parent ou l’accueil, services liés, schema (6.341667ms)
+✔ page Services : H2 de chaque hub lié, une carte par page service avec sa description, CTA final (1.49125ms)
+✔ le formulaire poste vers la page qui le contient, jamais vers la racine redirigée (2.470167ms)
+✔ les ancres atterrissent sous le header collant et la barre mobile ne couvre pas le pied de page (0.184875ms)
+✔ les boutons accent utilisent la teinte foncée conforme AA (0.153042ms)
+✔ le hero a une vraie image de fond et les textes annexes viennent du JSON validé (0.609583ms)
+✔ le lien vers le hub des zones est bien dans le paragraphe de la section zones (0.114625ms)
+✔ les réponses du schema FAQ sont identiques aux réponses affichées (0.442542ms)
+✔ seuls les placeholders documentés restent visibles sur la page (0.257708ms)
+✔ title, meta description et canonique viennent du contenu validé (2.674042ms)
+✔ un seul H1, exactement le H1 rédigé, avec couvreur + toiture + Bruxelles (0.181958ms)
+✔ les 11 sections sont présentes dans l’ordre imposé par le Prompt 3 (0.201584ms)
+✔ le hero porte une image de fond (pas un aplat), le sous-titre exact, les CTA et 4 signaux de confiance (0.345792ms)
+✔ « Pourquoi nous » affiche les 4 différenciateurs rédigés, juste après le hero (0.216084ms)
+✔ la section avis Google contient l’emplacement commenté pour le widget (0.084667ms)
+✔ le formulaire de devis a les bons champs, la liste des services et la réassurance (0.370709ms)
+✔ cartes catégories et services phares pointent vers les bonnes URL (0.222666ms)
+✔ zones, à propos, FAQ et liste compacte des communes (0.604208ms)
+✔ CTA final : titre rédigé, téléphone, deux boutons (0.118584ms)
+✔ schema.org : RoofingContractor (NAP + @id), 2 Service, FAQPage à 6 questions (0.732791ms)
+✔ mobile : barre CTA collante sur l’accueil (à la place du bouton flottant), tous les téléphones cliquables (0.437709ms)
+✔ performance : chaque <img> a width, height et loading="lazy" ; l’image du hero est préchargée (0.203959ms)
+✔ les 5 pages hubs (3 catégories + 2 services phares) ont un contenu rédigé et construit (4.4525ms)
+✔ title, meta description, H1 et canonique viennent du contenu et ciblent le mot-clé principal (0.827292ms)
+✔ hero : photo LCP préchargée, fil d’Ariane, sous-titre, CTA appel + devis, 4 signaux de confiance (0.449083ms)
+✔ contenu : 1 000 à 1 300 mots (+ interface), 4 H2 (5 pour un service phare) dans l’ordre, chaque service enfant lié dans le texte ET dans la grille, un lien accueil avec une ancre autorisée (3.110166ms)
+✔ schema.org : Service lié à l’organisation, catalogue des enfants, fil d’Ariane (0.380958ms)
+✔ titles, H1 et meta descriptions sont uniques sur tout le site (9.89675ms)
+✔ chaque page rédigée (accueil, services, communes) porte son mot-clé principal dans son title et son H1 (1.8595ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.847667

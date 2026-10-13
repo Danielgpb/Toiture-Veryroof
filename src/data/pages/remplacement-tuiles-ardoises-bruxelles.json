@@ -1,0 +1,114 @@
+{
+  "slug": "remplacement-tuiles-ardoises-bruxelles",
+  "name": "Remplacement de tuiles et ardoises cassées",
+  "metaTitle": "Remplacement de tuiles et ardoises cassées Bruxelles | Devis",
+  "metaDescription": "Remplacement de tuiles cassées et d'ardoises fendues à Bruxelles, modèle assorti, crochets et clous neufs. Devis gratuit sous 48 h. Tél. +32 460 22 99 60.",
+  "h1": "Remplacement de tuiles et ardoises cassées à Bruxelles : à l'identique, fixé pour durer",
+  "heroSubheadline": "Une tuile glissée, une ardoise fendue ou retrouvée dans la gouttière : nous la remplaçons par un modèle assorti, fixé avec des crochets ou des clous neufs.",
+  "opening": [
+    "Toiture Veryroof remplace vos tuiles et ardoises cassées à Bruxelles, une par une ou par zone, avec des éléments assortis à votre couverture. Une visite, une réparation propre, un devis gratuit."
+  ],
+  "problems": {
+    "h2": "Vous avez des tuiles ou des ardoises cassées ? Nous les remplaçons",
+    "items": [
+      {
+        "problem": "Une ardoise fendue ou tombée après le gel ou le vent ?",
+        "solution": "Nous la remplaçons par une ardoise naturelle ou artificielle de même format, posée sur un crochet inox neuf, sans toucher aux voisines."
+      },
+      {
+        "problem": "Une tuile introuvable, d'un modèle qui ne se fabrique plus ?",
+        "solution": "Nous la cherchons chez les revendeurs de réemploi, ou nous prélevons une tuile saine à l'arrière pour la poser côté rue et plaçons la neuve à l'arrière."
+      },
+      {
+        "problem": "Plusieurs rangées abîmées sur le même versant ?",
+        "solution": "Nous remplaçons par zone, liteaux vérifiés, sous-toiture contrôlée, et nous vous disons si le versant entier mérite une [[Rénovation de toiture]]."
+      },
+      {
+        "problem": "Des crochets rouillés qui lâchent les uns après les autres ?",
+        "solution": "Nous reposons les ardoises de la zone sur crochets inox, ce qui règle la série de chutes au lieu d'y revenir chaque hiver."
+      },
+      {
+        "problem": "Une tuile cassée au ras d'une cheminée ou d'un solin ?",
+        "solution": "Nous reprenons l'élément et le raccord en zinc dans la même intervention : [[Réparation de faîtage et de solins]]."
+      },
+      {
+        "problem": "Une fuite déjà déclarée sous l'élément cassé ?",
+        "solution": "Nous vérifions la sous-toiture et le chevron avant de refermer, et nous traitons la fuite elle-même : [[Réparation de fuite de toiture]]."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Matériaux et techniques de remplacement",
+    "items": [
+      {
+        "label": "Ardoises naturelles",
+        "text": "formats courants en stock, origine certifiée, tenue au gel connue, assortiment à l'existant sur échantillon."
+      },
+      {
+        "label": "Ardoises artificielles",
+        "text": "fibres-ciment de même module, teinte au plus proche, pose au crochet."
+      },
+      {
+        "label": "Tuiles",
+        "text": "terre cuite ou béton, modèles courants et réemploi, tuiles de rive et faîtières assorties."
+      },
+      {
+        "label": "Fixations",
+        "text": "crochets inox, clous inox, pattes de rive ; jamais de colle ni de mastic sur une couverture."
+      },
+      {
+        "label": "Contrôle",
+        "text": "liteaux et sous-toiture vérifiés sous chaque élément remplacé, photos avant et après."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'un remplacement de tuiles ou d'ardoises à Bruxelles",
+    "items": [
+      "Le nombre d'éléments et leur dispersion sur le toit.",
+      "L'accès : depuis une fenêtre de toit, une échelle, ou un échafaudage sur le trottoir.",
+      "Le matériau : une ardoise naturelle à assortir coûte plus qu'une tuile béton courante.",
+      "Devis gratuit après visite, ligne par ligne, montant ferme ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Où trouver des tuiles identiques aux miennes si le modèle n'existe plus ?",
+      "answer": "Chez les revendeurs de matériaux de réemploi, que nous consultons pour les toits anciens. Quand le modèle est introuvable, nous prélevons des tuiles saines dans une zone invisible, la face arrière par exemple, pour les poser côté rue. Les neuves prennent alors place à l'arrière."
+    },
+    {
+      "question": "Une seule ardoise cassée, est-ce vraiment urgent ?",
+      "answer": "Oui, parce que l'eau passe par le trou et mouille la sous-toiture, puis le bois. Une ardoise se remplace en une visite, avec un crochet neuf. Attendre, c'est laisser le voisinage du trou se dégrader et finir par une [[Réparation de fuite de toiture]]."
+    },
+    {
+      "question": "Faut-il un permis pour remplacer quelques tuiles ?",
+      "answer": "Non. Le remplacement à l'identique, même modèle et même teinte, relève de l'entretien et ne demande aucune démarche à Bruxelles. Le permis n'entre en jeu que si vous changez l'aspect du toit, comme passer de l'ardoise à la tuile."
+    },
+    {
+      "question": "Mes tuiles sont poreuses, dois-je tout remplacer ?",
+      "answer": "Pas forcément. Des tuiles qui boivent l'eau mais restent entières peuvent tenir encore des années si la sous-toiture est en bon état. Si elles s'effritent au gel ou se fendent en série, un remplacement général devient plus raisonnable : voyez notre page [[Toiture en tuiles]]."
+    },
+    {
+      "question": "Les nouvelles ardoises vont-elles se voir à côté des anciennes ?",
+      "answer": "Un peu, les premiers mois. Une ardoise naturelle neuve est plus sombre et plus brillante, puis elle se patine et la différence s'estompe. Pour un toit visible depuis la rue, nous cherchons une ardoise de même origine et de même format, et nous vous montrons un échantillon avant de commander."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Une ardoise par terre, une tuile fendue ? Appelez le +32 460 22 99 60 : nous passons, nous remplaçons, et vous recevez un devis gratuit dès la visite."
+    ]
+  },
+  "parentLink": "Tuiles et ardoises ne sont qu'un chapitre : la page [[Réparation de toiture]] présente tout ce que nous réparons sur un toit en pente.",
+  "summary": "Tuiles glissées ou fendues, ardoises cassées : remplacement assorti au modèle existant, avec crochets et clous neufs, sans toucher au reste du toit.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    },
+    {
+      "label": "urbanisme.brussels — permis d'urbanisme en Région bruxelloise",
+      "url": "https://urbanisme.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

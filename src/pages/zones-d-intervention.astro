@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { activeZones, serviceAreas, regionLabels } from '../data/zones';
+import { getPageContent } from '../lib/pages';
+const regions = Object.keys(serviceAreas) as (keyof typeof serviceAreas)[];
+// Résumé rédigé de chaque page commune (summary de ZoneContent) pour donner du contexte au lien.
+// Ce qui change d'une Région à l'autre : permis, aides, langue des démarches (audit du 13/10/2026 : hub trop mince).
+const regionNotes: Record<string, string> = {
+  bxl: "Maisons de rangée de 1880 à 1930 en ardoises, villas en tuiles, immeubles à toit plat. Règles bruxelloises : remplacement à l'identique sans permis, changement d'aspect avec permis d'urbanisme, zones de protection du patrimoine. Les primes Renolution sont suspendues depuis 2025 ; la TVA à 6 % reste acquise pour un logement de plus de dix ans.",
+  'brabant-wallon': "Villas quatre façades d'après-guerre, grands versants en tuiles, combles à isoler. Règles wallonnes : Code du développement territorial, permis délivré par la commune, isolation par l'intérieur sans permis. Les aides passent par la Prime Habitation du Service public de Wallonie, selon revenus et ancienneté du logement.",
+  'brabant-flamand': "Villas et cottages en ardoise ou tuile plate, souvent en lisière de forêt. Règles flamandes : le permis s'appelle omgevingsvergunning, délivré par la commune ; les aides relèvent de Mijn VerbouwPremie. Dans les communes à facilités, devis et démarches se font en français.",
+};
+const zones = activeZones.map((z) => { const c = getPageContent(z.slug); return { ...z, summary: c && 'summary' in c ? c.summary : undefined }; });
+---
+<BaseLayout title={`Zones d'intervention | ${site.name}`} description="Toiture Veryroof intervient dans les 19 communes de Bruxelles et en périphérie (Brabant wallon et flamand) : Uccle, Watermael-Boitsfort, Waterloo et au-delà.">
+  <section class="page-head">
+    <div class="container">
+      <h1>Zones d'intervention</h1>
+      <p>Depuis le sud de Bruxelles, nous couvrons les 19 communes bruxelloises et la périphérie, Brabant wallon et Brabant flamand compris. Certaines communes ont leur page, avec le bâti, les règles locales et les quartiers où nous passons chaque semaine ; les autres suivront. Pour toutes, le numéro est le même : {site.phoneDisplay}.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2>Nos pages par commune</h2>
+      <ul class="link-grid">
+        {zones.map((zone) => <li><a href={`/${zone.slug}`}>Couvreur {zone.name}</a>{zone.summary && <p>{zone.summary}</p>}</li>)}
+      </ul>
+      {regions.map((region) => (
+        <div>
+          <h2>{regionLabels[region]}</h2>
+          <p>{regionNotes[region]}</p>
+          <p>{serviceAreas[region].join(' · ')}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

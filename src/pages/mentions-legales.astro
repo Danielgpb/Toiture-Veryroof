@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, pending } from '../data/site';
+---
+<BaseLayout title="Mentions légales | Toiture Veryroof" description="Mentions légales du site toiture-veryroof.be : éditeur, numéro d’entreprise, hébergement et propriété intellectuelle.">
+  <section class="page-head"><div class="container"><h1>Mentions légales</h1></div></section>
+  <article class="section">
+    <div class="container prose">
+      <h2>Éditeur du site</h2>
+      <!-- Compléter dans src/data/site.ts : forme juridique (pending.legalForm), numéro d’entreprise BCE et TVA (site.vat) ; les lignes s'affichent dès qu'elles sont renseignées -->
+      <p>{site.name}{pending.legalForm ? `, ${pending.legalForm}` : ''}<br />{site.address.street}, {site.address.postalCode} {site.address.city}, Belgique<br />{site.vat && <>Numéro d'entreprise (BCE) et TVA : {site.vat}<br /></>}Téléphone : <a href={site.phoneHref}>{site.phoneDisplay}</a> · Email : <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <h2>Hébergeur</h2>
+      <!-- Compléter selon l’hébergeur retenu : pending.host (ex. Netlify, Inc., 512 2nd Street, San Francisco, CA 94107, États-Unis) -->
+      {pending.host ? <p>{pending.host}</p> : <p>Les coordonnées de l'hébergeur du site sont disponibles sur simple demande à <a href={`mailto:${site.email}`}>{site.email}</a>.</p>}
+      <h2>Propriété intellectuelle</h2>
+      <p>Les textes, la structure et les éléments graphiques de ce site sont la propriété de {site.name}. Toute reproduction, même partielle, sans autorisation écrite est interdite. Les visuels illustrant les services sont des images d'illustration, sauf mention contraire ; les photos de chantier appartiennent à {site.name}.</p>
+      <h2>Responsabilité</h2>
+      <p>Les informations publiées sur ce site sont fournies à titre indicatif et peuvent évoluer, notamment les règles d'urbanisme et les aides régionales. Elles ne remplacent pas un devis ni une visite sur place. {site.name} ne peut être tenue responsable de l'usage qui en serait fait sans vérification.</p>
+      <h2>Données personnelles</h2>
+      <p>Le traitement des données transmises via le formulaire de devis est décrit dans notre <a href="/politique-de-confidentialite">politique de confidentialité</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,116 @@
+---
+import { getImage } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import accueil from '../data/accueil.json';
+import { homePhotos } from '../data/photos';
+import { getPhoto } from '../lib/photos';
+import { site, pending, sameAs } from '../data/site';
+import { renderRich } from '../lib/rich';
+import { richContext } from '../lib/pages';
+const rich = (t: string) => renderRich(t, richContext());
+import { serviceAreas } from '../data/zones';
+import Hero from '../components/home/Hero.astro';
+import WhyChooseUs from '../components/home/WhyChooseUs.astro';
+import Reviews from '../components/home/Reviews.astro';
+import LeadForm from '../components/home/LeadForm.astro';
+import CategoryCards from '../components/home/CategoryCards.astro';
+import CoreServices from '../components/home/CoreServices.astro';
+import ServiceArea from '../components/home/ServiceArea.astro';
+import About from '../components/home/About.astro';
+import Faq from '../components/home/Faq.astro';
+import Sources from '../components/service/Sources.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import LocationsCompact from '../components/home/LocationsCompact.astro';
+import FinalCta from '../components/home/FinalCta.astro';
+
+const orgId = `${site.domain}/#organisation`;
+
+// Photo du hero : variante bureau (recadrage 16:9) et variante mobile (portrait), WebP responsive, préchargées (LCP).
+const heroPhoto = getPhoto(homePhotos.hero);
+const heroMobilePhoto = getPhoto(homePhotos.heroMobile);
+const heroDesktop = await getImage({ src: heroPhoto.image, width: 1200, height: 675, widths: [768, 1024, 1200], sizes: '100vw', format: 'webp', quality: 72 });
+const heroMobile = await getImage({ src: heroMobilePhoto.image, width: 800, height: 1067, widths: [480, 800], sizes: '100vw', format: 'webp', quality: 70 });
+const preloads = [
+  { href: heroDesktop.src, imagesrcset: heroDesktop.srcSet.attribute, imagesizes: '100vw', media: '(min-width: 701px)' },
+  { href: heroMobile.src, imagesrcset: heroMobile.srcSet.attribute, imagesizes: '100vw', media: '(max-width: 700px)' },
+];
+const withPhoto = (items: { slug: string }[], map: Record<string, string>) => items.map((it) => ({ ...it, photo: getPhoto(map[it.slug.replace(/^\//, '')]) }));
+const categories = withPhoto(accueil.categories.items, homePhotos.categories);
+const cores = withPhoto(accueil.coreServices.items, homePhotos.core);
+const aboutPhoto = getPhoto(homePhotos.about);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'RoofingContractor',
+      '@id': orgId,
+      name: site.name,
+      url: `${site.domain}/${site.homeSlug}`,
+      telephone: '+32460229960',
+      email: site.email,
+      description: accueil.metaDescription,
+      priceRange: '€€',
+      image: `${site.domain}${heroDesktop.src}`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: site.address.street,
+        addressLocality: site.address.city,
+        postalCode: site.address.postalCode,
+        addressRegion: site.address.region,
+        addressCountry: site.address.country,
+      },
+      areaServed: Object.values(serviceAreas).flat().map((name) => ({ '@type': 'City', name })),
+      // openingHoursSpecification : à ajouter quand les horaires seront connus. sameAs apparaît dès qu'un profil est renseigné (site.ts → pending.social).
+      ...(sameAs.length ? { sameAs } : {}),
+    },
+    ...accueil.coreServices.items.map((s) => ({
+      '@type': 'Service',
+      name: s.name,
+      serviceType: s.name,
+      url: `${site.domain}${s.slug}`,
+      description: s.description,
+      provider: { '@id': orgId },
+      areaServed: { '@type': 'City', name: site.city },
+    })),
+    {
+      '@type': 'FAQPage',
+      mainEntity: accueil.faq.map((q) => ({
+        '@type': 'Question',
+        name: q.question,
+        acceptedAnswer: { '@type': 'Answer', text: q.answer },
+      })),
+    },
+  ],
+};
+---
+<BaseLayout title={accueil.metaTitle} description={accueil.metaDescription} mobileCta="bar" preloads={preloads} ogImage={heroDesktop.src}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <Hero h1={accueil.hero.h1} subheadline={accueil.hero.subheadline} eyebrow={accueil.hero.eyebrow} trustStrip={accueil.trustStrip} desktop={heroDesktop} mobile={heroMobile} alt={heroPhoto.alt} />
+  <section id="intro" class="section intro">
+    <div class="container prose intro__inner">
+      {accueil.opening.map((t) => <p set:html={rich(t)} />)}
+    </div>
+  </section>
+  <WhyChooseUs heading={accueil.whyChooseUs.heading} items={accueil.whyChooseUs.items} />
+  <ProcessSteps standalone />
+  <Reviews heading={accueil.reviewsHeading} embed={pending.reviewsEmbed} />
+  <LeadForm heading={accueil.leadFormHeading} reassurance={accueil.leadFormReassurance} points={accueil.leadFormPoints} />
+  <CategoryCards heading={accueil.categories.heading} items={categories} />
+  <CoreServices heading={accueil.coreServices.heading} items={cores} />
+  <ServiceArea heading={accueil.serviceAreaHeading} paragraph={accueil.serviceAreaParagraph} />
+  <About heading={accueil.about.heading} paragraph={accueil.about.paragraph} badges={accueil.about.badges} photo={aboutPhoto} />
+  <Faq heading={accueil.faqHeading} items={accueil.faq} />
+  <Sources items={accueil.sources} updated={accueil.updated} />
+  <LocationsCompact />
+  <FinalCta headline={accueil.finalCta.headline} subtext={accueil.finalCta.subtext} hours={accueil.finalCta.hours} />
+</BaseLayout>
+
+<style>
+  .intro { padding-bottom: 0; }
+  .intro__inner { max-width: 860px; }
+  .intro p { font-size: 1.1rem; }
+  .intro p:first-child { font-size: 1.2rem; color: var(--color-primary); }
+</style>

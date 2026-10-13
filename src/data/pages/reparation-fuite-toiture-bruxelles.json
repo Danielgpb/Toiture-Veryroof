@@ -1,0 +1,115 @@
+{
+  "slug": "reparation-fuite-toiture-bruxelles",
+  "name": "Réparation de fuite de toiture",
+  "metaTitle": "Réparation de fuite de toiture Bruxelles | Devis sous 48 h",
+  "metaDescription": "Réparation de fuite de toiture à Bruxelles : nous remontons à l'origine de l'infiltration et réparons le point d'entrée. Devis gratuit sous 48 h.",
+  "h1": "Réparation de fuite de toiture à Bruxelles : l'origine trouvée, l'eau arrêtée",
+  "heroSubheadline": "Une auréole au plafond, une goutte au grenier : nous trouvons d'où vient l'eau et nous réparons ce point, pas tout le versant. Devis gratuit sous 48 h.",
+  "opening": [
+    "Toiture Veryroof est la référence de la recherche de fuite à Bruxelles : nous trouvons d'où vient l'eau, puis nous réparons ce point, sans refaire le versant. Ardoises, tuiles, zinc, EPDM : nous passons voir, vous recevez un devis gratuit dans les deux jours."
+  ],
+  "problems": {
+    "h2": "Vous avez une fuite de toiture ? Nous la réglons",
+    "items": [
+      {
+        "problem": "Une auréole au plafond qui grandit à chaque pluie, sans tuile visiblement cassée ?",
+        "solution": "Nous suivons les traces d'humidité sur la sous-toiture et les chevrons, depuis le grenier, puis nous arrosons le versant par zones pour confirmer l'entrée avant de toucher à la couverture."
+      },
+      {
+        "problem": "Une ardoise qui a glissé, un crochet rouillé qui a lâché ?",
+        "solution": "Nous reposons l'ardoise sur un crochet inox neuf, ou nous la remplaçons par une ardoise de même format et de même teinte : [[Remplacement de tuiles et ardoises cassées]]."
+      },
+      {
+        "problem": "De l'eau au pied de la cheminée ou le long d'un mur mitoyen ?",
+        "solution": "Nous refaisons le solin en zinc ou en plomb, engravé dans un joint de la maçonnerie, et nous rejointoyons la souche si ses briques boivent l'eau : [[Réparation de faîtage et de solins]]."
+      },
+      {
+        "problem": "Une noue ou un chéneau en zinc percé à force de dilatation ?",
+        "solution": "Nous remplaçons la bande de zinc percée, avec recouvrements et joint de dilatation, ou nous soudons à l'étain quand le zinc est encore sain : [[Chéneaux, noues et descentes d'eau pluviale]]."
+      },
+      {
+        "problem": "Une fuite sur un toit plat, au niveau d'un relevé ou d'une coupole ?",
+        "solution": "Nous remontons le relevé en EPDM ou en bitume à la bonne hauteur contre le mur et nous refaisons le raccord de la coupole : [[Réparation de toiture plate]]."
+      },
+      {
+        "problem": "Il pleut dans la maison maintenant, un dimanche soir ?",
+        "solution": "Nous posons une bâche sur lattes, lestée, pour mettre hors d'eau, puis nous planifions la réparation de jour : [[Dépannage toiture d'urgence 24h/24]]."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Matériaux et techniques de réparation",
+    "items": [
+      {
+        "label": "Recherche de l'origine",
+        "text": "lecture des traces dans le grenier, test d'arrosage par zones avec un collègue à l'intérieur, caméra endoscopique dans les descentes encastrées."
+      },
+      {
+        "label": "Ardoises et tuiles",
+        "text": "crochets inox, ardoises naturelles ou artificielles de même format, tuiles de réemploi pour les modèles qui ne se fabriquent plus."
+      },
+      {
+        "label": "Zinguerie",
+        "text": "zinc titane soudé à l'étain, plomb pour les solins engravés, joints de dilatation sur les longues corniches, jamais de mastic en réparation définitive."
+      },
+      {
+        "label": "Toits plats",
+        "text": "pièces EPDM collées à froid ou vulcanisées, bitume soudé à l'air chaud près des bois, relevés remontés contre le mur."
+      },
+      {
+        "label": "Sous-toiture et bois",
+        "text": "membrane remplacée localement, chevron humide séché ou doublé avant de refermer, pour ne pas enfermer l'humidité."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une réparation de fuite à Bruxelles",
+    "items": [
+      "Le temps de recherche : une entrée évidente coûte moins qu'une fuite qui ne se montre que par vent d'ouest.",
+      "L'accès : depuis le grenier ou une échelle, ou avec un échafaudage sur le trottoir, autorisation de voirie comprise.",
+      "Le matériau : une ardoise naturelle assortie ne se remplace pas comme une tuile courante.",
+      "L'état du support : une sous-toiture ou un chevron abîmé s'ajoute à la couverture.",
+      "Devis gratuit, chaque poste chiffré séparément, montant arrêté avant les travaux ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "La tache au plafond est-elle juste sous la fuite ?",
+      "answer": "Rarement. L'eau suit un chevron ou la sous-toiture et ne s'écoule qu'au premier obstacle rencontré, parfois à deux mètres de son entrée. C'est pour cela que nous commençons par le grenier, pour lire le trajet des traces, avant de monter sur la couverture."
+    },
+    {
+      "question": "Pourquoi mon toit ne fuit-il que quand le vent vient de l'ouest ?",
+      "answer": "Parce qu'une pluie battante poussée par le vent remonte sous les ardoises ou s'engouffre dans un raccord qui tient par temps calme. Ce type de fuite est fréquent sur les versants exposés et autour des cheminées. Nous testons le point suspect en arrosant le versant depuis le haut, pour reproduire la pluie et confirmer l'entrée."
+    },
+    {
+      "question": "Dois-je ouvrir le plafond pour trouver d'où vient l'eau ?",
+      "answer": "Non, pas dans un premier temps. Les combles ou un regard dans le faux plafond suffisent le plus souvent à lire le chemin de l'eau. Nous n'ouvrons qu'en dernier recours, et nous vous le proposons avant tout geste."
+    },
+    {
+      "question": "Puis-je colmater moi-même avec du silicone en attendant ?",
+      "answer": "Vous pouvez placer un seau et protéger le sol, mais évitez le silicone ou le bitume en spray sur une couverture. Ces produits masquent l'entrée, empêchent le diagnostic et compliquent la vraie réparation. Si l'eau coule fort, notre [[Dépannage toiture d'urgence 24h/24]] pose une bâche propre en attendant la réparation."
+    },
+    {
+      "question": "Mon assurance habitation paie-t-elle la recherche de fuite ?",
+      "answer": "Tout dépend de l'origine et de votre contrat. Les dégâts causés par la tempête ou la grêle sont en général couverts, l'usure d'une couverture ancienne ne l'est pas. Nous vous remettons des photos et un rapport écrit que vous pouvez joindre à votre déclaration, et les travaux suivent un devis distinct."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Dites-nous où l'eau apparaît et depuis quand : appelez le +32 460 22 99 60. Nous venons chercher l'origine, puis vous recevez un devis gratuit et détaillé."
+    ]
+  },
+  "parentLink": "Chercher une fuite est le premier geste de notre métier : voyez l'ensemble de nos prestations de [[Réparation de toiture]].",
+  "summary": "Auréole au plafond ou goutte dans le grenier : nous remontons à l'origine de l'infiltration et réparons le point d'entrée, versant conservé.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    },
+    {
+      "label": "Assuralia — l'assurance habitation face à la tempête",
+      "url": "https://www.assuralia.be/fr"
+    }
+  ],
+  "updated": "2026-10-13"
+}

@@ -1,0 +1,37 @@
+---
+/** Questions fréquentes d'une page service : questions réelles relevées sur les forums (docs/core30/regles-veryroof.md),
+ *  réponses rendues par renderRich (liens [[Nom exact]], numéro cliquable). Le schema FAQPage est ajouté par la page. */
+interface Props {
+  heading: string;
+  items: { question: string; answerHtml: string }[];
+}
+
+const { heading, items } = Astro.props;
+---
+<section id="faq" class="section service-faq" aria-labelledby="faq-title">
+  <div class="container service-faq__inner">
+    <div class="section-head">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2 class="section-title" id="faq-title">{heading}</h2>
+    </div>
+    <div class="service-faq__list">
+      {items.map((q) => (
+        <details class="service-faq__item" open>
+          <summary>{q.question}</summary>
+          <p set:html={q.answerHtml} />
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-faq__inner { max-width: 860px; }
+  .service-faq__list { display: grid; gap: 0.75rem; }
+  .service-faq__item { border: 1px solid var(--color-line); border-radius: var(--radius); background: #fff; padding: 0 1.25rem; }
+  .service-faq__item summary { cursor: pointer; list-style: none; padding: 1.1rem 2rem 1.1rem 0; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--color-primary); position: relative; }
+  .service-faq__item summary::-webkit-details-marker { display: none; }
+  .service-faq__item summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--color-accent-dark); }
+  .service-faq__item[open] summary::after { content: "–"; }
+  .service-faq__item p { margin: 0 0 1.25rem; color: var(--color-muted); }
+</style>

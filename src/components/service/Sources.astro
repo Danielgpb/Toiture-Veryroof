@@ -1,0 +1,26 @@
+---
+/** Sources officielles citées par la page + date de mise à jour (audit du 13/10/2026 : autorité, fraîcheur, citabilité). */
+interface Props {
+  items: { label: string; url: string }[];
+  updated: string;
+}
+const { items, updated } = Astro.props;
+const date = new Date(updated + 'T12:00:00');
+const updatedLabel = new Intl.DateTimeFormat('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+---
+<section id="sources" class="section sources" aria-labelledby="sources-title">
+  <div class="container sources__inner">
+    <h2 class="section-title" id="sources-title">Sources et références</h2>
+    <ul>
+      {items.map((it) => <li><a href={it.url} target="_blank" rel="noopener">{it.label}</a></li>)}
+    </ul>
+    <p class="sources__updated">Page mise à jour le <time datetime={updated}>{updatedLabel}</time>. Les règles de permis et d'aides évoluent : nous vérifions votre situation avant chaque devis.</p>
+  </div>
+</section>
+
+<style>
+  .sources__inner { max-width: 860px; }
+  .sources ul { margin: 0 0 1rem; padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+  .sources a { color: var(--color-primary); }
+  .sources__updated { color: var(--color-muted); font-size: 0.95rem; margin: 0; }
+</style>

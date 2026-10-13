@@ -1,0 +1,46 @@
+---
+import { brandify, escapeHtml } from '../../lib/phone';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Icon from '../Icon.astro';
+import { site } from '../../data/site';
+
+interface Props {
+  heading: string;
+  paragraph: string;
+  badges: string[];
+  photo: { image: ImageMetadata; alt: string };
+}
+
+const { heading, paragraph, badges, photo } = Astro.props;
+const icons = ['shield', 'document', 'euro'] as const;
+// Les 3 premiers badges viennent du contenu validé ; le numéro d'entreprise vient des données du site.
+// La pastille « N° BCE » n'apparaît que lorsque le numéro est renseigné (site.vat), demande du client du 13/10/2026.
+const items = [...badges.map((label, i) => ({ icon: icons[i % icons.length], label })), ...(site.vat ? [{ icon: 'building' as const, label: `N° BCE : ${site.vat}` }] : [])];
+---
+<section id="a-propos" class="section section--alt about">
+  <div class="container about__inner">
+    <div class="about__text">
+      <p class="eyebrow">Votre couvreur</p>
+      <h2 class="section-title">{heading}</h2>
+      <p set:html={brandify(escapeHtml(paragraph))} />
+      <ul class="about__badges">
+        {items.map((b) => <li><Icon name={b.icon} size={20} /> {b.label}</li>)}
+      </ul>
+    </div>
+    <figure class="about__photo">
+      <!-- Photo de chantier en attendant une vraie photo de l'équipe ou du gérant (à remplacer dans src/data/photos.ts, clé homePhotos.about) -->
+      <Image src={photo.image} alt={photo.alt} width={640} height={480} format="webp" quality={80} />
+    </figure>
+  </div>
+</section>
+
+<style>
+  .about__inner { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 900px) { .about__inner { grid-template-columns: 1.1fr 1fr; gap: 4rem; } }
+  .about__badges { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 0.6rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .about__badges li { display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 0.9rem; background: #fff; border: 1px solid var(--color-line); border-radius: 8px; font-weight: 600; font-size: 0.95rem; }
+  .about__badges :global(svg) { color: var(--color-accent-dark); flex: none; }
+  .about__photo { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .about__photo img { width: 100%; height: auto; }
+</style>

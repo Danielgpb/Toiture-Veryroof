@@ -1,0 +1,121 @@
+---
+import { site } from '../data/site';
+import { serviceGroups, generalServices } from '../data/services';
+import { cleanPath } from '../lib/paths';
+
+interface Props {
+  /** Page qui reçoit le POST (jamais la racine « / », redirigée en 301). Par défaut : la page courante. */
+  action?: string;
+  submitLabel?: string;
+}
+
+const { action = cleanPath(Astro.url.pathname), submitLabel = 'Demander mon devis gratuit' } = Astro.props;
+const categories = serviceGroups.filter((g) => g.kind === 'category');
+const cores = serviceGroups.filter((g) => g.kind === 'core');
+---
+<form class="form card" name="devis" method="POST" action={action} data-netlify="true" netlify-honeypot="bot-field" data-phone-href={site.phoneHref} data-phone-display={site.phoneDisplay}>
+  <!-- BRANCHER LE FORMULAIRE : Netlify Forms (actif tel quel sur Netlify) + relais /.netlify/functions/lead vers l'app Suivi Leads (variables LEADAPP_* sur Netlify) -->
+  <input type="hidden" name="form-name" value="devis" />
+  <input type="hidden" name="source" value={action} />
+  <p class="hidden-field" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+  <div class="form__field">
+    <label for="nom">Nom <span class="req" aria-hidden="true">*</span></label>
+    <input id="nom" name="nom" type="text" autocomplete="name" required />
+  </div>
+  <div class="form__grid">
+    <div class="form__field">
+      <label for="telephone">Téléphone <span class="req" aria-hidden="true">*</span></label>
+      <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required />
+    </div>
+    <div class="form__field">
+      <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+    </div>
+  </div>
+  <div class="form__field">
+    <label for="service">Service souhaité <span class="req" aria-hidden="true">*</span></label>
+    <select id="service" name="service" required>
+      <option value="">Choisissez un service</option>
+      <optgroup label="Catégories">{categories.map((g) => <option value={g.name}>{g.name}</option>)}</optgroup>
+      <optgroup label="Services phares">{cores.map((g) => <option value={g.name}>{g.name}</option>)}</optgroup>
+      <optgroup label="Autres services">{generalServices.map((s) => <option value={s.name}>{s.name}</option>)}</optgroup>
+      <option value="Autre / je ne sais pas">Autre / je ne sais pas</option>
+    </select>
+  </div>
+  <div class="form__field">
+    <label for="message">Message (facultatif)</label>
+    <textarea id="message" name="message" rows="4" placeholder="Décrivez le problème (fuite, tuiles, gouttière…) et votre commune"></textarea>
+  </div>
+  <p class="form__legend">* Champs obligatoires. Vos coordonnées servent uniquement à vous répondre : <a href="/politique-de-confidentialite">politique de confidentialité</a>.</p>
+  <button class="btn btn--accent btn--lg form__submit" type="submit">{submitLabel}</button>
+  <p class="form__status" role="status" aria-live="polite"></p>
+</form>
+
+<style>
+  .form { color: var(--color-text); display: grid; gap: 1rem; }
+  .form__grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .form__grid { grid-template-columns: 1fr 1fr; } }
+  .form__field { display: grid; gap: 0.35rem; }
+  .form label { font-weight: 600; font-size: 0.95rem; }
+  .form input, .form select, .form textarea { width: 100%; min-height: 48px; padding: 0.7rem 0.9rem; border: 1px solid #7C8798; border-radius: 8px; font: inherit; color: var(--color-text); background: #fff; }
+  .req { color: var(--color-accent-dark); }
+  .form__legend { margin: 0; font-size: 0.85rem; color: var(--color-muted); }
+  .form__legend a { color: var(--color-accent-dark); font-weight: 600; }
+  .form textarea { min-height: 120px; resize: vertical; }
+  .form input:focus, .form select:focus, .form textarea:focus { outline: 3px solid var(--color-accent-soft); border-color: var(--color-accent); }
+  .form__submit { width: 100%; }
+  .form__status { margin: 0; min-height: 1.5em; font-weight: 600; }
+  .form__status.is-ok { color: #1B7F4B; }
+  .form__status.is-error { color: #B42318; }
+</style>
+
+<script>
+  // Double envoi : Netlify Forms (copie e-mail de secours) + relais serveur vers l'app Suivi Leads.
+  // La demande est considérée envoyée dès qu'un des deux canaux a répondu correctement ;
+  // l'erreur ne s'affiche que si les deux échouent.
+  const RELAIS = '/.netlify/functions/lead';
+  const form = document.querySelector<HTMLFormElement>('form[name="devis"]');
+  if (form) {
+    const status = form.querySelector<HTMLElement>('.form__status');
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const texte = (data: FormData, cle: string) => String(data.get(cle) ?? '').trim();
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      if (submit) submit.disabled = true;
+      if (status) { status.textContent = 'Envoi en cours…'; status.className = 'form__status'; }
+      const data = new FormData(form);
+      // Jamais vers la racine « / » : elle est redirigée en 301 et le navigateur transformerait le POST en GET sans corps.
+      const endpoint = form.getAttribute('action') || window.location.pathname;
+      const versNetlify = async () => {
+        const body = new URLSearchParams(data as unknown as Record<string, string>).toString();
+        const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
+        const landedElsewhere = response.redirected && new URL(response.url).pathname !== endpoint;
+        if (!response.ok || landedElsewhere) throw new Error(String(response.status));
+      };
+      const versApp = async () => {
+        const payload = {
+          nom: texte(data, 'nom'),
+          telephone: texte(data, 'telephone'),
+          email: texte(data, 'email'),
+          message: texte(data, 'message'),
+          page: window.location.href,
+          source: 'formulaire toiture-veryroof.be',
+          champs: { Service: texte(data, 'service') },
+          _piege: texte(data, 'bot-field'), // piège anti-robot : rempli = l'app répond OK sans rien créer
+        };
+        const response = await fetch(RELAIS, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const reponse = (await response.json().catch(() => ({}))) as { cree?: string; rappel?: string; ok?: boolean };
+        if (!response.ok || !(reponse.cree || reponse.rappel || reponse.ok)) throw new Error(String(response.status));
+      };
+      const resultats = await Promise.allSettled([versApp(), versNetlify()]);
+      if (submit) submit.disabled = false;
+      if (resultats.every((r) => r.status === 'rejected')) {
+        if (status) { status.innerHTML = `L’envoi a échoué. Appelez-nous au <a href="${form.dataset.phoneHref}">${form.dataset.phoneDisplay}</a> ou réessayez dans un instant.`; status.classList.add('is-error'); }
+        return;
+      }
+      form.reset();
+      if (status) { status.textContent = 'Merci, votre demande est envoyée. Nous vous rappelons rapidement pour fixer la visite.'; status.classList.add('is-ok'); }
+    });
+  }
+</script>

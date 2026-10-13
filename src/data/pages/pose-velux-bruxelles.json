@@ -1,0 +1,114 @@
+{
+  "slug": "pose-velux-bruxelles",
+  "name": "Pose de fenêtres de toit Velux",
+  "metaTitle": "Pose de fenêtres de toit Velux à Bruxelles | Devis gratuit",
+  "metaDescription": "Pose de fenêtres de toit Velux à Bruxelles : installation ou remplacement, raccord étanche, permis vérifié. Devis gratuit sous 48 h au +32 460 22 99 60.",
+  "h1": "Pose de fenêtres de toit Velux à Bruxelles : de la lumière sous votre toit, sans infiltration",
+  "heroSubheadline": "Grenier sombre, pièce sous toit à aménager, ancien Velux qui laisse passer l'air ? Nous posons et remplaçons les fenêtres de toit à Bruxelles et en périphérie, raccord étanche compris.",
+  "opening": [
+    "Toiture Veryroof pose les fenêtres de toit Velux à Bruxelles : ouverture dans la couverture, chevêtre, raccord d'étanchéité adapté aux tuiles ou aux ardoises, finition intérieure. De la lumière sous le toit, sans la moindre infiltration."
+  ],
+  "problems": {
+    "h2": "Vous voulez une fenêtre de toit ? Nous la posons",
+    "items": [
+      {
+        "problem": "Un grenier sombre à transformer en chambre ou en bureau ?",
+        "solution": "Nous dimensionnons la fenêtre selon la surface de la pièce, découpons la couverture et posons le chevêtre entre les chevrons."
+      },
+      {
+        "problem": "Un Velux ancien qui fuit au raccord ou dont le vitrage est embué ?",
+        "solution": "Nous remplaçons la fenêtre par un modèle actuel de même dimension, avec un raccord d'étanchéité neuf."
+      },
+      {
+        "problem": "Trop chaud l'été sous la fenêtre de toit ?",
+        "solution": "Nous posons un store extérieur ou un volet roulant solaire, et choisissons un vitrage à faible facteur solaire."
+      },
+      {
+        "problem": "Une fenêtre à poser pendant la rénovation du toit ?",
+        "solution": "Nous l'intégrons au chantier : [[Rénovation de toiture]], raccord posé dans la foulée de la couverture."
+      },
+      {
+        "problem": "Un permis à demander pour un versant côté rue ?",
+        "solution": "Nous vérifions la règle communale, préparons les plans et déposons le dossier si nécessaire."
+      },
+      {
+        "problem": "Des combles à isoler autour de la nouvelle fenêtre ?",
+        "solution": "Nous raccordons l'isolant et le pare-vapeur au cadre avec le kit d'étanchéité à l'air : [[Isolation des combles par l'intérieur]]."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Fenêtres de toit et raccords que nous posons",
+    "items": [
+      {
+        "label": "Fenêtres Velux",
+        "text": "rotation ou projection, bois, polyuréthane blanc ou aluminium, vitrage double ou triple."
+      },
+      {
+        "label": "Raccords d'étanchéité",
+        "text": "profilés adaptés aux tuiles ondulées, aux ardoises ou aux matériaux plats, gouttière de raccord."
+      },
+      {
+        "label": "Chevêtre",
+        "text": "pièces de bois entre chevrons, chevron coupé repris si la largeur l'impose."
+      },
+      {
+        "label": "Étanchéité à l'air",
+        "text": "collerette pare-vapeur, isolant périphérique, gouttière de drainage sous la fenêtre."
+      },
+      {
+        "label": "Accessoires",
+        "text": "stores intérieurs, volets solaires, motorisation et détecteur de pluie."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une pose de Velux à Bruxelles",
+    "items": [
+      "La taille et la gamme de la fenêtre, le type de vitrage.",
+      "Pose dans une couverture existante ou remplacement d'une fenêtre en place.",
+      "Le chevêtre à créer, la finition intérieure, les accessoires.",
+      "Devis gratuit poste par poste, fourniture et pose ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Faut-il un permis pour poser un Velux à Bruxelles ?",
+      "answer": "Pas si la fenêtre reste dans le plan du toit, n'est pas visible depuis la rue et que la surface totale des fenêtres de toit reste limitée par rapport au versant. Au-delà, ou en zone protégée, le permis est requis. Nous vérifions la règle de votre commune avant de commander."
+    },
+    {
+      "question": "Quelle taille de fenêtre de toit pour une chambre sous les combles ?",
+      "answer": "Comptez une surface vitrée d'environ un dixième de la surface au sol de la pièce pour une lumière confortable, à répartir sur une ou deux fenêtres. Une fenêtre haute et étroite éclaire plus loin qu'une large et basse. Nous posons le bas de la fenêtre à hauteur de vue, assis ou debout selon l'usage."
+    },
+    {
+      "question": "Mon ancien Velux fuit au niveau du raccord, faut-il le remplacer ?",
+      "answer": "Le raccord d'étanchéité, la collerette en plomb ou en aluminium autour du cadre, se remplace sans changer la fenêtre si le bois est sain. Si le cadre est gonflé, le vitrage embué ou l'ouverture dure, le remplacement complet est plus raisonnable. Les fabricants proposent des modèles aux mêmes dimensions que les anciens."
+    },
+    {
+      "question": "Fenêtre de toit ou lucarne, que choisir ?",
+      "answer": "La fenêtre de toit pour la lumière, le prix et la simplicité : pas de permis dans la plupart des cas, pose en une journée. La lucarne pour gagner du volume et une vue droite, mais elle demande un permis, une charpente adaptée et un chantier plus long. Voyez la [[Rénovation de toiture]] si vous envisagez une lucarne."
+    },
+    {
+      "question": "Peut-on poser un Velux sur un toit plat ?",
+      "answer": "Oui, avec une fenêtre conçue pour les toits plats, posée sur une costière surélevée pour que l'eau s'écoule. Une coupole classique fait aussi l'affaire pour un couloir ou une salle de bain. Le raccord avec la membrane est le point à soigner : voyez notre [[Toiture plate]]."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Un grenier à éclairer ? Appelez le +32 460 22 99 60 : nous mesurons l'entraxe des chevrons sur place, devis gratuit."
+    ]
+  },
+  "parentLink": "La pose de fenêtres de toit s'inscrit dans tous les travaux de couverture que réalise notre [[home:entreprise de toiture à Bruxelles]].",
+  "summary": "Fenêtre de toit neuve ou remplacement d'un ancien Velux : pose dans le plan du toit, raccord étanche, permis vérifié avec la commune.",
+  "sources": [
+    {
+      "label": "urbanisme.brussels — permis d'urbanisme en Région bruxelloise",
+      "url": "https://urbanisme.brussels/"
+    },
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

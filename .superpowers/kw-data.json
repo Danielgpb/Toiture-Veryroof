@@ -1,0 +1,1320 @@
+[
+ {
+  "kw": "roofing bruxelles",
+  "vol": 3600,
+  "comp": "LOW",
+  "cpc": 0.32,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture en ardoise",
+  "vol": 880,
+  "comp": "HIGH",
+  "cpc": 2.05,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture epdm",
+  "vol": 880,
+  "comp": "HIGH",
+  "cpc": 2.71,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur bruxelles",
+  "vol": 480,
+  "comp": "HIGH",
+  "cpc": 11.66,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "roofing toiture",
+  "vol": 480,
+  "comp": "HIGH",
+  "cpc": 2.03,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture bruxelles",
+  "vol": 480,
+  "comp": "MEDIUM",
+  "cpc": 13.63,
+  "kd": 31,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "démoussage toiture",
+  "vol": 390,
+  "comp": "HIGH",
+  "cpc": 6.22,
+  "kd": 27,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture végétalisée",
+  "vol": 390,
+  "comp": "HIGH",
+  "cpc": 1.12,
+  "kd": 22,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "toiturier bruxelles",
+  "vol": 390,
+  "comp": "HIGH",
+  "cpc": 7.43,
+  "kd": 11,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toituriers bruxelles",
+  "vol": 390,
+  "comp": "HIGH",
+  "cpc": 7.43,
+  "kd": 11,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur uccle",
+  "vol": 260,
+  "comp": "HIGH",
+  "cpc": 12.59,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation toiture plate",
+  "vol": 260,
+  "comp": "HIGH",
+  "cpc": 4.85,
+  "kd": 29,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture uccle",
+  "vol": 210,
+  "comp": "HIGH",
+  "cpc": 5.57,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur waterloo",
+  "vol": 170,
+  "comp": "HIGH",
+  "cpc": 3.7,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture en zinc",
+  "vol": 170,
+  "comp": "HIGH",
+  "cpc": 4.76,
+  "kd": 46,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "ardoise naturelle toiture",
+  "vol": 140,
+  "comp": "LOW",
+  "cpc": 2.56,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "dépannage toiture",
+  "vol": 140,
+  "comp": "LOW",
+  "cpc": 5.72,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation sarking",
+  "vol": 140,
+  "comp": "MEDIUM",
+  "cpc": 1.81,
+  "kd": null,
+  "intent": "informational",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation toiture par l'extérieur",
+  "vol": 140,
+  "comp": "HIGH",
+  "cpc": 3.44,
+  "kd": 41,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "solin zinc",
+  "vol": 140,
+  "comp": "HIGH",
+  "cpc": 0.76,
+  "kd": 45,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "étanchéité toit plat",
+  "vol": 140,
+  "comp": "HIGH",
+  "cpc": 4.78,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "étanchéité toiture plate",
+  "vol": 140,
+  "comp": "HIGH",
+  "cpc": 4.78,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "hydrofuge toiture",
+  "vol": 110,
+  "comp": "HIGH",
+  "cpc": 1.05,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "refaire toiture prix",
+  "vol": 110,
+  "comp": "HIGH",
+  "cpc": 5.39,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture en tuiles",
+  "vol": 110,
+  "comp": "HIGH",
+  "cpc": 2.75,
+  "kd": 25,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture waterloo",
+  "vol": 110,
+  "comp": "HIGH",
+  "cpc": 16.04,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "ardoise amiante",
+  "vol": 90,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation toit plat",
+  "vol": 90,
+  "comp": "HIGH",
+  "cpc": 2.45,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation toiture bruxelles",
+  "vol": 90,
+  "comp": "MEDIUM",
+  "cpc": 15.97,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur auderghem",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "cpc": 0.05,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur ixelles",
+  "vol": 70,
+  "comp": "HIGH",
+  "cpc": 4.32,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "descente d'eau pluviale",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "cpc": 0.03,
+  "kd": null,
+  "intent": "informational",
+  "src": "overview"
+ },
+ {
+  "kw": "entreprise toiture bruxelles",
+  "vol": 70,
+  "comp": "HIGH",
+  "cpc": 6.19,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "solin cheminée",
+  "vol": 70,
+  "comp": "HIGH",
+  "cpc": 0.46,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "chéneau zinc",
+  "vol": 50,
+  "comp": "HIGH",
+  "cpc": 1.23,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur brabant wallon",
+  "vol": 50,
+  "comp": "HIGH",
+  "cpc": 12.42,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "expertise toiture",
+  "vol": 50,
+  "comp": "HIGH",
+  "cpc": 3.99,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "rénovation toiture bruxelles",
+  "vol": 50,
+  "comp": "HIGH",
+  "cpc": 8.86,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "réparation toiture plate",
+  "vol": 50,
+  "comp": "HIGH",
+  "cpc": 7.16,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture zinc joint debout",
+  "vol": 50,
+  "comp": "MEDIUM",
+  "cpc": 4.25,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "renovation toiture bruxelles",
+  "vol": 50,
+  "comp": "HIGH",
+  "cpc": 8.86,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "couvreur braine-l'alleud",
+  "vol": 40,
+  "comp": "MEDIUM",
+  "cpc": 10.73,
+  "kd": null,
+  "intent": "informational",
+  "src": "overview"
+ },
+ {
+  "kw": "entreprise de toiture bruxelles",
+  "vol": 40,
+  "comp": "MEDIUM",
+  "cpc": 2.85,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "nettoyage de gouttières",
+  "vol": 40,
+  "comp": "HIGH",
+  "cpc": 2.6,
+  "kd": 48,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "prix rénovation toiture",
+  "vol": 40,
+  "comp": "HIGH",
+  "cpc": 3.77,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "réparation roofing",
+  "vol": 40,
+  "comp": "HIGH",
+  "cpc": 4.24,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "réparation toiture bruxelles",
+  "vol": 40,
+  "comp": "HIGH",
+  "cpc": 32.08,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "étanchéité epdm",
+  "vol": 40,
+  "comp": "HIGH",
+  "cpc": 4.56,
+  "kd": null,
+  "intent": "informational",
+  "src": "overview"
+ },
+ {
+  "kw": "entreprise de toiture à bruxelles",
+  "vol": 40,
+  "comp": "MEDIUM",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture bruxelles devis gratuit",
+  "vol": 40,
+  "comp": "MEDIUM",
+  "cpc": 13.36,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "charpentier bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 4.29,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "descente eau pluviale",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 0.37,
+  "kd": null,
+  "intent": "informational",
+  "src": "overview"
+ },
+ {
+  "kw": "désamiantage bruxelles",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "cpc": 8.47,
+  "kd": null,
+  "intent": "informational",
+  "src": "overview"
+ },
+ {
+  "kw": "fuite toiture bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 13.36,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture plate bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 5.8,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "velux bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 2.95,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "prime isolation toiture bruxelles",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "cpc": 4.87,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "prime rénovation toiture bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 4.68,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "primes isolation toiture bruxelles",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "cpc": 4.87,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "prime toiture bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "cpc": 7.32,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "couvreur anderlecht",
+  "vol": 20,
+  "comp": "HIGH",
+  "cpc": 10.67,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur zingueur bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "cpc": 7.84,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "démoussage toiture bruxelles",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "cpc": 2.72,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "nettoyage toiture bruxelles",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "cpc": 3.42,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "prix toiture plate",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "cpc": 3.81,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "réparation fuite toiture",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture végétalisée bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "cpc": 2.66,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture végétale bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "cpc": 2.66,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "demoussage toiture bruxelles",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "cpc": 2.72,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "couvreur schaerbeek",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": 19.08,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur toiture bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "couvreur urgence",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "devis toiture bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": 8.24,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "dépannage toiture bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "inspection toiture",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation combles bruxelles",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "isolation toiture plate bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 21.13,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "nettoyage gouttière bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "prix toiture bruxelles",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "refaire sa toiture",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 10.88,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "remplacement gouttière",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 13.77,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "roofing toit plat",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "réparation cheminée bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": 3.47,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "réparation souche de cheminée",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toit vert bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture verte bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": 9.08,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "toiture zinc bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "traitement hydrofuge toiture",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 0.97,
+  "kd": null,
+  "intent": "transactional",
+  "src": "overview"
+ },
+ {
+  "kw": "zinguerie bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "zingueur bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 24.25,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "étanchéité toiture bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "overview"
+ },
+ {
+  "kw": "magasin toiture bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 0.07,
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "prime isolation toiture bruxelles 2024",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture a bruxelles",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "matériaux de toiture bruxelles",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "delleuse toiture bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 3.14,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "societe de toiture a bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 32.42,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "entreprise générale de toiture bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "prime isolation toiture bruxelles 2023",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture bruxelles anderlecht",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "reparation toiture bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture joseph bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "travaux toiture bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "eto toiture srl bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture francotte bruxelles",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture express bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "salon de la toiture bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "dim toiture bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": 7.02,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "societe toiture bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 33.59,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture constant bruxelles",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture delleuse bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": 10.93,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture davaux bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture en zinc bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "obligation isolation toiture bruxelles",
+  "vol": 10,
+  "comp": "MEDIUM",
+  "cpc": 4.24,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "magasin de toiture bruxelles",
+  "vol": 10,
+  "comp": "HIGH",
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "toiture verte bruxelles environnement",
+  "vol": 10,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "entrepreneur toiture bruxelles",
+  "vol": 10,
+  "comp": "LOW",
+  "cpc": null,
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:toiture bruxelles"
+ },
+ {
+  "kw": "epdm bruxelles",
+  "vol": null,
+  "comp": null,
+  "cpc": null,
+  "kd": null,
+  "intent": "navigational",
+  "src": "overview"
+ },
+ {
+  "kw": "toit bruxelles",
+  "vol": 480,
+  "comp": "MEDIUM",
+  "kd": 31,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "toitures bruxelles",
+  "vol": 390,
+  "comp": "HIGH",
+  "kd": 11,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "ramoneur cheminée bruxelles",
+  "vol": 110,
+  "comp": "MEDIUM",
+  "kd": 43,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "ramonage cheminée bruxelles",
+  "vol": 110,
+  "comp": "MEDIUM",
+  "kd": 43,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "primes isolation bruxelles",
+  "vol": 90,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "prime isolation bruxelles",
+  "vol": 90,
+  "comp": "MEDIUM",
+  "kd": 52,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "la cheminée bruxelles",
+  "vol": 70,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "entreprises toitures bruxelles",
+  "vol": 70,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "isolation facade bruxelles",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "isolation façade bruxelles",
+  "vol": 70,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "amiante bruxelles",
+  "vol": 50,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "entreprise de toitures bruxelles",
+  "vol": 40,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "institut demot couvreur bruxelles",
+  "vol": 40,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "institut demot-couvreur bruxelles",
+  "vol": 40,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "institut de mot-couvreur bruxelles",
+  "vol": 40,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "cheminée bruxelles",
+  "vol": 40,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "isolation bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "magasin velux bruxelles",
+  "vol": 30,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "certificat amiante bruxelles",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "informational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "prime isolation toit bruxelles",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "inventaire amiante bruxelles",
+  "vol": 30,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "rue de la gouttière bruxelles",
+  "vol": 20,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "rue de la gouttière 25 1000 bruxelles",
+  "vol": 20,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "prime isolation facade bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "ramonage cheminée bruxelles prix",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "prime isolation façade bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "isolation sensorielle bruxelles",
+  "vol": 20,
+  "comp": "LOW",
+  "kd": null,
+  "intent": "informational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "ramonage cheminée prix bruxelles",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "installateur velux bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "navigational",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "entreprise isolation bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "tubage cheminée bruxelles",
+  "vol": 20,
+  "comp": "HIGH",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ },
+ {
+  "kw": "isolation facade exterieur bruxelles",
+  "vol": 20,
+  "comp": "MEDIUM",
+  "kd": null,
+  "intent": "commercial",
+  "src": "sugg:bruxelles"
+ }
+]

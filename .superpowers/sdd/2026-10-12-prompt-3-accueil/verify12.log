@@ -1,0 +1,154 @@
+
+> toiture-veryroof@0.1.0 verify
+> npm test && astro build && node scripts/check-links.mjs && node --test tests/built/*.test.mjs
+
+
+> toiture-veryroof@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ la teinte accent foncée (texte, boutons) atteint AA 4,5:1 sur blanc et sur fond gris (0.567917ms)
+✔ boutons accent, eyebrows, liens fléchés et badges utilisent la teinte accent foncée (0.183625ms)
+✔ la hiérarchie des services respecte les comptages de la spec (0.442959ms)
+✔ chaque page enfant connaît son parent, les autres n’en ont pas (0.099042ms)
+✔ tous les slugs sont uniques et propres (0.161917ms)
+✔ les pages communes sont des zones desservies, au moins 4 au lancement (0.07575ms)
+✔ les titres H1 suivent « [Service] Bruxelles » (0.050709ms)
+✔ les données NAP sont présentes (0.043417ms)
+✔ cleanPath retire le suffixe .html produit par build.format "file" (0.392292ms)
+✔ cleanPath retire un slash final superflu (0.054125ms)
+✔ linkPhone enveloppe chaque occurrence du numéro dans un lien tel: (0.396916ms)
+✔ linkPhone échappe le HTML du texte source (0.053791ms)
+✔ linkText enveloppe une expression dans un lien (0.054375ms)
+✔ linkText refuse une expression absente du texte (erreur de build plutôt qu’un lien perdu) (0.1595ms)
+✔ linkPhone reste silencieux quand le numéro est absent (0.04625ms)
+✔ chaque photo du registre existe dans src/assets/photos et a un texte alternatif descriptif (2.492917ms)
+✔ les attributions de photos pointent vers des photos et des pages connues, et chaque page service a une photo (0.266417ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 83.456459
+19:42:04 [content] Syncing content
+19:42:04 [content] Synced content
+19:42:04 [types] Generated 15ms
+19:42:04 [build] output: "static"
+19:42:04 [build] mode: "static"
+19:42:04 [build] directory: /Users/macbook/Desktop/Sites/site /Toiture Veryroof/dist/
+19:42:04 [build] Collecting build info...
+19:42:04 [build] ✓ Completed in 24ms.
+19:42:04 [build] Building static entrypoints...
+19:42:05 [vite] ✓ built in 400ms
+19:42:05 [build] ✓ Completed in 414ms.
+
+ building client (vite) 
+19:42:05 [vite] transforming...
+19:42:05 [vite] ✓ 2 modules transformed.
+19:42:05 [vite] rendering chunks...
+19:42:05 [vite] ✓ built in 6ms
+
+ generating static routes 
+19:42:05 ▶ src/pages/404.astro
+19:42:05   └─ /404.html (+3ms) 
+19:42:05 ▶ src/pages/[slug].astro
+19:42:05   ├─ /reparation-toiture-bruxelles.html (+1ms) 
+19:42:05   ├─ /reparation-fuite-toiture-bruxelles.html (+1ms) 
+19:42:05   ├─ /remplacement-tuiles-ardoises-bruxelles.html (+1ms) 
+19:42:05   ├─ /reparation-toiture-tempete-bruxelles.html (+1ms) 
+19:42:05   ├─ /reparation-faitage-solins-bruxelles.html (+0ms) 
+19:42:05   ├─ /reparation-cheminee-bruxelles.html (+0ms) 
+19:42:05   ├─ /isolation-toiture-bruxelles.html (+0ms) 
+19:42:05   ├─ /isolation-combles-bruxelles.html (+1ms) 
+19:42:05   ├─ /isolation-sarking-bruxelles.html (+0ms) 
+19:42:05   ├─ /isolation-toiture-plate-bruxelles.html (+0ms) 
+19:42:05   ├─ /zinguerie-gouttieres-bruxelles.html (+0ms) 
+19:42:05   ├─ /pose-gouttieres-bruxelles.html (+0ms) 
+19:42:05   ├─ /reparation-gouttieres-bruxelles.html (+0ms) 
+19:42:05   ├─ /nettoyage-gouttieres-bruxelles.html (+0ms) 
+19:42:05   ├─ /cheneaux-descentes-eau-bruxelles.html (+0ms) 
+19:42:05   ├─ /renovation-toiture-bruxelles.html (+0ms) 
+19:42:05   ├─ /toiture-tuiles-bruxelles.html (+0ms) 
+19:42:05   ├─ /toiture-ardoises-bruxelles.html (+0ms) 
+19:42:05   ├─ /toiture-zinc-bruxelles.html (+0ms) 
+19:42:05   ├─ /charpente-bruxelles.html (+0ms) 
+19:42:05   ├─ /enlevement-ardoises-amiante-bruxelles.html (+0ms) 
+19:42:05   ├─ /toiture-plate-bruxelles.html (+0ms) 
+19:42:05   ├─ /etancheite-epdm-bruxelles.html (+0ms) 
+19:42:05   ├─ /roofing-bitumineux-bruxelles.html (+0ms) 
+19:42:05   ├─ /reparation-toiture-plate-bruxelles.html (+0ms) 
+19:42:05   ├─ /toiture-vegetalisee-bruxelles.html (+0ms) 
+19:42:05   ├─ /depannage-toiture-urgence-bruxelles.html (+0ms) 
+19:42:05   ├─ /pose-velux-bruxelles.html (+0ms) 
+19:42:05   ├─ /demoussage-toiture-bruxelles.html (+0ms) 
+19:42:05   ├─ /inspection-toiture-bruxelles.html (+0ms) 
+19:42:05   ├─ /toiture-copropriete-bruxelles.html (+0ms) 
+19:42:05   ├─ /couvreur-uccle.html (+0ms) 
+19:42:05   ├─ /couvreur-watermael-boitsfort.html (+0ms) 
+19:42:05   ├─ /couvreur-rhode-saint-genese.html (+0ms) 
+19:42:05   └─ /couvreur-waterloo.html (+0ms) 
+19:42:05 ▶ src/pages/a-propos.astro
+19:42:05   └─ /a-propos.html (+0ms) 
+19:42:05 ▶ src/pages/contact.astro
+19:42:05   └─ /contact.html (+0ms) 
+19:42:05 ▶ src/pages/mentions-legales.astro
+19:42:05   └─ /mentions-legales.html (+1ms) 
+19:42:05 ▶ src/pages/politique-de-confidentialite.astro
+19:42:05   └─ /politique-de-confidentialite.html (+0ms) 
+19:42:05 ▶ src/pages/services.astro
+19:42:05   └─ /services.html (+0ms) 
+19:42:05 ▶ src/pages/zones-d-intervention.astro
+19:42:05   └─ /zones-d-intervention.html (+0ms) 
+19:42:05 ▶ src/pages/couvreur-bruxelles.astro
+19:42:05   └─ /couvreur-bruxelles.html (+4ms) 
+19:42:05 ▶ /
+19:42:05   └─ /index.html (+0ms) 
+19:42:05 ✓ Completed in 34ms.
+
+ generating optimized images 
+19:42:05   ▶ /_astro/souche-cheminee-solins-zinc.cKs3FU28_Z15BN1w.webp (reused cache entry) (+1ms) (1/11)
+19:42:05   ▶ /_astro/bandeau-corniche-gouttiere-echafaudage.BaW81Mrl_Z2kI94H.webp (reused cache entry) (+1ms) (2/11)
+19:42:05   ▶ /_astro/toiture-tuiles-neuve-velux-bruxelles.C1qVRGlw_ZlhwCv.webp (reused cache entry) (+2ms) (3/11)
+19:42:05   ▶ /_astro/hero-toiture-tuiles-bruxelles.Zr_zyBqB_Z1z1Byn.webp (reused cache entry) (+2ms) (4/11)
+19:42:05   ▶ /_astro/isolation-sarking-panneaux-contre-lattes.D5uXan9Q_ZCBpi4.webp (reused cache entry) (+2ms) (5/11)
+19:42:05   ▶ /_astro/toiture-plate-etancheite-neuve.DnKPQ_7n_Z26JciT.webp (reused cache entry) (+2ms) (6/11)
+19:42:05   ▶ /_astro/toiture-tuiles-anthracite-cheminee.BtEbWqRn_1qxUWt.webp (reused cache entry) (+2ms) (7/11)
+19:42:05   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.Cr1CdWCK_Z14z6C9.webp (reused cache entry) (+3ms) (8/11)
+19:42:05   ▶ /_astro/toiture-tuiles-neuve-velux-bruxelles.C1qVRGlw_nLRlX.webp (reused cache entry) (+2ms) (9/11)
+19:42:05   ▶ /_astro/hero-toiture-tuiles-bruxelles.Zr_zyBqB_Z1UtNB4.webp (reused cache entry) (+1ms) (10/11)
+19:42:05   ▶ /_astro/hero-toiture-tuiles-bruxelles.Zr_zyBqB_2kSVww.webp (reused cache entry) (+1ms) (11/11)
+19:42:05 ✓ Completed in 4ms.
+
+19:42:05 [build] 43 page(s) built in 513ms
+19:42:05 [build] Complete!
+44 pages HTML, 1310 liens internes vérifiés
+OK : aucun lien cassé, aucune ancre, aucun slash final, aucune page orpheline
+✔ le formulaire poste vers la page qui le contient, jamais vers la racine redirigée (2.654958ms)
+✔ les ancres atterrissent sous le header collant et la barre mobile ne couvre pas le pied de page (0.197875ms)
+✔ les boutons accent utilisent la teinte foncée conforme AA (0.16075ms)
+✔ le hero a une vraie image de fond et les textes annexes viennent du JSON validé (0.514291ms)
+✔ le lien vers le hub des zones est bien dans le paragraphe de la section zones (0.1125ms)
+✔ les réponses du schema FAQ sont identiques aux réponses affichées (0.3985ms)
+✔ seuls les placeholders documentés restent visibles sur la page (0.199209ms)
+✔ title, meta description et canonique viennent du contenu validé (2.206458ms)
+✔ un seul H1, exactement le H1 rédigé, avec couvreur + toiture + Bruxelles (0.163041ms)
+✔ les 11 sections sont présentes dans l’ordre imposé par le Prompt 3 (0.165125ms)
+✔ le hero porte une image de fond (pas un aplat), le sous-titre exact, les CTA et 4 signaux de confiance (0.206958ms)
+✔ « Pourquoi nous » affiche les 4 différenciateurs rédigés, juste après le hero (0.133125ms)
+✔ la section avis Google contient l’emplacement commenté pour le widget (0.064833ms)
+✔ le formulaire de devis a les bons champs, la liste des services et la réassurance (0.329167ms)
+✔ cartes catégories et services phares pointent vers les bonnes URL (0.189542ms)
+✔ zones, à propos, FAQ et liste compacte des communes (0.47475ms)
+✔ CTA final : titre rédigé, téléphone, deux boutons (0.096292ms)
+✔ schema.org : RoofingContractor (NAP + @id), 2 Service, FAQPage à 6 questions (0.753167ms)
+✔ mobile : barre CTA collante sur l’accueil (à la place du bouton flottant), tous les téléphones cliquables (0.372458ms)
+✔ performance : chaque <img> a width, height et loading="lazy" ; l’image du hero est préchargée (0.180708ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 73.863542

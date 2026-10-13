@@ -1,0 +1,27 @@
+---
+import { activeZones, serviceAreas, regionLabels } from '../../data/zones';
+
+const byName = new Map(activeZones.map((z) => [z.name, z.slug]));
+const regions = Object.keys(serviceAreas) as (keyof typeof serviceAreas)[];
+---
+<section id="zones-liste" class="locations">
+  <div class="container">
+    <h2 class="locations__title">Zones d'intervention</h2>
+    {regions.map((region) => (
+      <p class="locations__line">
+        <strong>{regionLabels[region]} :</strong>
+        {serviceAreas[region].map((name, i) => (
+          <Fragment>{i > 0 && ' · '}{byName.has(name) ? <a href={`/${byName.get(name)}`}>{name}</a> : name}</Fragment>
+        ))}
+      </p>
+    ))}
+    <p class="locations__line"><a class="link-arrow" href="/zones-d-intervention">Toutes nos zones d'intervention</a></p>
+  </div>
+</section>
+
+<style>
+  .locations { padding: 2rem 0; border-top: 1px solid var(--color-line); font-size: 0.9rem; color: var(--color-muted); }
+  .locations__title { font-size: 1rem; margin-bottom: 0.5rem; }
+  .locations__line { margin: 0 0 0.35rem; }
+  .locations__line a { color: var(--color-primary); font-weight: 600; }
+</style>

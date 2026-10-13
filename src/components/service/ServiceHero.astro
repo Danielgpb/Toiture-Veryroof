@@ -1,0 +1,59 @@
+---
+import type { GetImageResult } from 'astro';
+import Icon from '../Icon.astro';
+import { site } from '../../data/site';
+
+interface Props {
+  h1: string;
+  /** Sous-titre déjà rendu en HTML (liens tel: inclus). */
+  subheadlineHtml: string;
+  image: GetImageResult;
+  imageAlt: string;
+  trustStrip: string[];
+  breadcrumb: { label: string; href?: string }[];
+}
+
+const { h1, subheadlineHtml, image, imageAlt, trustStrip, breadcrumb } = Astro.props;
+---
+<section id="hero" class="shero">
+  <img class="shero__bg" src={image.src} srcset={image.srcSet.attribute} sizes="100vw" width={image.attributes.width} height={image.attributes.height} fetchpriority="high" decoding="async" alt={imageAlt} />
+  <div class="container shero__inner">
+   <div class="shero__content">
+    <nav class="crumbs" aria-label="Fil d'Ariane">
+      <ol>
+        {breadcrumb.map((b, i) => <li>{b.href ? <a href={b.href}>{b.label}</a> : <span aria-current="page">{b.label}</span>}{i < breadcrumb.length - 1 && <span class="crumbs__sep" aria-hidden="true">›</span>}</li>)}
+      </ol>
+    </nav>
+    <h1>{h1}</h1>
+    <p class="shero__sub" set:html={subheadlineHtml} />
+    <div class="shero__cta">
+      <a class="btn btn--accent btn--lg" href={site.phoneHref}><Icon name="phone" size={20} /> Appeler le {site.phoneDisplay}</a>
+      <a class="btn btn--outline btn--lg" href="/contact">Demander un devis</a>
+    </div>
+    <ul class="trust">
+      {trustStrip.map((t) => <li><Icon name="check" size={18} /> {t}</li>)}
+    </ul>
+   </div>
+  </div>
+</section>
+
+<style>
+  .shero { position: relative; color: #fff; overflow: hidden; isolation: isolate; }
+  .shero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; z-index: -2; }
+  .shero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(12, 22, 38, 0.88) 0%, rgba(12, 22, 38, 0.6) 50%, rgba(12, 22, 38, 0.18) 100%), linear-gradient(0deg, rgba(12, 22, 38, 0.5) 0%, rgba(12, 22, 38, 0) 40%); }
+  .shero__inner { padding: clamp(2.5rem, 7vw, 5.5rem) 0 clamp(2rem, 5vw, 3.5rem); }
+  .shero__content { max-width: 780px; }
+  .crumbs ol { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); }
+  .crumbs li { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .crumbs a { display: inline-block; padding: 0.55rem 0; color: #fff; text-decoration: none; }
+  .crumbs a:hover { text-decoration: underline; }
+  .crumbs__sep { opacity: 0.6; }
+  .shero h1 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; text-wrap: balance; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); }
+  .shero__sub { font-size: clamp(1rem, 1.5vw, 1.15rem); color: rgba(255, 255, 255, 0.92); max-width: 62ch; margin-bottom: 1.5rem; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35); }
+  .shero__sub :global(a) { color: #fff; font-weight: 700; text-decoration-color: var(--color-accent); }
+  .shero__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; font-weight: 600; font-size: 0.95rem; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4); }
+  .trust li { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .trust svg { color: #F3B48F; }
+  @media (max-width: 600px) { .shero__cta .btn { width: 100%; } }
+</style>

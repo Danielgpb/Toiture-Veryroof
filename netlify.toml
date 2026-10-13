@@ -1,0 +1,12 @@
+# Déploiement Netlify du site statique Astro + relais serveur du formulaire vers l'app Suivi Leads.
+# Variables à définir sur le site Netlify (jamais dans ce fichier) :
+#   LEADAPP_URL    = https://<projet>.supabase.co/functions/v1/formulaire-site
+#   LEADAPP_SITE   = identifiant du site dans l'app (ex. s-toiture)
+#   LEADAPP_TYPE   = identifiant du type de lead (ex. t-toiture)
+#   LEADAPP_SECRET = FORMULAIRE_SECRET de l'app
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"

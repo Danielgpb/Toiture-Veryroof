@@ -1,0 +1,114 @@
+{
+  "slug": "toiture-ardoises-bruxelles",
+  "name": "Toiture en ardoises",
+  "metaTitle": "Toiture en ardoises Bruxelles | Naturelle ou artificielle",
+  "metaDescription": "Toiture en ardoises à Bruxelles : ardoise naturelle ou fibrociment, posée au crochet ou au clou. Devis détaillé gratuit sous 48 h : +32 460 22 99 60.",
+  "h1": "Toiture en ardoises à Bruxelles : votre maison retrouve sa couverture d'origine, étanche et bien posée",
+  "heroSubheadline": "Vos ardoises se délitent, glissent ou se fendent sous les doigts ? Nous reposons une toiture en ardoise neuve, naturelle ou en fibrociment, sur votre maison bruxelloise.",
+  "opening": [
+    "Toiture Veryroof couvre et rénove en ardoises à Bruxelles : ardoises naturelles ou artificielles, crochets inox, sous-toiture et liteaux neufs. Le matériau des maisons bruxelloises, posé dans les règles."
+  ],
+  "problems": {
+    "h2": "Vos ardoises glissent ou s'effritent ? Nous refaisons le versant",
+    "items": [
+      {
+        "problem": "Des ardoises qui glissent les unes après les autres ?",
+        "solution": "Nous remplaçons les crochets galvanisés rouillés par un versant complet sur crochets inox, sous-toiture neuve."
+      },
+      {
+        "problem": "Des ardoises artificielles qui gondolent et se délaminent ?",
+        "solution": "Nous posons une ardoise naturelle ou une artificielle actuelle sans amiante, selon le budget et le quartier ; si la charpente est faible, nous la reprenons d'abord : [[Réparation et traitement de charpente]]."
+      },
+      {
+        "problem": "Quelques ardoises manquantes après un coup de vent ?",
+        "solution": "Nous reposons à l'identique au crochet, ou en réparation d'urgence : [[Remplacement de tuiles et ardoises cassées]]."
+      },
+      {
+        "problem": "Des ardoises d'avant 1998 que vous soupçonnez amiantées ?",
+        "solution": "Nous faisons analyser un échantillon et, si besoin, organisons la dépose agréée : [[Enlèvement d'ardoises amiante-ciment]]."
+      },
+      {
+        "problem": "Une maison en zone protégée ou un toit visible depuis la rue ?",
+        "solution": "Nous préparons le dossier d'urbanisme et proposons une ardoise conforme au cahier des charges communal."
+      },
+      {
+        "problem": "Une couverture à refaire et l'isolation à prévoir ?",
+        "solution": "Nous isolons dans la foulée, par l'intérieur ou par-dessus les chevrons : [[Isolation de toiture]]."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Ardoises et fixations que nous posons",
+    "items": [
+      {
+        "label": "Ardoise naturelle",
+        "text": "schiste d'Espagne ou du Brésil, calibrée, pose au crochet inox ou au clou cuivre."
+      },
+      {
+        "label": "Ardoise artificielle",
+        "text": "fibrociment sans amiante, format rectangulaire ou losangé, teintes ardoise, gris ou brun."
+      },
+      {
+        "label": "Crochets inox",
+        "text": "pointe tempête, longueur adaptée au pureau, aucune rouille."
+      },
+      {
+        "label": "Sous-toiture et liteaux",
+        "text": "écran respirant, liteaux calibrés, contre-lattes pour ventiler."
+      },
+      {
+        "label": "Finitions",
+        "text": "noues et solins en zinc, faîtage en zinc ou en ardoises, rives et arêtiers soignés."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une toiture en ardoises à Bruxelles",
+    "items": [
+      "La surface et le nombre de versants, lucarnes et noues.",
+      "Ardoise naturelle ou artificielle, format et épaisseur.",
+      "La dépose amiantée éventuelle et la charpente à reprendre.",
+      "Devis gratuit détaillé, échantillons à l'appui ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Ardoise naturelle ou artificielle : laquelle pour une maison de 1930 ?",
+      "answer": "La naturelle si vous voulez un toit pour plusieurs générations et le rendu d'origine ; l'artificielle en fibres-ciment si le budget prime, avec une bonne durée mais une teinte qui pâlit. Sur une façade classée ou en zone protégée, la commune impose parfois la naturelle. Nous vous montrons les deux côte à côte."
+    },
+    {
+      "question": "D'où viennent les ardoises naturelles posées aujourd'hui ?",
+      "answer": "Surtout d'Espagne, parfois du Pays de Galles ou du Brésil ; les carrières ardennaises ont presque toutes fermé. La qualité varie beaucoup d'une carrière à l'autre : nous travaillons avec des ardoises certifiées, dont nous connaissons la tenue au gel bruxellois. L'origine figure sur le devis."
+    },
+    {
+      "question": "Crochets ou clous pour fixer les ardoises ?",
+      "answer": "Les crochets en inox, pour une pose durable et facile à réparer : une ardoise cassée se remplace sans toucher aux voisines. Les clous conviennent aux ardoises épaisses posées à l'ancienne, mais imposent de soulever les rangs supérieurs à chaque réparation. Nous posons au crochet sauf demande contraire."
+    },
+    {
+      "question": "Combien de temps dure une toiture en ardoises naturelles ?",
+      "answer": "Plusieurs générations, quand l'ardoise est de bonne qualité et la fixation correcte : les toits bruxellois de 1880 encore en place le prouvent. Les crochets, la sous-toiture et la zinguerie vieillissent plus vite que l'ardoise elle-même. C'est souvent eux qu'il faut refaire, pas la couverture."
+    },
+    {
+      "question": "Que deviennent mes anciennes ardoises après la rénovation ?",
+      "answer": "Les ardoises naturelles saines sont triées et revendues en réemploi, ou gardées pour vos réparations futures. Les ardoises artificielles anciennes contiennent souvent de l'amiante et suivent une filière spécifique : voyez notre [[Enlèvement d'ardoises amiante-ciment]]. Rien ne part en décharge sans tri."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Des ardoises qui tombent ? Appelez le +32 460 22 99 60 : nous montons voir le versant, et un devis gratuit vous parvient sous 48 h."
+    ]
+  },
+  "parentLink": "Reposer une toiture en ardoise s'inscrit dans une [[Rénovation de toiture]] : la page parente détaille les étapes communes à tous les matériaux.",
+  "summary": "Toiture en ardoise naturelle ou fibrociment reposée au crochet ou au clou sur les pentes fortes et les lucarnes des maisons bruxelloises anciennes.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    },
+    {
+      "label": "urbanisme.brussels — permis d'urbanisme en Région bruxelloise",
+      "url": "https://urbanisme.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

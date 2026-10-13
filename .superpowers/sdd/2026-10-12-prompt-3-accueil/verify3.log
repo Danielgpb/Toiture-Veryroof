@@ -1,0 +1,51 @@
+
+> toiture-veryroof@0.1.0 verify
+> npm test && astro build && node scripts/check-links.mjs && node --test tests/built/*.test.mjs
+
+
+> toiture-veryroof@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ la teinte accent foncée (texte, boutons) atteint AA 4,5:1 sur blanc et sur fond gris (0.526709ms)
+✖ boutons accent, eyebrows, liens fléchés et badges utilisent la teinte accent foncée (0.333917ms)
+✔ la hiérarchie des services respecte les comptages de la spec (0.593958ms)
+✔ chaque page enfant connaît son parent, les autres n’en ont pas (0.127416ms)
+✔ tous les slugs sont uniques et propres (0.18675ms)
+✔ les pages communes sont des zones desservies, au moins 4 au lancement (0.083417ms)
+✔ les titres H1 suivent « [Service] Bruxelles » (0.056708ms)
+✔ les données NAP sont présentes (0.048583ms)
+✔ cleanPath retire le suffixe .html produit par build.format "file" (0.398208ms)
+✔ cleanPath retire un slash final superflu (0.053625ms)
+✔ linkPhone enveloppe chaque occurrence du numéro dans un lien tel: (0.459208ms)
+✔ linkPhone échappe le HTML du texte source (0.122792ms)
+✔ linkText enveloppe une expression dans un lien (0.055791ms)
+✔ linkText refuse une expression absente du texte (erreur de build plutôt qu’un lien perdu) (0.190584ms)
+✔ linkPhone reste silencieux quand le numéro est absent (0.090333ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 78.41075
+
+✖ failing tests:
+
+test at tests/contrast.test.mjs:20:1
+✖ boutons accent, eyebrows, liens fléchés et badges utilisent la teinte accent foncée (0.333917ms)
+  AssertionError [ERR_ASSERTION]: .btn--accent doit utiliser --color-accent-dark
+      at TestContext.<anonymous> (file:///Users/macbook/Desktop/Sites/site%20/Toiture%20Veryroof/tests/contrast.test.mjs:22:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

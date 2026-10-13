@@ -1,0 +1,20 @@
+{
+  "name": "toiture-veryroof",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test tests/*.test.mjs",
+    "check-links": "node scripts/check-links.mjs",
+    "verify": "npm test && npm run build && node scripts/check-links.mjs && node --test tests/built/*.test.mjs",
+    "test:built": "node --test tests/built/*.test.mjs",
+    "photos": "node scripts/import-photos.mjs && node scripts/make-placeholders.mjs",
+    "postbuild": "node scripts/clean-dist.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.18.2"
+  }
+}

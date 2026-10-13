@@ -1,0 +1,125 @@
+{
+  "slug": "toiture-plate-bruxelles",
+  "name": "Toiture plate",
+  "metaTitle": "Toiture plate Bruxelles | Étanchéité garantie, devis 48 h",
+  "metaDescription": "Toiture plate à Bruxelles : diagnostic, membrane neuve et garantie écrite pour annexe, extension ou immeuble. Devis gratuit sous 48 h : +32 460 22 99 60.",
+  "h1": "Toiture plate à Bruxelles : un toit plat refait pour durer, de l'annexe à l'immeuble",
+  "heroSubheadline": "Annexe, extension ou immeuble : votre toit plat a fait son temps, ou il reste à couvrir. Diagnostic sur place, membrane choisie pour votre toit, devis gratuit en 48 h. L'eau entre déjà ? 24h/24 au +32 460 22 99 60.",
+  "opening": [
+    "Toiture Veryroof est la référence des toits plats à Bruxelles : EPDM, roofing bitumineux, réparations, isolation en toiture chaude et toitures vertes. Annexes, garages, immeubles : nous étanchéifions, nous isolons, nous garantissons par écrit."
+  ],
+  "problems": {
+    "h2": "Vous avez un problème de toiture plate ? Nous le réglons",
+    "items": [
+      {
+        "problem": "Une membrane fissurée qui fuit à chaque pluie ?",
+        "solution": "Nous localisons la fuite au test à l'eau, puis réparons par rustine soudée ou refaisons la zone : [[Réparation de toiture plate]]."
+      },
+      {
+        "problem": "Un roofing cloqué, craquelé, en fin de vie ?",
+        "solution": "Nous posons une membrane EPDM en une pièce, collée ou lestée, garantie longue durée : [[Toiture EPDM]]."
+      },
+      {
+        "problem": "Un budget serré pour une annexe ou un garage ?",
+        "solution": "Nous posons un bicouche bitumineux soudé au chalumeau, fiable et économique : [[Roofing bitumineux]]."
+      },
+      {
+        "problem": "Un plafond qui condense et une pièce impossible à chauffer ?",
+        "solution": "Nous isolons par-dessus le support, pare-vapeur en dessous, membrane neuve au-dessus : [[Isolation de toiture plate]]."
+      },
+      {
+        "problem": "Une terrasse d'immeuble que vous voulez verdir ?",
+        "solution": "Nous vérifions la portance et posons un complexe drainant et végétal : [[Toiture végétalisée]]."
+      },
+      {
+        "problem": "Des flaques qui stagnent des jours après la pluie ?",
+        "solution": "Nous créons une pente avec des panneaux isolants en forme ou ajoutons une évacuation et un trop-plein."
+      },
+      {
+        "problem": "Des relevés décollés le long des murs et de la cheminée ?",
+        "solution": "Nous refaisons les relevés en hauteur, avec profilés de finition et solins en zinc."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Membranes et techniques pour toits plats",
+    "items": [
+      {
+        "label": "EPDM",
+        "text": "caoutchouc synthétique en une pièce, collé en plein ou lesté, souple au gel comme au soleil."
+      },
+      {
+        "label": "Bitume bicouche",
+        "text": "sous-couche clouée ou collée, finition soudée au chalumeau avec paillettes."
+      },
+      {
+        "label": "Isolation",
+        "text": "PIR ou PUR posés sur le support, panneaux de pente pour l'écoulement."
+      },
+      {
+        "label": "Évacuations",
+        "text": "avaloirs, crapaudines, trop-pleins, descentes en zinc ou PVC."
+      },
+      {
+        "label": "Finitions",
+        "text": "relevés, profilés alu, solins en zinc, coupoles et sorties de ventilation étanchées."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une toiture plate à Bruxelles",
+    "items": [
+      "La surface du toit, ses relevés, ses coupoles et ses pénétrations.",
+      "La membrane : bitume, EPDM ou végétalisation, et l'isolant éventuel.",
+      "L'état du support : dépose de l'ancien, panneaux à remplacer.",
+      "Devis gratuit détaillé par poste et garantie écrite ; TVA réduite dès dix ans d'ancienneté du logement."
+    ]
+  },
+  "faq": [
+    {
+      "question": "EPDM ou roofing bitumineux : lequel choisir pour mon toit plat ?",
+      "answer": "L'EPDM pour une pose sans joint sur une surface simple et une durée de vie longue. Le roofing bitumineux pour un toit découpé, avec beaucoup de relevés et de traversées, ou pour une réparation sur un bitume existant. Nos pages [[Toiture EPDM]] et [[Roofing bitumineux]] détaillent les deux cas."
+    },
+    {
+      "question": "Des flaques restent sur mon toit plat après la pluie, est-ce un problème ?",
+      "answer": "Une flaque qui sèche en un ou deux jours est tolérable. Une eau qui stagne plus longtemps vieillit la membrane, attire la mousse et finit par trouver un joint. Nous reprenons la pente avec un isolant en forme ou ajoutons une évacuation : c'est un point de notre [[Réparation de toiture plate]]."
+    },
+    {
+      "question": "Combien de temps dure un toit plat ?",
+      "answer": "Cela dépend de la membrane et de la pose : plusieurs décennies pour un EPDM bien posé, moins pour un bitume ancien exposé au soleil. Le vieillissement se voit aux relevés, aux angles et autour des évacuations avant le reste. Un contrôle tous les quelques années repousse la réfection."
+    },
+    {
+      "question": "Mon toit plat fuit mais je ne trouve pas d'où, comment faites-vous ?",
+      "answer": "Nous commençons par les points faibles : relevés, angles, traversées, évacuations, puis nous inondons le toit par zones en surveillant l'intérieur. Sur un bitume, une sonde ou un test à la fumée aide à localiser. La fuite est rarement là où l'eau apparaît sous le plafond."
+    },
+    {
+      "question": "Puis-je transformer mon toit plat en terrasse ?",
+      "answer": "Souvent, si la structure supporte la charge et si l'urbanisme l'autorise : une terrasse accessible demande en général un permis à Bruxelles, et le vis-à-vis avec les voisins est examiné. La membrane doit être protégée par des dalles sur plots. Nous vérifions la portance avant tout devis."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Un toit plat qui fuit, condense ou garde l'eau ? Appelez le +32 460 22 99 60 : nous passons voir la membrane, devis gratuit sous 48 h."
+    ]
+  },
+  "homeLink": "Toiture Veryroof est aussi votre [[home:couvreur à Bruxelles]] pour les toits en pente, la zinguerie et l'isolation de toute la maison.",
+  "gridIntro": "Choisissez l'option qui correspond à l'état de votre toiture plate :",
+  "gridHeading": "Nos options de toiture plate en détail",
+  "childDescriptions": {
+    "etancheite-epdm-bruxelles": "Membrane de caoutchouc en une seule pièce, souple et sans joint sur un toit simple : notre premier choix pour une annexe.",
+    "roofing-bitumineux-bruxelles": "Bandes de bitume soudées à la flamme, la membrane des toits découpés et des immeubles déjà en roofing.",
+    "reparation-toiture-plate-bruxelles": "Fissure, cloque ou relevé décollé : une intervention ciblée, sans refaire toute l'étanchéité.",
+    "toiture-vegetalisee-bruxelles": "Sedum sur substrat léger, posé sur une membrane anti-racines, une fois le poids admissible vérifié."
+  },
+  "sources": [
+    {
+      "label": "Bruxelles Environnement — bâtiment, énergie et toitures vertes",
+      "url": "https://environnement.brussels/"
+    },
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

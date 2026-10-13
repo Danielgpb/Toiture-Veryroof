@@ -1,0 +1,91 @@
+16:44:15 [content] Syncing content
+16:44:15 [content] Synced content
+16:44:15 [types] Generated 15ms
+16:44:15 [build] output: "static"
+16:44:15 [build] mode: "static"
+16:44:15 [build] directory: /Users/macbook/Desktop/Sites/site /Toiture Veryroof/dist/
+16:44:15 [build] Collecting build info...
+16:44:15 [build] ✓ Completed in 26ms.
+16:44:15 [build] Building static entrypoints...
+16:44:15 [vite] ✓ built in 376ms
+16:44:15 [build] ✓ Completed in 389ms.
+
+ building client (vite) 
+16:44:15 [vite] transforming...
+16:44:15 [vite] ✓ 2 modules transformed.
+16:44:15 [vite] rendering chunks...
+16:44:15 [vite] ✓ built in 6ms
+
+ generating static routes 
+16:44:15 ▶ src/pages/404.astro
+16:44:15   └─ /404.html (+3ms) 
+16:44:15 ▶ src/pages/[slug].astro
+16:44:15   ├─ /reparation-toiture-bruxelles.html (+1ms) 
+16:44:15   ├─ /reparation-fuite-toiture-bruxelles.html (+1ms) 
+16:44:15   ├─ /remplacement-tuiles-ardoises-bruxelles.html (+1ms) 
+16:44:15   ├─ /reparation-toiture-tempete-bruxelles.html (+1ms) 
+16:44:15   ├─ /reparation-faitage-solins-bruxelles.html (+0ms) 
+16:44:15   ├─ /reparation-cheminee-bruxelles.html (+1ms) 
+16:44:15   ├─ /isolation-toiture-bruxelles.html (+0ms) 
+16:44:15   ├─ /isolation-combles-bruxelles.html (+1ms) 
+16:44:15   ├─ /isolation-sarking-bruxelles.html (+1ms) 
+16:44:15   ├─ /isolation-toiture-plate-bruxelles.html (+0ms) 
+16:44:15   ├─ /zinguerie-gouttieres-bruxelles.html (+2ms) 
+16:44:15   ├─ /pose-gouttieres-bruxelles.html (+0ms) 
+16:44:15   ├─ /reparation-gouttieres-bruxelles.html (+0ms) 
+16:44:15   ├─ /nettoyage-gouttieres-bruxelles.html (+0ms) 
+16:44:15   ├─ /cheneaux-descentes-eau-bruxelles.html (+0ms) 
+16:44:15   ├─ /renovation-toiture-bruxelles.html (+0ms) 
+16:44:15   ├─ /toiture-tuiles-bruxelles.html (+0ms) 
+16:44:15   ├─ /toiture-ardoises-bruxelles.html (+0ms) 
+16:44:15   ├─ /toiture-zinc-bruxelles.html (+0ms) 
+16:44:15   ├─ /charpente-bruxelles.html (+0ms) 
+16:44:15   ├─ /enlevement-ardoises-amiante-bruxelles.html (+0ms) 
+16:44:15   ├─ /toiture-plate-bruxelles.html (+0ms) 
+16:44:15   ├─ /etancheite-epdm-bruxelles.html (+0ms) 
+16:44:15   ├─ /roofing-bitumineux-bruxelles.html (+0ms) 
+16:44:15   ├─ /reparation-toiture-plate-bruxelles.html (+0ms) 
+16:44:15   ├─ /toiture-vegetalisee-bruxelles.html (+0ms) 
+16:44:15   ├─ /depannage-toiture-urgence-bruxelles.html (+0ms) 
+16:44:15   ├─ /pose-velux-bruxelles.html (+0ms) 
+16:44:15   ├─ /demoussage-toiture-bruxelles.html (+0ms) 
+16:44:15   ├─ /inspection-toiture-bruxelles.html (+0ms) 
+16:44:15   ├─ /toiture-copropriete-bruxelles.html (+0ms) 
+16:44:15   ├─ /couvreur-uccle.html (+0ms) 
+16:44:15   ├─ /couvreur-watermael-boitsfort.html (+0ms) 
+16:44:15   ├─ /couvreur-rhode-saint-genese.html (+0ms) 
+16:44:15   └─ /couvreur-waterloo.html (+0ms) 
+16:44:15 ▶ src/pages/a-propos.astro
+16:44:15   └─ /a-propos.html (+0ms) 
+16:44:15 ▶ src/pages/contact.astro
+16:44:15   └─ /contact.html (+0ms) 
+16:44:15 ▶ src/pages/mentions-legales.astro
+16:44:15   └─ /mentions-legales.html (+0ms) 
+16:44:15 ▶ src/pages/politique-de-confidentialite.astro
+16:44:15   └─ /politique-de-confidentialite.html (+0ms) 
+16:44:15 ▶ src/pages/services.astro
+16:44:15   └─ /services.html (+0ms) 
+16:44:15 ▶ src/pages/zones-d-intervention.astro
+16:44:15   └─ /zones-d-intervention.html (+0ms) 
+16:44:15 ▶ src/pages/couvreur-bruxelles.astro
+16:44:15   └─ /couvreur-bruxelles.html (+3ms) 
+16:44:15 ▶ /
+16:44:15   └─ /index.html (+1ms) 
+16:44:15 ✓ Completed in 31ms.
+
+ generating optimized images 
+16:44:15   ▶ /_astro/souche-cheminee-solins-zinc.30eTUwsP_22uTfN.webp (before: 254kB, after: 71kB) (+112ms) (1/11)
+16:44:15   ▶ /_astro/hero-toiture-tuiles-bruxelles.Dxrd4nJq_Z1K1YVz.webp (before: 145kB, after: 102kB) (+112ms) (2/11)
+16:44:15   ▶ /_astro/toiture-tuiles-anthracite-cheminee.CsElKwog_Z2unzq5.webp (before: 308kB, after: 104kB) (+112ms) (3/11)
+16:44:15   ▶ /_astro/toiture-plate-etancheite-neuve.BL_KdiS6_tKH5f.webp (before: 377kB, after: 132kB) (+112ms) (4/11)
+16:44:15   ▶ /_astro/isolation-sarking-panneaux-contre-lattes.g54o5juo_Z16foE1.webp (before: 343kB, after: 93kB) (+112ms) (5/11)
+16:44:15   ▶ /_astro/bandeau-corniche-gouttiere-echafaudage.CZgnt3tC_1tG2nj.webp (before: 383kB, after: 112kB) (+124ms) (6/11)
+16:44:15   ▶ /_astro/chevrons-neufs-echafaudage-tuiles.CgtTqMZm_Z2sPQ0z.webp (before: 434kB, after: 137kB) (+131ms) (7/11)
+16:44:15   ▶ /_astro/hero-toiture-tuiles-bruxelles.Dxrd4nJq_Z2fQfvc.webp (before: 145kB, after: 50kB) (+23ms) (8/11)
+16:44:15   ▶ /_astro/toiture-tuiles-neuve-velux-bruxelles.BETuUrTv_1jLUTs.webp (before: 318kB, after: 113kB) (+137ms) (9/11)
+16:44:15   ▶ /_astro/toiture-tuiles-neuve-velux-bruxelles.BETuUrTv_23QkSV.webp (before: 318kB, after: 45kB) (+28ms) (10/11)
+16:44:15   ▶ /_astro/hero-toiture-tuiles-bruxelles.Dxrd4nJq_29Sy9k.webp (before: 145kB, after: 78kB) (+36ms) (11/11)
+16:44:15 ✓ Completed in 172ms.
+
+16:44:15 [build] 43 page(s) built in 638ms
+16:44:15 [build] Complete!

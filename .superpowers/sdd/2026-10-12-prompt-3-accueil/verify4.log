@@ -1,0 +1,110 @@
+
+> toiture-veryroof@0.1.0 verify
+> npm test && astro build && node scripts/check-links.mjs && node --test tests/built/*.test.mjs
+
+
+> toiture-veryroof@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ la teinte accent foncée (texte, boutons) atteint AA 4,5:1 sur blanc et sur fond gris (0.570167ms)
+✔ boutons accent, eyebrows, liens fléchés et badges utilisent la teinte accent foncée (0.187291ms)
+✔ la hiérarchie des services respecte les comptages de la spec (0.459541ms)
+✔ chaque page enfant connaît son parent, les autres n’en ont pas (0.104958ms)
+✔ tous les slugs sont uniques et propres (0.167167ms)
+✔ les pages communes sont des zones desservies, au moins 4 au lancement (0.077125ms)
+✔ les titres H1 suivent « [Service] Bruxelles » (0.049334ms)
+✔ les données NAP sont présentes (0.046041ms)
+✔ cleanPath retire le suffixe .html produit par build.format "file" (0.394ms)
+✔ cleanPath retire un slash final superflu (0.053542ms)
+✔ linkPhone enveloppe chaque occurrence du numéro dans un lien tel: (0.421625ms)
+✔ linkPhone échappe le HTML du texte source (0.063208ms)
+✔ linkText enveloppe une expression dans un lien (0.044333ms)
+✔ linkText refuse une expression absente du texte (erreur de build plutôt qu’un lien perdu) (0.149125ms)
+✔ linkPhone reste silencieux quand le numéro est absent (0.050708ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 82.246125
+16:18:50 [content] Syncing content
+16:18:50 [content] Synced content
+16:18:50 [types] Generated 16ms
+16:18:50 [build] output: "static"
+16:18:50 [build] mode: "static"
+16:18:50 [build] directory: /Users/macbook/Desktop/Sites/site /Toiture Veryroof/dist/
+16:18:50 [build] Collecting build info...
+16:18:50 [build] ✓ Completed in 27ms.
+16:18:50 [build] Building static entrypoints...
+16:18:50 [vite] ✓ built in 315ms
+16:18:50 [build] ✓ Completed in 328ms.
+
+ building client (vite) 
+16:18:51 [vite] transforming...
+16:18:51 [vite] ✓ 2 modules transformed.
+16:18:51 [vite] rendering chunks...
+16:18:51 [vite] ✓ built in 6ms
+
+ generating static routes 
+16:18:51 ▶ src/pages/404.astro
+16:18:51   └─ /404.html (+3ms) 
+16:18:51 ▶ src/pages/[slug].astro
+16:18:51   ├─ /reparation-toiture-bruxelles.html (+1ms) 
+16:18:51   ├─ /reparation-fuite-toiture-bruxelles.html (+1ms) 
+16:18:51   ├─ /remplacement-tuiles-ardoises-bruxelles.html (+1ms) 
+16:18:51   ├─ /reparation-toiture-tempete-bruxelles.html (+0ms) 
+16:18:51   ├─ /reparation-faitage-solins-bruxelles.html (+0ms) 
+16:18:51   ├─ /reparation-cheminee-bruxelles.html (+0ms) 
+16:18:51   ├─ /isolation-toiture-bruxelles.html (+1ms) 
+16:18:51   ├─ /isolation-combles-bruxelles.html (+1ms) 
+16:18:51   ├─ /isolation-sarking-bruxelles.html (+0ms) 
+16:18:51   ├─ /isolation-toiture-plate-bruxelles.html (+0ms) 
+16:18:51   ├─ /zinguerie-gouttieres-bruxelles.html (+0ms) 
+16:18:51   ├─ /pose-gouttieres-bruxelles.html (+0ms) 
+16:18:51   ├─ /reparation-gouttieres-bruxelles.html (+0ms) 
+16:18:51   ├─ /nettoyage-gouttieres-bruxelles.html (+0ms) 
+16:18:51   ├─ /cheneaux-descentes-eau-bruxelles.html (+0ms) 
+16:18:51   ├─ /renovation-toiture-bruxelles.html (+0ms) 
+16:18:51   ├─ /toiture-tuiles-bruxelles.html (+0ms) 
+16:18:51   ├─ /toiture-ardoises-bruxelles.html (+0ms) 
+16:18:51   ├─ /toiture-zinc-bruxelles.html (+1ms) 
+16:18:51   ├─ /charpente-bruxelles.html (+0ms) 
+16:18:51   ├─ /enlevement-ardoises-amiante-bruxelles.html (+0ms) 
+16:18:51   ├─ /toiture-plate-bruxelles.html (+0ms) 
+16:18:51   ├─ /etancheite-epdm-bruxelles.html (+0ms) 
+16:18:51   ├─ /roofing-bitumineux-bruxelles.html (+0ms) 
+16:18:51   ├─ /reparation-toiture-plate-bruxelles.html (+0ms) 
+16:18:51   ├─ /toiture-vegetalisee-bruxelles.html (+0ms) 
+16:18:51   ├─ /depannage-toiture-urgence-bruxelles.html (+0ms) 
+16:18:51   ├─ /pose-velux-bruxelles.html (+0ms) 
+16:18:51   ├─ /demoussage-toiture-bruxelles.html (+0ms) 
+16:18:51   ├─ /inspection-toiture-bruxelles.html (+0ms) 
+16:18:51   ├─ /toiture-copropriete-bruxelles.html (+0ms) 
+16:18:51   ├─ /couvreur-uccle.html (+0ms) 
+16:18:51   ├─ /couvreur-watermael-boitsfort.html (+0ms) 
+16:18:51   ├─ /couvreur-rhode-saint-genese.html (+0ms) 
+16:18:51   └─ /couvreur-waterloo.html (+0ms) 
+16:18:51 ▶ src/pages/a-propos.astro
+16:18:51   └─ /a-propos.html (+0ms) 
+16:18:51 ▶ src/pages/contact.astro
+16:18:51   └─ /contact.html (+0ms) 
+16:18:51 ▶ src/pages/couvreur-bruxelles.astro
+16:18:51   └─ /couvreur-bruxelles.html (+2ms) 
+16:18:51 ▶ src/pages/mentions-legales.astro
+16:18:51   └─ /mentions-legales.html (+0ms) 
+16:18:51 ▶ src/pages/politique-de-confidentialite.astro
+16:18:51   └─ /politique-de-confidentialite.html (+0ms) 
+16:18:51 ▶ src/pages/services.astro
+16:18:51   └─ /services.html (+1ms) 
+16:18:51 ▶ src/pages/zones-d-intervention.astro
+16:18:51   └─ /zones-d-intervention.html (+0ms) 
+16:18:51 ▶ /
+16:18:51   └─ /index.html (+0ms) 
+16:18:51 ✓ Completed in 29ms.
+
+16:18:51 [build] 43 page(s) built in 399ms
+16:18:51 [build] Complete!
+44 pages HTML, 1309 liens internes vérifiés
+/couvreur-bruxelles.html: lien non absolu "${e.dataset.phoneHref}"

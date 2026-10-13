@@ -1,0 +1,112 @@
+{
+  "slug": "couvreur-uccle",
+  "name": "Uccle",
+  "metaTitle": "Couvreur Uccle, toiturier : toiture ancienne et ardoises",
+  "metaDescription": "Couvreur à Uccle : réparation, ardoises, zinguerie et isolation des maisons de maître et des villas. Visite sur place, devis gratuit sous 48 h, garantie.",
+  "h1": "Couvreur à Uccle, toiturier : réparation, rénovation et isolation de toiture",
+  "heroSubheadline": "Du parc de Wolvendael au Fort Jaco, une fuite, une corniche ou une toiture à refaire : nous passons voir, le devis gratuit suit sous 48 h.",
+  "opening": [
+    "Besoin d'un couvreur à Uccle ? Toiture Veryroof, c'est la référence du toit ancien à Uccle : rapide, assuré, devis gratuit. Une auréole au plafond avenue Brugmann, une ardoise envolée au Fort Jaco, une corniche qui déborde à Calevoet ? Appelez le +32 460 22 99 60 : nous venons voir, et vous recevez un devis sous 48 h.",
+    "[[Réparation de fuite de toiture]], [[Remplacement de tuiles et ardoises cassées]], [[Zinguerie et gouttières]], [[Isolation de toiture]] : quel que soit le problème, nous montons et nous réglons ça."
+  ],
+  "rules": {
+    "h2": "Permis et primes à Uccle",
+    "paragraphs": [
+      "Le règlement communal d'urbanisme impose des tuiles ou des ardoises en harmonie avec les toits voisins. Remplacement à l'identique : sans permis. Changement de matériau, lucarne, rehausse : permis d'urbanisme, avec avis de la commission de concertation si la maison est à l'inventaire.",
+      "Primes Renolution suspendues depuis 2025. TVA à 6 % pour un logement de plus de dix ans. Autorisation de voirie pour l'échafaudage sur le trottoir : nous la demandons."
+    ]
+  },
+  "quartiers": [
+    "Uccle-Centre",
+    "Fort Jaco",
+    "Vivier d'Oie",
+    "Saint-Job",
+    "Calevoet",
+    "Stalle",
+    "Observatoire",
+    "Dieweg",
+    "Homborch",
+    "Prince d'Orange"
+  ],
+  "faq": [
+    {
+      "question": "Mon toit en ardoises à Uccle date de 1930, faut-il tout refaire ?",
+      "answer": "Rarement d'un coup. Sur ces toits, l'ardoise tient souvent mieux que ses fixations : nous remplaçons d'abord les crochets et les ardoises glissées, puis la zinguerie si elle est fatiguée. Le remplacement complet se discute quand la sous-toiture manque et que les fuites se multiplient, voyez la [[Toiture en ardoises]]."
+    },
+    {
+      "question": "Puis-je remplacer mes ardoises par des tuiles à Uccle ?",
+      "answer": "Pas sans permis : le règlement communal demande une couverture en harmonie avec les toits voisins, et le changement de matériau modifie l'aspect. Dans une rue de maisons de maître, la commune refuse souvent. L'ardoise artificielle, moins chère, reste la voie la plus simple pour garder l'aspect."
+    },
+    {
+      "question": "Ma maison est à l'inventaire du patrimoine, que change cela pour la toiture ?",
+      "answer": "L'inventaire n'est pas un classement : les travaux restent possibles, mais toute modification visible passe par un permis avec avis de la commission de concertation. Remplacer les ardoises à l'identique ne pose aucun problème. Nous préparons les photos et la description des matériaux pour le dossier."
+    },
+    {
+      "question": "Les grands arbres de mon jardin abîment-ils ma toiture ?",
+      "answer": "Oui, de trois façons : les feuilles bouchent les gouttières, l'ombre entretient la mousse sur le versant nord, et les branches qui frottent usent les ardoises. Un élagage à distance du toit et un [[Nettoyage de gouttières]] chaque automne évitent la plupart des dégâts."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Dites-nous ce que vous voyez, nous venons voir. Appelez le +32 460 22 99 60 : visite sur place, devis gratuit sous 48 h, travaux garantis par écrit."
+    ]
+  },
+  "homeLink": "Toutes nos prestations sont sur la page [[home:couvreur à Bruxelles]].",
+  "summary": "Maisons de maître en ardoises, villas en tuiles, règlement communal : nos interventions à Uccle.",
+  "sources": [
+    {
+      "label": "Commune d'Uccle — site officiel (service de l'urbanisme)",
+      "url": "https://www.uccle.be/"
+    },
+    {
+      "label": "urbanisme.brussels — permis d'urbanisme en Région bruxelloise",
+      "url": "https://urbanisme.brussels/"
+    },
+    {
+      "label": "Renolution — état des primes régionales bruxelloises",
+      "url": "https://renolution.brussels/fr"
+    }
+  ],
+  "updated": "2026-10-13",
+  "problems": {
+    "h2": "Vous avez un problème de toiture à Uccle ? Nous le réglons",
+    "items": [
+      {
+        "problem": "Une auréole au plafond du deuxième étage, avenue Brugmann, et une goutte au grenier les soirs de vent d'ouest ?",
+        "solution": "Nous cherchons l'origine depuis le grenier, remplaçons les crochets rouillés et l'ardoise glissée, sans toucher au reste du versant : [[Réparation de fuite de toiture]]."
+      },
+      {
+        "problem": "Des ardoises dans le jardin après la tempête, sur une villa du Fort Jaco ou du Vivier d'Oie ?",
+        "solution": "Nous bâchons le jour même, photographions pour l'assureur, puis remplaçons par des ardoises assorties : [[Réparation de toiture après tempête]]."
+      },
+      {
+        "problem": "Un versant nord qui verdit à l'ombre du Kauwberg ou du bois de Verrewinkel, et une gouttière pleine de mousse ?",
+        "solution": "Nous démoussons à la brosse, jamais au nettoyeur haute pression, puis nous appliquons l'hydrofuge : [[Démoussage et traitement hydrofuge]]. Les feuilles d'automne, c'est le [[Nettoyage de gouttières]]."
+      },
+      {
+        "problem": "Une corniche en bois qui déborde sur la façade, à Calevoet ou au Dieweg, et le voisin qui voit l'eau couler chez lui ?",
+        "solution": "Nous ressoudons ou remplaçons le bac en zinc, refaisons la moulure, dégageons la descente : [[Zinguerie et gouttières]]."
+      },
+      {
+        "problem": "Des combles aménagés sous un toit ancien près du parc de Wolvendael, glacés l'hiver et étouffants l'été ?",
+        "solution": "Nous isolons entre et sous les chevrons avec pare-vapeur, ou en sarking quand la couverture est à refaire : [[Isolation de toiture]]."
+      },
+      {
+        "problem": "Une couverture entière en fin de vie, et la commune qui a son mot à dire sur l'ardoise ?",
+        "solution": "Nous refaisons tout en ardoises naturelles ou artificielles, sous-toiture et zinguerie neuves, dossier de permis préparé avec vous : [[Rénovation de toiture]]."
+      }
+    ]
+  },
+  "landmarks": [
+    "Parc de Wolvendael",
+    "Observatoire royal",
+    "Cimetière du Dieweg",
+    "Musée Van Buuren",
+    "Place de Saint-Job",
+    "Kauwberg",
+    "Bois de Verrewinkel",
+    "Avenue Brugmann"
+  ],
+  "areaHeading": "De Wolvendael à Saint-Job : nos quartiers à Uccle",
+  "areaIntro": "Uccle, nous connaissons : les maisons de maître de l'avenue Brugmann, les villas sous les hêtres du Kauwberg, les maisons de rangée de Calevoet et de Stalle. Nos rues de tous les jours :"
+}

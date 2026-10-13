@@ -1,0 +1,114 @@
+{
+  "slug": "demoussage-toiture-bruxelles",
+  "name": "Démoussage et traitement hydrofuge",
+  "metaTitle": "Démoussage et traitement hydrofuge de toiture à Bruxelles",
+  "metaDescription": "Démoussage et nettoyage de toiture à Bruxelles : mousse retirée sans haute pression, hydrofuge qui fait perler l'eau. Devis gratuit : +32 460 22 99 60.",
+  "h1": "Démoussage et traitement hydrofuge à Bruxelles : votre toiture nettoyée en douceur et protégée",
+  "heroSubheadline": "Versant nord couvert de mousse, tuiles qui verdissent, ardoises qui restent humides ? Nous nettoyons et protégeons les toits de Bruxelles et des communes voisines, sans nettoyeur haute pression.",
+  "opening": [
+    "Toiture Veryroof démousse et protège les toitures à Bruxelles : mousse retirée à la main et à basse pression, traitement anti-mousse, hydrofuge incolore ou teinté. Sans haute pression qui abîme tuiles et joints."
+  ],
+  "problems": {
+    "h2": "Votre toit verdit ? Nous le nettoyons",
+    "items": [
+      {
+        "problem": "De la mousse épaisse sur le versant nord, qui retient l'eau ?",
+        "solution": "Nous grattons à la main, rinçons à basse pression et appliquons un anti-mousse qui agit pendant les mois suivants."
+      },
+      {
+        "problem": "Des tuiles béton devenues poreuses et toujours humides ?",
+        "solution": "Nous appliquons un hydrofuge après nettoyage, incolore ou teinté, pour que la tuile sèche à nouveau après la pluie."
+      },
+      {
+        "problem": "Des gouttières pleines de mousse tombée du toit ?",
+        "solution": "Nous les vidons dans la même intervention : [[Nettoyage de gouttières]]."
+      },
+      {
+        "problem": "Des tuiles cassées découvertes sous la mousse ?",
+        "solution": "Nous les remplaçons au passage : [[Remplacement de tuiles et ardoises cassées]]."
+      },
+      {
+        "problem": "Un nettoyage à haute pression proposé par un démarcheur ?",
+        "solution": "Nous vous le déconseillons : la haute pression décape la tuile et pousse l'eau sous la couverture."
+      },
+      {
+        "problem": "Une couverture trop usée pour un simple nettoyage ?",
+        "solution": "Nous vous le disons honnêtement et chiffrons une [[Rénovation de toiture]] à la place."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Produits et méthode de démoussage",
+    "items": [
+      {
+        "label": "Nettoyage manuel",
+        "text": "grattoirs et brosses, rinçage à basse pression, débris récupérés dans les gouttières."
+      },
+      {
+        "label": "Anti-mousse",
+        "text": "produit biocide à action lente, pulvérisé sur toiture sèche, agit sur plusieurs mois."
+      },
+      {
+        "label": "Hydrofuge",
+        "text": "incolore ou teinté, à base d'eau ou de solvant, appliqué sur une couverture propre et saine."
+      },
+      {
+        "label": "Sécurité",
+        "text": "harnais et ligne de vie, échelle de toit, pas de marche sur tuiles gelées ou mouillées."
+      },
+      {
+        "label": "Contrôle",
+        "text": "tuiles cassées, faîtage et solins inspectés avec photos."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'un démoussage à Bruxelles",
+    "items": [
+      "La surface et la pente du toit.",
+      "L'épaisseur de la mousse et le nombre de passages de rinçage.",
+      "L'hydrofuge appliqué ou non, incolore ou teinté.",
+      "Prix annoncé avant intervention, devis gratuit pour les réparations relevées ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Le démoussage est-il utile, ou est-ce un attrape-client ?",
+      "answer": "Les deux existent. Sur un toit en tuiles béton ou en ardoises artificielles couvert de mousse, le démoussage évite que les mousses retiennent l'eau, gèlent et fendent le matériau. Sur un toit en ardoises naturelles propre ou légèrement patiné, il ne sert à rien, et nous vous le dirons."
+    },
+    {
+      "question": "Pourquoi le nettoyeur haute pression est-il à proscrire sur une toiture ?",
+      "answer": "Parce qu'il arrache la surface des tuiles béton et des ardoises artificielles, les rend plus poreuses, et que la mousse revient plus vite. Il chasse aussi l'eau sous la couverture et déplace les ardoises. Nous travaillons à la brosse et à basse pression, puis avec un produit qui agit dans les semaines suivantes."
+    },
+    {
+      "question": "Le traitement hydrofuge après démoussage vaut-il son prix ?",
+      "answer": "Oui sur une tuile béton ou une ardoise artificielle poreuse : il réduit l'absorption d'eau et retarde le retour des mousses. Non sur une ardoise naturelle, qui n'absorbe presque rien. Nous ne le proposons que lorsqu'il a un effet réel sur votre matériau."
+    },
+    {
+      "question": "Une entreprise a sonné pour un démoussage immédiat, dois-je accepter ?",
+      "answer": "Non. Le démarchage à domicile pour nettoyer la toiture est la porte d'entrée classique des abus : prix annoncé bas, facture finale élevée, produits inefficaces. Refusez poliment, puis demandez deux devis écrits à des entreprises de votre choix et comparez-les à tête reposée."
+    },
+    {
+      "question": "Mon toit a été démoussé, faut-il le refaire tous les ans ?",
+      "answer": "Non : un démoussage bien fait, suivi d'un traitement, tient plusieurs années, selon l'exposition et les arbres voisins. Un toit orienté nord ou sous des arbres reverdit plus vite. Le signal pour revenir, ce sont les plaques de mousse visibles depuis la rue, pas un calendrier. Entre deux, le [[Nettoyage de gouttières]] enlève ce qui tombe du toit."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Un toit couvert de mousse ? Appelez le +32 460 22 99 60 : nous évaluons l'état des tuiles avant de nettoyer, devis gratuit."
+    ]
+  },
+  "parentLink": "Le démoussage est l'un des entretiens que propose [[home:Toiture Veryroof, votre couvreur bruxellois]], aux côtés de la réparation, de la rénovation et de l'isolation.",
+  "summary": "Mousse et lichen retirés sans haute pression, traitement hydrofuge qui fait perler l'eau et tuiles contrôlées au passage.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    },
+    {
+      "label": "Bruxelles Environnement — amiante : obligations et retrait",
+      "url": "https://environnement.brussels/thematiques/batiment-et-energie/obligations/amiante"
+    }
+  ],
+  "updated": "2026-10-13"
+}

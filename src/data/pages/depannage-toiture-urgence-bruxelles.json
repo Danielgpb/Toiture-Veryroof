@@ -1,0 +1,114 @@
+{
+  "slug": "depannage-toiture-urgence-bruxelles",
+  "name": "Dépannage toiture d'urgence 24h/24",
+  "metaTitle": "Dépannage toiture d'urgence 24h/24 Bruxelles | Bâchage 7j/7",
+  "metaDescription": "Dépannage toiture à Bruxelles 24h/24, 7j/7 : bâchage et mise hors d'eau la nuit comme le week-end, puis réparation sur devis écrit. Tél. +32 460 22 99 60.",
+  "h1": "Dépannage toiture d'urgence 24h/24 à Bruxelles : votre toit mis hors d'eau, de jour comme de nuit",
+  "heroSubheadline": "L'eau coule du plafond en pleine nuit, un coup de vent vient d'arracher des tuiles ? Nous venons à toute heure, à Bruxelles et en périphérie, bâcher votre toit et arrêter l'entrée d'eau.",
+  "opening": [
+    "Toiture Veryroof dépanne les toitures en urgence à Bruxelles, 24h/24 et 7j/7 : bâchage, tuiles et ardoises reposées, faîtière refixée, gouttière débouchée. Le toit est mis hors d'eau d'abord ; la réparation durable se chiffre ensuite, à froid."
+  ],
+  "problems": {
+    "h2": "Votre toit fuit maintenant ? Nous intervenons",
+    "items": [
+      {
+        "problem": "De l'eau qui coule au plafond en pleine nuit ?",
+        "solution": "Nous venons en urgence bâcher la zone et poser des bacs sous les gouttes, puis revenons de jour pour la réparation : [[Réparation de fuite de toiture]]."
+      },
+      {
+        "problem": "Des tuiles tombées dans la rue après une rafale ?",
+        "solution": "Nous sécurisons le trottoir, reposons ou remplaçons les tuiles et contrôlons les rives : [[Réparation de toiture après tempête]]."
+      },
+      {
+        "problem": "Une faîtière ou une rive soulevée qui menace de partir ?",
+        "solution": "Nous la refixons mécaniquement à sec et vérifions les pièces voisines avant de redescendre."
+      },
+      {
+        "problem": "Une gouttière qui déborde en cascade sur la façade ?",
+        "solution": "Nous débouchons la descente, vidons la corniche et posons une crapaudine le soir même."
+      },
+      {
+        "problem": "Un velux ou une coupole qui laisse entrer l'eau ?",
+        "solution": "Nous bâchons ou fermons provisoirement, puis reprenons l'abergement ou le joint au retour du sec."
+      },
+      {
+        "problem": "Une toiture plate avec une flaque qui s'infiltre ?",
+        "solution": "Nous pompons, posons une rustine provisoire et testons à l'eau au retour du beau temps."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Matériel et méthode d'intervention d'urgence",
+    "items": [
+      {
+        "label": "Bâches lourdes",
+        "text": "bâches armées lestées ou liteaunées, jamais clouées dans la couverture saine."
+      },
+      {
+        "label": "Pièces de rechange",
+        "text": "tuiles et ardoises courantes, crochets inox, faîtières et closoirs en stock dans la camionnette."
+      },
+      {
+        "label": "Sécurité",
+        "text": "harnais et ligne de vie ; aucune montée sur un toit mouillé en pleine tempête, on bâche depuis l'intérieur si besoin."
+      },
+      {
+        "label": "Diagnostic",
+        "text": "photos prises de nuit, retour de jour pour le devis de réparation durable."
+      },
+      {
+        "label": "Assurance",
+        "text": "rapport et photos fournis pour votre déclaration de sinistre."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'un dépannage de toiture à Bruxelles",
+    "items": [
+      "L'heure et le jour : nuit, dimanche ou jour férié.",
+      "L'ampleur de l'urgence : quelques tuiles ou un bâchage complet.",
+      "L'accessibilité du toit et la hauteur du bâtiment.",
+      "Tarif du déplacement annoncé au téléphone, devis gratuit pour la réparation durable ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Il pleut dans ma maison maintenant, que faire en attendant votre arrivée ?",
+      "answer": "Coupez l'électricité de la pièce si l'eau approche d'une prise ou d'un luminaire. Placez un seau et percez une petite cloque dans le plafond pour que l'eau s'écoule au lieu de l'arracher, puis éloignez meubles et tapis. Appelez ensuite le +32 460 22 99 60 et décrivez ce que vous voyez."
+    },
+    {
+      "question": "En combien de temps arrivez-vous la nuit ou le week-end ?",
+      "answer": "Dès que l'équipe de garde est libre, le plus souvent dans l'heure qui suit l'appel à Bruxelles, un peu plus en périphérie. Par tempête, les appels se multiplient et nous les traitons dans l'ordre de gravité : eau qui coule à l'intérieur d'abord. Nous vous donnons une heure d'arrivée au téléphone, et nous la tenons."
+    },
+    {
+      "question": "Une bâche tient-elle jusqu'à la réparation définitive ?",
+      "answer": "Oui, si elle est posée dans les règles : lestée, fixée sur des lattes, débordant largement la zone touchée. Elle protège plusieurs semaines, le temps du passage de l'expert et du devis. Une bâche simplement jetée sur le toit s'envole au premier coup de vent."
+    },
+    {
+      "question": "Le dépannage de nuit coûte-t-il plus cher que de jour ?",
+      "answer": "Oui, un supplément s'applique la nuit, le dimanche et les jours fériés, comme chez tout dépanneur : il couvre l'équipe de garde. Il est annoncé au téléphone avant que nous partions. La réparation définitive se fait ensuite aux conditions normales, sur devis, voyez la [[Réparation de fuite de toiture]]."
+    },
+    {
+      "question": "Réparez-vous définitivement la nuit, ou seulement en urgence ?",
+      "answer": "La nuit, nous mettons hors d'eau : bâche, ardoises replacées, descente remise. La réparation durable attend le jour, la lumière et parfois une pièce à commander. Si le défaut est simple et accessible, nous le réglons sur place pour ne pas revenir."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Ça coule ? Appelez le +32 460 22 99 60, jour et nuit : nous mettons le toit hors d'eau, le devis de réparation suit."
+    ]
+  },
+  "parentLink": "Une fois le toit au sec, le reste du métier vous attend chez votre [[home:couvreur à Bruxelles]] : réparation, rénovation, isolation.",
+  "summary": "Fuite en pleine nuit ou tuiles arrachées par le vent : nous bâchons et arrêtons l'eau à toute heure, puis la réparation est planifiée sur devis.",
+  "sources": [
+    {
+      "label": "Assuralia — l'assurance habitation face à la tempête",
+      "url": "https://www.assuralia.be/fr"
+    },
+    {
+      "label": "IRM — observations et avertissements météo en Belgique",
+      "url": "https://www.meteo.be/fr/belgique"
+    }
+  ],
+  "updated": "2026-10-13"
+}

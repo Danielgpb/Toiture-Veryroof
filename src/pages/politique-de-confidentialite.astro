@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, pending } from '../data/site';
+---
+<BaseLayout title="Politique de confidentialité | Toiture Veryroof" description="Politique de confidentialité de toiture-veryroof.be : données collectées par le formulaire de devis, finalités, base légale, conservation et vos droits.">
+  <section class="page-head"><div class="container"><h1>Politique de confidentialité</h1></div></section>
+  <article class="section">
+    <div class="container prose">
+      <p>Cette page explique quelles données {site.name} collecte sur ce site, pourquoi, pendant combien de temps, et quels sont vos droits, conformément au Règlement général sur la protection des données (RGPD).</p>
+      <h2>Responsable du traitement</h2>
+      <p>{site.name}, {site.address.street}, {site.address.postalCode} {site.address.city}, Belgique{site.vat ? ` · ${site.vat}` : ''} · <a href={`mailto:${site.email}`}>{site.email}</a> · <a href={site.phoneHref}>{site.phoneDisplay}</a>.</p>
+      <h2>Données collectées</h2>
+      <p>Par le formulaire de devis : votre nom, votre numéro de téléphone, votre adresse email, le service souhaité, votre message et la page depuis laquelle vous avez écrit. Par le simple fait de naviguer : les journaux techniques de l'hébergeur (adresse IP, pages consultées, navigateur), conservés à des fins de sécurité.</p>
+      <h2>Finalité et base légale</h2>
+      <p>Ces données servent uniquement à répondre à votre demande, à organiser une visite et à établir un devis. Le traitement repose sur l'exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD) et, pour les journaux techniques, sur l'intérêt légitime de sécuriser le site. Aucune donnée n'est utilisée pour de la prospection sans votre accord, ni vendue.</p>
+      <h2>Destinataires et sous-traitants</h2>
+      <!-- Compléter selon l’hébergeur et l’outil de formulaire retenus : pending.host et pending.hostTransferNote dans src/data/site.ts (ex. Netlify Forms, serveurs aux États-Unis, clauses contractuelles types) -->
+      <p>Vos demandes sont reçues par {site.name} et enregistrées dans un outil de suivi des demandes (base de données Supabase, hébergée dans l'Union européenne) utilisé uniquement pour vous rappeler et suivre votre dossier. L'hébergement du site et la réception des formulaires sont assurés par {pending.host ? pending.host : <>un prestataire technique dont les coordonnées sont disponibles sur demande à <a href={`mailto:${site.email}`}>{site.email}</a></>}.{pending.hostTransferNote ? ` ${pending.hostTransferNote}` : ''} Les polices de caractères du site sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google lors de l'affichage des pages.</p>
+      <h2>Durée de conservation</h2>
+      <p>{pending.retentionMonths > 0 ? `Les demandes de devis sont conservées ${pending.retentionMonths} mois après le dernier contact lorsqu'elles ne donnent pas lieu à des travaux.` : `Les demandes de devis qui ne donnent pas lieu à des travaux sont conservées le temps nécessaire pour vous répondre et assurer le suivi de votre demande, puis supprimées.`} Les devis acceptés et les factures sont conservés pendant la durée imposée par la législation comptable et fiscale belge. Les journaux techniques sont conservés par l'hébergeur pendant une durée limitée.</p>
+      <h2>Vos droits</h2>
+      <p>Vous pouvez demander l'accès à vos données, leur rectification, leur effacement, la limitation du traitement, vous opposer au traitement ou demander la portabilité de vos données en écrivant à <a href={`mailto:${site.email}`}>{site.email}</a>. Vous pouvez aussi introduire une réclamation auprès de l'Autorité de protection des données (rue de la Presse 35, 1000 Bruxelles, autoriteprotectiondonnees.be).</p>
+      <h2>Cookies</h2>
+      <p>Ce site ne dépose aucun cookie de suivi ou de publicité. Aucune carte ni vidéo n'est intégrée depuis un service tiers sans votre action. Si un outil de mesure d'audience ou une carte interactive devait être ajouté, cette page et une demande de consentement seraient mises à jour au préalable.</p>
+      <h2>Mise à jour</h2>
+      <p>Dernière mise à jour : octobre 2026. Toute modification sera publiée sur cette page.</p>
+    </div>
+  </article>
+</BaseLayout>

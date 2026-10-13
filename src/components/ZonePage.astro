@@ -1,0 +1,135 @@
+---
+import { getImage, Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceHero from './service/ServiceHero.astro';
+import ContentSection from './service/ContentSection.astro';
+import ServiceFaq from './service/ServiceFaq.astro';
+import Sources from './service/Sources.astro';
+import ProcessSteps from './ProcessSteps.astro';
+import RelatedGrid from './service/RelatedGrid.astro';
+import PageCta from './service/PageCta.astro';
+import ChantierGallery from './service/ChantierGallery.astro';
+import accueil from '../data/accueil.json';
+import { site } from '../data/site';
+import { activeZones, regionLabels } from '../data/zones';
+import { allServicePages } from '../data/services';
+import { pagePhotos, pageGalleries } from '../data/photos';
+import { getPhoto } from '../lib/photos';
+import { renderRich } from '../lib/rich';
+import { richContext, getPageContent, type ZoneContent } from '../lib/pages';
+
+interface Props {
+  content: ZoneContent;
+}
+
+const { content: c } = Astro.props;
+const zone = activeZones.find((z) => z.slug === c.slug);
+if (!zone) throw new Error(`ZonePage : commune inconnue ${c.slug}`);
+const ctx = richContext();
+const rich = (t: string) => renderRich(t, ctx);
+const plain = (t: string) => t.replace(/\[\[home:([^\]]+)\]\]/g, '$1').replace(/\[\[([^\]]+)\]\]/g, '$1');
+const photo = getPhoto(pagePhotos[c.slug]);
+const gallery = (pageGalleries[c.slug] ?? []).map((id) => { const ph = getPhoto(id); return { image: ph.image, alt: ph.alt, caption: ph.caption ?? ph.alt }; });
+const hero = await getImage({ src: photo.image, width: 1600, height: 900, widths: [768, 1200, 1600], sizes: '100vw', format: 'webp', quality: 72 });
+const preloads = [{ href: hero.src, imagesrcset: hero.srcSet.attribute, imagesizes: '100vw' }];
+
+// Autres communes publiées : résumé rédigé quand la page existe, sinon libellé de région.
+const others = activeZones.filter((z) => z.slug !== c.slug).map((z) => {
+  const content = getPageContent(z.slug);
+  return { name: `Couvreur ${z.name}`, slug: z.slug, tag: regionLabels[z.region], description: content && 'summary' in content ? content.summary : undefined };
+});
+
+const orgId = `${site.domain}/#organisation`;
+const pageUrl = `${site.domain}/${c.slug}`;
+const crumbs = [
+  { label: 'Accueil', href: `/${site.homeSlug}` },
+  { label: "Zones d'intervention", href: '/zones-d-intervention' },
+  { label: `Couvreur ${zone.name}` },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}/${site.homeSlug}`, telephone: site.phoneHref.replace('tel:', ''), address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country }, areaServed: { '@type': 'City', name: zone.name } },
+    { '@type': 'Service', '@id': `${pageUrl}#service`, name: `Couvreur à ${zone.name}`, serviceType: 'Travaux de toiture', url: pageUrl, description: c.metaDescription, provider: { '@id': orgId }, areaServed: { '@type': 'City', name: zone.name } },
+    { '@type': 'BreadcrumbList', itemListElement: crumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.label, item: b.href ? `${site.domain}${b.href}` : pageUrl })) },
+    { '@type': 'FAQPage', '@id': `${pageUrl}#faq`, mainEntity: c.faq.map((q) => ({ '@type': 'Question', name: q.question, acceptedAnswer: { '@type': 'Answer', text: plain(q.answer) } })) },
+    { '@type': 'WebPage', '@id': pageUrl, url: pageUrl, name: c.metaTitle, inLanguage: 'fr-BE', datePublished: '2026-10-12', dateModified: c.updated, isPartOf: { '@type': 'WebSite', url: site.domain, name: site.name }, about: { '@id': orgId } },
+  ],
+};
+const faqHeading = c.faqHeading ?? `Vos questions de toiture à ${zone.name}`;
+// Photo de chaque couple problème → solution : le hero du premier service lié dans la solution (demande du client du 13/10/2026).
+const slugByName = new Map(allServicePages().map((pg) => [pg.name, pg.slug]));
+const problemItems = c.problems.items.map((it) => {
+  const first = it.solution.match(/\[\[(?!home:)([^\]]+)\]\]/)?.[1];
+  const slug = first ? slugByName.get(first) : undefined;
+  const ph = slug && pagePhotos[slug] ? getPhoto(pagePhotos[slug]) : null;
+  return { ...it, image: ph?.image, alt: ph?.alt, href: slug ? `/${slug}` : undefined };
+});
+const quartiersHeading = c.areaHeading ?? `Nos quartiers à ${zone.name}`;
+// Style Helpcar : les lieux connus par paires « ✓ A & B », quartiers puis repères.
+const places = [...c.quartiers, ...c.landmarks];
+const pairs: string[] = [];
+for (let i = 0; i < places.length; i += 2) pairs.push(places[i + 1] ? `${places[i]} & ${places[i + 1]}` : places[i]);
+const whyCall = [
+  'Assurés en RC professionnelle et en responsabilité décennale, attestation remise avant le chantier',
+  'Visite sur place, puis devis gratuit et détaillé sous 48 h',
+  'Garantie écrite sur chaque intervention, durée inscrite sur le devis',
+  'Dépannage 24h/24, 7j/7, bâche posée avant tout le reste',
+];
+const faqItems = c.faq.map((q) => ({ question: q.question, answerHtml: rich(q.answer) }));
+---
+<BaseLayout title={c.metaTitle} description={c.metaDescription} preloads={preloads} ogImage={hero.src}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  </Fragment>
+  <ServiceHero h1={c.h1} subheadlineHtml={rich(c.heroSubheadline)} image={hero} imageAlt={photo.alt} trustStrip={accueil.trustStrip} breadcrumb={crumbs} />
+  <article id="contenu" class="section">
+    <div class="container prose">
+      <ContentSection paragraphsHtml={c.opening.map(rich)} />
+      <section class="prose-block zone-problems" id="problemes">
+        <h2>{c.problems.h2}</h2>
+        <ul class="zone-problems__list">
+          {problemItems.map((it) => (
+            <li class="zone-problems__item">
+              {it.image && <a class="zone-problems__photo" href={it.href} tabindex="-1"><Image src={it.image} alt={it.alt!} width={480} height={270} format="webp" quality={72} loading="lazy" /></a>}
+              <div class="zone-problems__text">
+                <h3 class="zone-problems__q" set:html={rich(it.problem)} />
+                <p class="zone-problems__a" set:html={rich(it.solution)} />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section class="prose-block zone-area" id="quartiers">
+        <h2>{quartiersHeading}</h2>
+        {c.areaIntro && <p set:html={rich(c.areaIntro)} />}
+        <ul class="zone-area__list">{pairs.map((pr) => <li>{pr}</li>)}</ul>
+      </section>
+      <ProcessSteps place={zone.name} />
+      <ContentSection h2={c.rules.h2} paragraphsHtml={c.rules.paragraphs.map(rich)} />
+      <section class="prose-block zone-why" id="pourquoi">
+        <h2>Pourquoi appeler Toiture Veryroof ?</h2>
+        <ul class="zone-area__list">{whyCall.map((w) => <li>{w}</li>)}</ul>
+      </section>
+    </div>
+  </article>
+  <Sources items={c.sources} updated={c.updated} />
+  {gallery.length > 0 && <ChantierGallery items={gallery} />}
+  <ServiceFaq heading={faqHeading} items={faqItems} />
+  <RelatedGrid heading="Nos autres communes" items={others} />
+  <PageCta heading={`Un problème de toit à ${zone.name} ?`} paragraphsHtml={c.finalCta.paragraphs.map(rich)} homeLinkHtml={rich(c.homeLink)} />
+</BaseLayout>
+
+<style>
+  .zone-area__list { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.5rem 1.25rem; }
+  .zone-area__list li { padding-left: 1.6rem; position: relative; color: var(--color-primary); }
+  .zone-area__list li::before { content: "✓"; position: absolute; left: 0; color: var(--color-accent-dark); font-weight: 700; }
+  .zone-problems__list { list-style: none; padding: 0; display: grid; gap: 0.9rem; margin: 0 0 1.5rem; }
+  .zone-problems__item { display: grid; grid-template-columns: minmax(0, 220px) 1fr; gap: 1rem 1.25rem; align-items: start; border: 1px solid var(--color-line); border-left: 4px solid var(--color-accent); border-radius: var(--radius); background: #fff; padding: 1rem 1.25rem; }
+  .zone-problems__photo { display: block; border-radius: calc(var(--radius) - 4px); overflow: hidden; }
+  .zone-problems__photo :global(img) { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+  .zone-problems__text { min-width: 0; }
+  @media (max-width: 640px) { .zone-problems__item { grid-template-columns: 1fr; } }
+  .zone-problems__q { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--color-primary); margin: 0 0 0.35rem; }
+  .zone-problems__a { margin: 0; color: var(--color-muted); }
+</style>

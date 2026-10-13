@@ -1,0 +1,129 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import accueil from '../data/accueil.json';
+import { site } from '../data/site';
+import { serviceGroups, generalServices } from '../data/services';
+import { getPageContent } from '../lib/pages';
+import { linkPhone } from '../lib/phone';
+import { pagePhotos } from '../data/photos';
+import { getPhoto } from '../lib/photos';
+// Vignette de chaque carte : la photo de hero de la page (registre src/data/photos.ts), demande du client du 13/10/2026.
+const thumb = (slug: string) => getPhoto(pagePhotos[slug]);
+
+// Descriptions des cartes : le résumé rédigé de chaque page (summary), sinon la description validée dans le JSON du hub.
+const describeChild = (groupSlug: string, childSlug: string) => {
+  const c = getPageContent(childSlug);
+  if (c && 'summary' in c) return c.summary;
+  const g = getPageContent(groupSlug);
+  return g && 'childDescriptions' in g ? g.childDescriptions[childSlug] : undefined;
+};
+const describeGeneral = (slug: string) => {
+  const c = getPageContent(slug);
+  return c && 'summary' in c ? c.summary : undefined;
+};
+const opening = `Vous cherchez un service précis, ou vous ne savez pas encore ce dont votre toit a besoin. Dans les deux cas, vous êtes au bon endroit. ${site.name} prend en charge toute la toiture : de la tuile cassée à la réfection complète, isolation, zinguerie et toits plats compris. Nous dépannons 24h/24, 7j/7 et le devis est gratuit sous 48 h après la visite. Un doute ? Appelez le ${site.phoneDisplay}.`;
+const orgId = `${site.domain}/#organisation`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}/${site.homeSlug}`, telephone: site.phoneHref.replace('tel:', '') },
+    { '@type': 'ItemList', name: 'Services de toiture à Bruxelles', itemListElement: [...serviceGroups.flatMap((g) => [g, ...g.children]), ...generalServices].map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, url: `${site.domain}/${s.slug}` })) },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}/${site.homeSlug}` }, { '@type': 'ListItem', position: 2, name: 'Services', item: `${site.domain}/services` }] },
+  ],
+};
+---
+<BaseLayout title="Services de toiture Bruxelles | Liste complète et devis" description="Tous nos services de toiture à Bruxelles : réparation, rénovation, toiture plate, isolation, zinguerie, gouttières, Velux, démoussage. Devis gratuit sous 48 h.">
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  </Fragment>
+  <section id="hero" class="page-head services-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={`/${site.homeSlug}`}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">Services</span></li></ol></nav>
+      <h1>Services de toiture à Bruxelles : un couvreur pour chaque intervention</h1>
+      <p class="services-head__sub">Trouvez le service qu'il vous faut, ou appelez-nous : nous verrons ensemble ce dont votre toit a besoin.</p>
+      <div class="services-head__cta">
+        <a class="btn btn--accent btn--lg" href={site.phoneHref}><Icon name="phone" size={20} /> Appeler le {site.phoneDisplay}</a>
+        <a class="btn btn--outline btn--lg" href="/contact">Demander un devis</a>
+      </div>
+      <ul class="trust">{accueil.trustStrip.map((t) => <li><Icon name="check" size={18} /> {t}</li>)}</ul>
+    </div>
+  </section>
+  <section id="contenu" class="section">
+    <div class="container prose">
+      <p set:html={linkPhone(opening, site.phoneDisplay, site.phoneHref)} />
+    </div>
+  </section>
+  {serviceGroups.map((group) => (
+    <section id={`groupe-${group.slug}`} class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">{group.kind === 'core' ? 'Service phare' : 'Catégorie'}</p>
+          <h2 class="section-title"><a href={`/${group.slug}`}>{group.name}</a></h2>
+        </div>
+        <div class="grid grid--3">
+          {group.children.map((child) => (
+            <article class="card svc">
+              <a class="svc__thumb" href={`/${child.slug}`} tabindex="-1"><Image src={thumb(child.slug).image} alt={thumb(child.slug).alt} width={480} height={270} format="webp" quality={72} loading="lazy" /></a>
+              <h3><a href={`/${child.slug}`}>{child.name}</a></h3>
+              {describeChild(group.slug, child.slug) && <p>{describeChild(group.slug, child.slug)}</p>}
+              <a class="link-arrow" href={`/${child.slug}`}>En savoir plus <Icon name="arrow" size={18} /></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+  <section id="groupe-general" class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Services généraux</p>
+        <h2 class="section-title">Autres services de toiture</h2>
+      </div>
+      <div class="grid grid--3">
+        {generalServices.map((service) => (
+          <article class="card svc">
+            <a class="svc__thumb" href={`/${service.slug}`} tabindex="-1"><Image src={thumb(service.slug).image} alt={thumb(service.slug).alt} width={480} height={270} format="webp" quality={72} loading="lazy" /></a>
+            <h3><a href={`/${service.slug}`}>{service.name}</a></h3>
+            {describeGeneral(service.slug) && <p>{describeGeneral(service.slug)}</p>}
+            <a class="link-arrow" href={`/${service.slug}`}>En savoir plus <Icon name="arrow" size={18} /></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section id="cta-final" class="services-cta">
+    <div class="container services-cta__inner">
+      <h2>Vous ne savez pas ce qu'il vous faut ?</h2>
+      <p>Appelez le <a href={site.phoneHref}>{site.phoneDisplay}</a> : nous diagnostiquons le problème et nous vous proposons la bonne solution, avec un devis gratuit sous 48 h après la visite.</p>
+      <a class="btn btn--accent btn--lg" href={site.phoneHref}>Appeler maintenant</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-head .crumbs ol { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; gap: 0.35rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); }
+  .services-head .crumbs li { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .services-head .crumbs a { color: #fff; text-decoration: none; }
+  .services-head__sub { font-size: 1.1rem; max-width: 60ch; margin: 0 0 1.5rem !important; }
+  .services-head__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; font-weight: 600; font-size: 0.95rem; }
+  .trust li { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .trust svg { color: #F3B48F; }
+  .section-title a { text-decoration: none; color: var(--color-primary); }
+  .section-title a:hover { color: var(--color-accent-dark); }
+  .svc { display: flex; flex-direction: column; }
+  .svc__thumb { display: block; margin: 0 0 0.9rem; border-radius: calc(var(--radius) - 4px); overflow: hidden; }
+  .svc__thumb :global(img) { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.3s ease; }
+  .svc:hover .svc__thumb :global(img) { transform: scale(1.03); }
+  .svc h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .svc h3 a { text-decoration: none; color: var(--color-primary); }
+  .svc p { color: var(--color-muted); flex: 1; }
+  .services-cta { background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary) 60%, #2D4A6B); color: #fff; padding: clamp(3rem, 7vw, 5rem) 0; }
+  .services-cta__inner { text-align: center; max-width: 720px; }
+  .services-cta h2 { color: #fff; }
+  .services-cta p { color: rgba(255, 255, 255, 0.88); font-size: 1.05rem; }
+  .services-cta p a { color: #fff; font-weight: 700; }
+  @media (max-width: 600px) { .services-head__cta .btn { width: 100%; } }
+</style>

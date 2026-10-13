@@ -1,0 +1,25 @@
+---
+interface Props {
+  heading: string;
+  /** Code d'intégration des avis Google (pending.reviewsEmbed) : la section n'est rendue que s'il est renseigné. */
+  embed: string;
+}
+
+const { heading, embed } = Astro.props;
+---
+<!-- COLLER ICI LE CODE D’INTÉGRATION DES AVIS GOOGLE : renseigner pending.reviewsEmbed dans src/data/site.ts ; la section « Avis » s’affiche dès qu’il est présent. -->
+{embed && (
+  <section id="avis" class="section section--alt reviews">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Avis clients</p>
+        <h2 class="section-title">{heading}</h2>
+      </div>
+      <div class="reviews__embed" set:html={embed} />
+    </div>
+  </section>
+)}
+
+<style>
+  .reviews__embed { max-width: 860px; margin: 0 auto; }
+</style>

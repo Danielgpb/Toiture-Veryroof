@@ -1,0 +1,39 @@
+---
+import QuoteForm from '../QuoteForm.astro';
+import { site } from '../../data/site';
+import { linkPhone } from '../../lib/phone';
+
+interface Props {
+  heading: string;
+  reassurance: string;
+  points: string[];
+}
+
+const { heading, reassurance, points } = Astro.props;
+---
+<section id="devis" class="section lead">
+  <div class="container lead__inner">
+    <div class="lead__text">
+      <p class="eyebrow eyebrow--light">Devis gratuit</p>
+      <h2>{heading}</h2>
+      <p class="lead__reassurance" set:html={linkPhone(reassurance, site.phoneDisplay, site.phoneHref)} />
+      <ul class="lead__points">
+        {points.map((p) => <li>{p}</li>)}
+      </ul>
+    </div>
+    <QuoteForm action={`/${site.homeSlug}`} />
+  </div>
+</section>
+
+<style>
+  .lead { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: #fff; }
+  .lead__inner { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 900px) { .lead__inner { grid-template-columns: 1fr 1.1fr; gap: 4rem; } }
+  .lead h2 { color: #fff; }
+  .eyebrow--light { color: #F3B48F; }
+  .lead__reassurance { color: rgba(255, 255, 255, 0.85); }
+  .lead__reassurance :global(a) { color: #fff; font-weight: 700; }
+  .lead__points { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: 0.5rem; }
+  .lead__points li { padding-left: 1.6rem; position: relative; }
+  .lead__points li::before { content: "✓"; position: absolute; left: 0; color: #F3B48F; font-weight: 800; }
+</style>

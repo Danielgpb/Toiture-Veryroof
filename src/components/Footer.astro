@@ -1,0 +1,83 @@
+---
+import { site, pending } from '../data/site';
+
+const socials = [
+  { label: 'Facebook', short: 'f', url: pending.social.facebook },
+  { label: 'Google', short: 'G', url: pending.social.google },
+  { label: 'LinkedIn', short: 'in', url: pending.social.linkedin },
+  { label: 'Instagram', short: 'ig', url: pending.social.instagram },
+].filter((s) => s.url);
+import { serviceGroups, generalServices } from '../data/services';
+import { activeZones } from '../data/zones';
+
+const year = new Date().getFullYear();
+const quickLinks = [
+  ...site.nav,
+  { label: "Zones d'intervention", href: '/zones-d-intervention' },
+];
+---
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <p class="footer__logo">Toiture <strong>Veryroof</strong></p>
+      <p>{site.tagline}.</p>
+      <a class="footer__phone" href={site.phoneHref}>{site.phoneDisplay}</a>
+      <address class="footer__address">
+        {site.address.street}<br />
+        {site.address.postalCode} {site.address.city}<br />
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        {site.vat && <><br /><span>{site.vat}</span></>}
+      </address>
+      <!-- Réseaux sociaux : renseigner pending.social dans src/data/site.ts (Facebook, fiche Google, LinkedIn, Instagram) ; seuls les profils renseignés s'affichent. -->
+      {socials.length > 0 && (
+        <div class="social" aria-label="Réseaux sociaux">
+          {socials.map((s) => <a class="social__item" href={s.url} title={s.label} aria-label={s.label} rel="noopener" target="_blank">{s.short}</a>)}
+        </div>
+      )}
+    </div>
+    <div>
+      <p class="footer__title">Liens rapides</p>
+      <ul class="footer__list">
+        {quickLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="footer__title">Nos services</p>
+      <ul class="footer__list">
+        {serviceGroups.map((g) => <li><a href={`/${g.slug}`}>{g.name}</a></li>)}
+        {generalServices.map((s) => <li><a href={`/${s.slug}`}>{s.name}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="footer__title">Zones d'intervention</p>
+      <ul class="footer__list">
+        {activeZones.map((z) => <li><a href={`/${z.slug}`}>Couvreur {z.name}</a></li>)}
+        <li><a href="/zones-d-intervention">Toutes nos zones d'intervention</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>© {year} {site.name}. Tous droits réservés.</p>
+      <p><a href="/mentions-legales">Mentions légales</a> · <a href="/politique-de-confidentialite">Politique de confidentialité</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { background: var(--color-primary); color: rgba(255, 255, 255, 0.85); margin-top: 3rem; }
+  .footer a { color: #fff; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .footer__grid { display: grid; gap: 2rem; padding: 3.5rem 0 2.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .footer__logo { font-family: var(--font-heading); font-size: 1.4rem; color: #fff; margin: 0 0 0.5rem; }
+  .footer__logo strong { font-weight: 800; }
+  .footer__phone { display: inline-block; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #fff; margin: 0.25rem 0 1rem; }
+  .footer__address { font-style: normal; line-height: 1.7; }
+  .footer__title { font-family: var(--font-heading); font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; margin: 0 0 1rem; }
+  .footer__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .social { display: flex; gap: 0.6rem; margin-top: 1rem; }
+  .social__item { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); font-weight: 700; color: #fff; }
+  .footer__bottom { border-top: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.9rem; }
+  .footer__bottom-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; padding: 1.25rem 0; }
+  .footer__bottom p { margin: 0; }
+</style>

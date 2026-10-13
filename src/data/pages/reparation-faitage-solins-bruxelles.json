@@ -1,0 +1,110 @@
+{
+  "slug": "reparation-faitage-solins-bruxelles",
+  "name": "Réparation de faîtage et de solins",
+  "metaTitle": "Réparation de faîtage et de solins Bruxelles | Devis gratuit",
+  "metaDescription": "Réparation de faîtage fissuré et de solins décollés à Bruxelles : raccords en zinc ou en plomb refaits, pas mastiqués. Devis gratuit sous 48 h.",
+  "h1": "Réparation de faîtage et de solins à Bruxelles : des raccords refaits, pas mastiqués",
+  "heroSubheadline": "Du mortier qui s'effrite au sommet du toit, une bande de zinc qui bâille contre le mur du voisin ou la cheminée : nous refaisons ces raccords au lieu de les boucher au mastic.",
+  "opening": [
+    "Toiture Veryroof refait faîtages et solins à Bruxelles dans les règles : faîtage à sec sous closoir ventilé, solins en zinc ou en plomb engravés dans la maçonnerie. Deux points du toit qui lâchent en premier, réparés pour durer."
+  ],
+  "problems": {
+    "h2": "Votre faîtage ou vos solins fuient ? Nous les refaisons",
+    "items": [
+      {
+        "problem": "Du mortier qui tombe du faîtage par plaques et des faîtières qui bougent ?",
+        "solution": "Nous déposons le faîtage, posons un closoir ventilé et refixons les faîtières à sec, vis et crochets inox : plus aucun joint à refaire au gel."
+      },
+      {
+        "problem": "Une fissure dans le solin au pied de la cheminée ?",
+        "solution": "Nous engravons un solin neuf en plomb ou en zinc dans un joint de la maçonnerie, avec contre-bavette, et vérifions la souche : [[Réparation de souche de cheminée]]."
+      },
+      {
+        "problem": "Un solin collé au mastic qui se décolle au bout d'un an ?",
+        "solution": "Nous retirons le mastic, reprenons le relevé à la bonne hauteur et posons un solin métallique engravé, la seule réparation durable."
+      },
+      {
+        "problem": "De l'eau qui entre le long du mur mitoyen plus haut que le toit ?",
+        "solution": "Nous refaisons le solin de rive contre le mur, avec bavette et couvre-mur en zinc si nécessaire : [[Chéneaux, noues et descentes d'eau pluviale]]."
+      },
+      {
+        "problem": "Des tuiles de rive ou d'arêtier descellées ?",
+        "solution": "Nous les refixons à sec avec pattes et closoirs, et remplaçons celles qui sont cassées : [[Remplacement de tuiles et ardoises cassées]]."
+      },
+      {
+        "problem": "Une fuite dont vous soupçonnez le faîtage sans certitude ?",
+        "solution": "Nous testons à l'eau faîtage, solins et noues avant de démonter quoi que ce soit : [[Réparation de fuite de toiture]]."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Matériaux et techniques pour faîtages et solins",
+    "items": [
+      {
+        "label": "Faîtage à sec",
+        "text": "closoir ventilé en rouleau, faîtières fixées par vis et crochets inox, ventilation du toit assurée."
+      },
+      {
+        "label": "Faîtage au mortier",
+        "text": "uniquement en rejointoyage ponctuel sur un faîtage sain, mortier bâtard souple."
+      },
+      {
+        "label": "Solins",
+        "text": "plomb ou zinc engravé dans la maçonnerie, contre-bavette, hauteur de relevé respectée."
+      },
+      {
+        "label": "Noues et rives",
+        "text": "zinc titane avec recouvrements, pattes de rive inox."
+      },
+      {
+        "label": "Contrôle",
+        "text": "test d'arrosage, photos avant et après depuis le toit."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'un faîtage ou d'un solin à Bruxelles",
+    "items": [
+      "La longueur de faîtage ou le nombre de solins à reprendre.",
+      "L'accès : depuis le toit ou avec un échafaudage en bord de rue.",
+      "Le métal retenu, plomb ou zinc, et l'état de la maçonnerie à engraver.",
+      "Devis gratuit, poste par poste, sans surprise après signature ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Solin au plomb ou bande bitumineuse adhésive : lequel tient dans le temps ?",
+      "answer": "Le plomb, ou le zinc façonné, pour une réparation durable : il épouse la maçonnerie et se dilate sans se décoller. La bande adhésive dépanne un hiver, puis l'UV et le gel la décollent par les bords. Nous l'acceptons comme mise hors d'eau provisoire, jamais comme réparation finale."
+    },
+    {
+      "question": "Le mortier de mon faîtage s'effrite, faut-il tout refaire ?",
+      "answer": "Si les tuiles faîtières bougent à la main ou si le mortier tombe par plaques, oui, il faut reposer le faîtage. Nous proposons alors le faîtage à sec, fixé mécaniquement sous un closoir ventilé, qui ne se fissure plus au gel. Quand seuls quelques joints sont ouverts, un rejointoyage suffit."
+    },
+    {
+      "question": "Pourquoi mon solin fuit-il alors qu'il a été refait il y a peu ?",
+      "answer": "Le plus souvent parce qu'il a été collé au mastic plutôt qu'engravé dans un joint de la maçonnerie. Le mastic se rétracte et laisse l'eau passer derrière. Une autre cause fréquente est la souche elle-même, dont les joints boivent l'eau : voyez notre [[Réparation de souche de cheminée]]."
+    },
+    {
+      "question": "Un solin fuit-il à cause de la pluie ou de la neige ?",
+      "answer": "Les deux, mais pas de la même façon. La pluie battante passe par une fissure ou un décollement, la neige fondante remonte par capillarité sous un solin trop court. Nous vérifions la hauteur du relevé et la contre-bavette, pas seulement l'étanchéité apparente."
+    },
+    {
+      "question": "Peut-on réparer un faîtage ou un solin sans échafaudage ?",
+      "answer": "Parfois, depuis une fenêtre de toit, une lucarne ou une nacelle, quand l'accès est sûr. Sur une maison bruxelloise à trois niveaux côté rue, l'échafaudage reste la règle, avec l'autorisation de voirie que nous demandons à la commune. Le devis le précise avant toute intervention."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Faîtage qui s'effrite, solin qui fuit ? Appelez le +32 460 22 99 60 : nous venons voir depuis le toit, et le devis gratuit suit."
+    ]
+  },
+  "parentLink": "Faîtage et solins font partie des raccords que nous traitons : retrouvez l'ensemble sur la page [[Réparation de toiture]].",
+  "summary": "Faîtage fissuré ou descellé, solin de zinc ou de plomb décollé : nous refaisons ces raccords proprement au lieu de les mastiquer.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

@@ -1,0 +1,103 @@
+
+> toiture-veryroof@0.1.0 verify
+> npm test && astro build && node scripts/check-links.mjs
+
+
+> toiture-veryroof@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ la hiérarchie des services respecte les comptages de la spec (0.543291ms)
+✔ chaque page enfant connaît son parent, les autres n’en ont pas (0.168167ms)
+✔ tous les slugs sont uniques et propres (0.203792ms)
+✔ les pages communes sont des zones desservies, au moins 4 au lancement (0.086084ms)
+✔ les titres H1 suivent « [Service] Bruxelles » (0.050084ms)
+✔ les données NAP sont présentes (0.044167ms)
+✔ cleanPath retire le suffixe .html produit par build.format "file" (0.374917ms)
+✔ cleanPath retire un slash final superflu (0.049917ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 80.657
+14:53:15 [content] Syncing content
+14:53:15 [content] Synced content
+14:53:15 [types] Generated 14ms
+14:53:15 [build] output: "static"
+14:53:15 [build] mode: "static"
+14:53:15 [build] directory: /Users/macbook/Desktop/Sites/site /Toiture Veryroof/dist/
+14:53:15 [build] Collecting build info...
+14:53:15 [build] ✓ Completed in 20ms.
+14:53:15 [build] Building static entrypoints...
+14:53:16 [vite] ✓ built in 266ms
+14:53:16 [build] ✓ Completed in 279ms.
+
+ building client (vite) 
+14:53:16 [vite] transforming...
+14:53:16 [vite] ✓ 1 modules transformed.
+14:53:16 [vite] rendering chunks...
+14:53:16 [vite] ✓ built in 4ms
+
+ generating static routes 
+14:53:16 ▶ src/pages/404.astro
+14:53:16   └─ /404.html (+3ms) 
+14:53:16 ▶ src/pages/[slug].astro
+14:53:16   ├─ /reparation-toiture-bruxelles.html (+1ms) 
+14:53:16   ├─ /reparation-fuite-toiture-bruxelles.html (+1ms) 
+14:53:16   ├─ /remplacement-tuiles-ardoises-bruxelles.html (+1ms) 
+14:53:16   ├─ /reparation-toiture-tempete-bruxelles.html (+1ms) 
+14:53:16   ├─ /reparation-faitage-solins-bruxelles.html (+1ms) 
+14:53:16   ├─ /reparation-cheminee-bruxelles.html (+0ms) 
+14:53:16   ├─ /isolation-toiture-bruxelles.html (+0ms) 
+14:53:16   ├─ /isolation-combles-bruxelles.html (+1ms) 
+14:53:16   ├─ /isolation-sarking-bruxelles.html (+1ms) 
+14:53:16   ├─ /isolation-toiture-plate-bruxelles.html (+1ms) 
+14:53:16   ├─ /zinguerie-gouttieres-bruxelles.html (+1ms) 
+14:53:16   ├─ /pose-gouttieres-bruxelles.html (+0ms) 
+14:53:16   ├─ /reparation-gouttieres-bruxelles.html (+0ms) 
+14:53:16   ├─ /nettoyage-gouttieres-bruxelles.html (+0ms) 
+14:53:16   ├─ /cheneaux-descentes-eau-bruxelles.html (+0ms) 
+14:53:16   ├─ /renovation-toiture-bruxelles.html (+0ms) 
+14:53:16   ├─ /toiture-tuiles-bruxelles.html (+0ms) 
+14:53:16   ├─ /toiture-ardoises-bruxelles.html (+0ms) 
+14:53:16   ├─ /toiture-zinc-bruxelles.html (+0ms) 
+14:53:16   ├─ /charpente-bruxelles.html (+0ms) 
+14:53:16   ├─ /enlevement-ardoises-amiante-bruxelles.html (+0ms) 
+14:53:16   ├─ /toiture-plate-bruxelles.html (+1ms) 
+14:53:16   ├─ /etancheite-epdm-bruxelles.html (+0ms) 
+14:53:16   ├─ /roofing-bitumineux-bruxelles.html (+0ms) 
+14:53:16   ├─ /reparation-toiture-plate-bruxelles.html (+0ms) 
+14:53:16   ├─ /toiture-vegetalisee-bruxelles.html (+0ms) 
+14:53:16   ├─ /depannage-toiture-urgence-bruxelles.html (+0ms) 
+14:53:16   ├─ /pose-velux-bruxelles.html (+0ms) 
+14:53:16   ├─ /demoussage-toiture-bruxelles.html (+0ms) 
+14:53:16   ├─ /inspection-toiture-bruxelles.html (+0ms) 
+14:53:16   ├─ /toiture-copropriete-bruxelles.html (+0ms) 
+14:53:16   ├─ /couvreur-uccle.html (+0ms) 
+14:53:16   ├─ /couvreur-watermael-boitsfort.html (+0ms) 
+14:53:16   ├─ /couvreur-rhode-saint-genese.html (+0ms) 
+14:53:16   └─ /couvreur-waterloo.html (+0ms) 
+14:53:16 ▶ src/pages/a-propos.astro
+14:53:16   └─ /a-propos.html (+0ms) 
+14:53:16 ▶ src/pages/contact.astro
+14:53:16   └─ /contact.html (+0ms) 
+14:53:16 ▶ src/pages/couvreur-bruxelles.astro
+14:53:16   └─ /couvreur-bruxelles.html (+1ms) 
+14:53:16 ▶ src/pages/mentions-legales.astro
+14:53:16   └─ /mentions-legales.html (+1ms) 
+14:53:16 ▶ src/pages/politique-de-confidentialite.astro
+14:53:16   └─ /politique-de-confidentialite.html (+0ms) 
+14:53:16 ▶ src/pages/services.astro
+14:53:16   └─ /services.html (+0ms) 
+14:53:16 ▶ src/pages/zones-d-intervention.astro
+14:53:16   └─ /zones-d-intervention.html (+1ms) 
+14:53:16 ▶ /
+14:53:16   └─ /index.html (+0ms) 
+14:53:16 ✓ Completed in 30ms.
+
+14:53:16 [build] 43 page(s) built in 341ms
+14:53:16 [build] Complete!
+44 pages HTML, 1285 liens internes vérifiés
+OK : aucun lien cassé, aucune ancre, aucun slash final, aucune page orpheline

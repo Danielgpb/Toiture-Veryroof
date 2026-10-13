@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  heading?: string;
+  lead?: string;
+  items: { image: ImageMetadata; alt: string; caption: string }[];
+}
+// Photos de chantier de l'entreprise (provenance confirmée par le client le 13/10/2026).
+const { heading = 'Sur nos chantiers', lead = 'Photos prises sur nos chantiers, à Bruxelles et en périphérie.', items } = Astro.props;
+---
+<section id="chantier" class="section section--alt chantier">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Nos réalisations</p>
+      <h2 class="section-title">{heading}</h2>
+      <p class="section-lead">{lead}</p>
+    </div>
+    <div class={`chantier__grid chantier__grid--${Math.min(items.length, 3)}`}>
+      {items.map((it) => (
+        <figure class="chantier__fig">
+          <Image src={it.image} alt={it.alt} width={800} height={600} format="webp" quality={76} />
+          <figcaption>{it.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .chantier__grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 700px) {
+    .chantier__grid--2 { grid-template-columns: repeat(2, 1fr); }
+    .chantier__grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .chantier__grid--1 { max-width: 760px; }
+  }
+  .chantier__fig { margin: 0; background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); overflow: hidden; }
+  .chantier__fig :global(img) { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+  .chantier__fig figcaption { padding: 0.75rem 1rem; font-size: 0.95rem; color: var(--color-muted); }
+</style>

@@ -1,0 +1,110 @@
+{
+  "slug": "reparation-toiture-plate-bruxelles",
+  "name": "Réparation de toiture plate",
+  "metaTitle": "Réparation de toiture plate Bruxelles | Cloque, fissure",
+  "metaDescription": "Cloque, fissure ou relevé décollé à Bruxelles ? Réparation de toiture plate localisée, sans tout refaire, garantie écrite. Devis gratuit sous 48 h.",
+  "h1": "Réparation de toiture plate à Bruxelles : le défaut réparé sans refaire toute l'étanchéité",
+  "heroSubheadline": "Une tache au plafond de l'annexe après la pluie, une cloque ou un relevé qui bâille : nous trouvons le défaut, le réparons sur place et vous remettons une garantie écrite.",
+  "opening": [
+    "Toiture Veryroof répare les toits plats à Bruxelles : fuite localisée au test à l'eau, rustine soudée ou collée, relevé refait, avaloir débouché. Une intervention ciblée avant de parler de remplacement."
+  ],
+  "problems": {
+    "h2": "Votre toit plat fuit ? Nous le réparons",
+    "items": [
+      {
+        "problem": "Une tache au plafond sans fissure visible sur le toit ?",
+        "solution": "Nous testons à l'eau zone par zone et contrôlons les relevés, les avaloirs et les coupoles, points de fuite les plus fréquents."
+      },
+      {
+        "problem": "Une cloque ou une fissure sur un roofing bitumineux ?",
+        "solution": "Nous ouvrons, séchons et soudons une rustine en bitume avec recouvrement large, finition ardoisée."
+      },
+      {
+        "problem": "Un EPDM qui décolle au relevé ou autour d'une sortie ?",
+        "solution": "Nous nettoyons, apprêtons et posons une pièce EPDM autocollante, puis refixons le profilé."
+      },
+      {
+        "problem": "Une flaque permanente qui ronge la membrane ?",
+        "solution": "Nous ajoutons un trop-plein ou corrigeons la pente localement avec un panneau de rattrapage."
+      },
+      {
+        "problem": "Un avaloir bouché, une feuille de zinc soulevée ?",
+        "solution": "Nous débouchons l'avaloir, posons une crapaudine et refixons le solin avec des pattes neuves."
+      },
+      {
+        "problem": "Une membrane trop usée pour être réparée ?",
+        "solution": "Nous vous le disons après le test : [[Toiture EPDM]] ou [[Roofing bitumineux]] neuf, chiffrés sur le même devis."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Matériel et techniques de réparation",
+    "items": [
+      {
+        "label": "Test à l'eau",
+        "text": "zones mises en eau une à une, fuite localisée avant toute réparation."
+      },
+      {
+        "label": "Rustines bitume",
+        "text": "soudées au chalumeau, recouvrement large, finition ardoisée assortie."
+      },
+      {
+        "label": "Pièces EPDM",
+        "text": "rubans et pièces autovulcanisantes, apprêt, roulette de marouflage."
+      },
+      {
+        "label": "Relevés et solins",
+        "text": "profilés alu, bandes de solin en zinc, mastic polyuréthane de finition."
+      },
+      {
+        "label": "Évacuations",
+        "text": "avaloirs remplacés, crapaudines posées, trop-pleins ajoutés si l'eau stagne."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une réparation de toiture plate à Bruxelles",
+    "items": [
+      "La surface à réparer et le nombre de points de fuite.",
+      "Le type de membrane : bitume ou EPDM.",
+      "L'accès au toit et la hauteur du bâtiment.",
+      "Devis gratuit après test à l'eau, le plus souvent réglé en une seule venue, TVA réduite pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "La fuite de mon toit plat vient-elle du relevé le long du mur ?",
+      "answer": "C'est le suspect numéro un : le relevé contre le mur ou l'acrotère se décolle, se fissure ou n'est pas assez haut, et l'eau passe derrière. Nous le refaisons sur une hauteur suffisante, avec un solin ou une bande de recouvrement. Le reste de la membrane est souvent encore sain."
+    },
+    {
+      "question": "La coupole ou le lanterneau fuit, est-ce la coupole ou le toit ?",
+      "answer": "Les deux se confondent : le joint entre le cadre et la membrane fatigue avant la coupole elle-même, et l'eau coule le long de l'embase. Nous testons séparément la coupole, fermée, puis son raccord. Un lanterneau ancien gagne souvent à être remplacé avec un nouveau raccord étanche."
+    },
+    {
+      "question": "Mon évacuation de toit plat déborde, que faire ?",
+      "answer": "Dégager la crapaudine et le tuyau, puis vérifier que l'eau s'écoule jusqu'à l'égout. Une évacuation seule pour un grand toit est un risque : nous ajoutons un trop-plein en façade, qui évite l'inondation en cas de bouchon. Les évacuations sont détaillées à la page [[Chéneaux, noues et descentes d'eau pluviale]], trop-plein compris."
+    },
+    {
+      "question": "La mousse sur un toit plat abîme-t-elle la membrane ?",
+      "answer": "Oui, à la longue : elle retient l'eau, et ses racines s'insinuent dans les joints d'un roofing ou soulèvent les gravillons. Un nettoyage doux et un traitement suffisent sur une membrane saine. Un toit qui reverdit vite signale souvent une pente insuffisante."
+    },
+    {
+      "question": "Réparer un toit plat en hiver, est-ce possible ?",
+      "answer": "Oui, par temps sec et au-dessus de quelques degrés : l'EPDM se colle et le roofing se soude. Par gel ou pluie, nous posons une protection provisoire et revenons dès que la météo le permet. Une infiltration en hiver ne doit pas attendre le printemps."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Une fuite sur un toit plat ? Appelez le +32 460 22 99 60 : nous mettons le toit en eau pour trouver la fuite, devis gratuit."
+    ]
+  },
+  "parentLink": "Vous hésitez entre réparer et refaire ? Notre page [[Toiture plate]] explique les signes qui font pencher d'un côté ou de l'autre.",
+  "summary": "Fissure, cloque, relevé décollé ou avaloir bouché : nous réparons le défaut localisé sans refaire toute l'étanchéité, avec une garantie écrite.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

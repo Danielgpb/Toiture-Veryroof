@@ -1,0 +1,114 @@
+{
+  "slug": "toiture-vegetalisee-bruxelles",
+  "name": "Toiture végétalisée",
+  "metaTitle": "Toiture végétalisée Bruxelles | Toit vert sedum, devis 48 h",
+  "metaDescription": "Toit vert sur votre annexe ou immeuble à Bruxelles ? Toiture végétalisée en sedum sur étanchéité anti-racines, plus fraîche l'été. Devis gratuit sous 48 h.",
+  "h1": "Toiture végétalisée à Bruxelles : un toit vert en sedum, plus frais l'été et léger à entretenir",
+  "heroSubheadline": "Annexe, extension ou immeuble au toit plat : nous posons un toit vert extensif en sedum sur une étanchéité qui résiste aux racines, après avoir vérifié ce que votre toit peut porter.",
+  "opening": [
+    "Toiture Veryroof pose des toitures végétalisées à Bruxelles : complexe extensif sur annexes et garages, semi-intensif sur immeubles. Membrane anti-racines, drainage, substrat, sedums ou prairie : un toit qui retient la pluie et rafraîchit l'été."
+  ],
+  "problems": {
+    "h2": "Vous voulez un toit vert ? Nous le réalisons",
+    "items": [
+      {
+        "problem": "Une annexe dont le toit noir chauffe toute la maison en été ?",
+        "solution": "Nous posons un complexe extensif léger, sedums en tapis ou en plugs, qui abaisse la température du toit."
+      },
+      {
+        "problem": "L'eau de pluie qui déborde à chaque orage ?",
+        "solution": "Nous retenons une partie de la pluie dans le substrat et le drainage, et nous évacuons le surplus par un avaloir à regard."
+      },
+      {
+        "problem": "Un toit plat à refaire qu'on aimerait verdir d'un coup ?",
+        "solution": "Nous posons une membrane neuve anti-racines puis le complexe végétal : [[Toiture EPDM]] en support."
+      },
+      {
+        "problem": "Une structure dont vous ne connaissez pas la portance ?",
+        "solution": "Nous vérifions la charpente et le support, et nous faisons valider la charge par un ingénieur pour un semi-intensif."
+      },
+      {
+        "problem": "Une toiture végétale existante qui dépérit ?",
+        "solution": "Nous reprenons le drainage, regarnissons et vérifions les relevés et les zones stériles."
+      },
+      {
+        "problem": "Une isolation à prévoir sous la végétation ?",
+        "solution": "Nous posons une toiture chaude avant le complexe : [[Isolation de toiture plate]]."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Couches et matériaux d'une toiture végétalisée",
+    "items": [
+      {
+        "label": "Membrane anti-racines",
+        "text": "EPDM ou bitume traité, relevés en hauteur, zones stériles en gravier autour des bords."
+      },
+      {
+        "label": "Drainage",
+        "text": "nappe alvéolée ou plaques de rétention, filtre géotextile."
+      },
+      {
+        "label": "Substrat",
+        "text": "mélange minéral léger, épaisseur de quelques centimètres en extensif, davantage en semi-intensif."
+      },
+      {
+        "label": "Végétation",
+        "text": "sedums en tapis ou plugs, prairie fleurie, arrosage limité à la première saison."
+      },
+      {
+        "label": "Évacuations",
+        "text": "avaloirs à regard de contrôle, trop-pleins, zones de gravier accessibles."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'une toiture végétalisée à Bruxelles",
+    "items": [
+      "La surface et le type : extensif léger ou semi-intensif.",
+      "La membrane à poser ou à vérifier dessous.",
+      "La portance et l'étude d'ingénieur éventuelle.",
+      "Devis gratuit poste par poste, entretien annuel proposé ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Mon annexe ou mon garage peut-il porter un toit vert ?",
+      "answer": "Souvent, pour une végétalisation extensive, légère, à sédums, dont le poids gorgé d'eau reste modéré. Une toiture intensive avec de la terre et des arbustes demande une structure en béton ou renforcée. Nous vérifions les solives et la portée avant de répondre, jamais à l'œil."
+    },
+    {
+      "question": "Les racines des plantes vont-elles percer l'étanchéité du toit ?",
+      "answer": "Pas si la membrane est anti-racines ou protégée par une couche dédiée : c'est la règle sur nos chantiers. Un sédum a des racines courtes, mais les graines apportées par le vent peuvent être plus agressives. Le relevé en bordure dépasse le substrat pour éviter toute remontée."
+    },
+    {
+      "question": "Quel entretien demande une toiture végétalisée ?",
+      "answer": "Une à deux visites par an pour une toiture extensive : retirer les plantes indésirables, vérifier les évacuations, nourrir les sédums si besoin. Pas de tonte, pas d'arrosage sauf sécheresse prolongée la première année. Nous proposons un contrat d'entretien si vous ne voulez pas monter."
+    },
+    {
+      "question": "Faut-il un permis d'urbanisme pour végétaliser un toit plat à Bruxelles ?",
+      "answer": "En général non pour une toiture extensive sur un toit existant, l'aspect depuis la rue ne changeant pas. Un permis peut être requis si la toiture devient accessible ou si la hauteur change. La Région encourage les toits verts, mais les primes Renolution restent suspendues depuis 2025."
+    },
+    {
+      "question": "Un toit vert isole-t-il vraiment la maison ?",
+      "answer": "Il rafraîchit nettement l'été, par l'évaporation et l'ombre du substrat, et il protège la membrane du soleil et du gel. L'hiver, son apport thermique reste faible : l'isolant sous la membrane fait le vrai travail. Nous combinons les deux, voyez l'[[Isolation de toiture plate]]."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Un toit plat à verdir ? Appelez le +32 460 22 99 60 : nous vérifions la portance et la membrane, devis gratuit."
+    ]
+  },
+  "parentLink": "Le toit vert est l'une des options décrites sur notre page [[Toiture plate]], qui compare aussi les membranes et le déroulement d'une réfection.",
+  "summary": "Un toit vert extensif en sedum, posé sur une étanchéité anti-racines après vérification du poids que votre toit peut porter.",
+  "sources": [
+    {
+      "label": "Bruxelles Environnement — bâtiment, énergie et toitures vertes",
+      "url": "https://environnement.brussels/"
+    },
+    {
+      "label": "urbanisme.brussels — permis d'urbanisme en Région bruxelloise",
+      "url": "https://urbanisme.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}

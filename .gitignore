@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Originaux des photos du client (lourds, non versionnés)
+photos-a-trier/*
+!photos-a-trier/LISEZ-MOI.md
+
+# Archives de photos livrées par WhatsApp (lourdes, non versionnées)
+*.zip

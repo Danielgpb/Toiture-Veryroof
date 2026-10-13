@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import { pagePhotos } from '../../data/photos';
+import { getPhoto } from '../../lib/photos';
+// Vignette : photo de hero de la page liée (registre src/data/photos.ts), demande du client du 13/10/2026.
+const thumb = (slug: string) => (pagePhotos[slug] ? getPhoto(pagePhotos[slug]) : null);
+
+interface Props {
+  heading: string;
+  intro?: string;
+  items: { name: string; slug: string; description: string }[];
+}
+const { heading, intro, items } = Astro.props;
+---
+<section id="services-enfants" class="section section--alt childgrid">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">{heading}</h2>
+      {intro && <p class="section-lead">{intro}</p>}
+    </div>
+    <div class="grid grid--3">
+      {items.map((it) => (
+        <article class="card childgrid__card">
+          {thumb(it.slug) && <a class="grid-thumb" href={`/${it.slug}`} tabindex="-1"><Image src={thumb(it.slug)!.image} alt={thumb(it.slug)!.alt} width={480} height={270} format="webp" quality={72} loading="lazy" /></a>}
+          <h3><a href={`/${it.slug}`}>{it.name}</a></h3>
+          <p>{it.description}</p>
+          <a class="link-arrow" href={`/${it.slug}`}>En savoir plus <Icon name="arrow" size={18} /></a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid-thumb { display: block; margin: 0 0 0.9rem; border-radius: calc(var(--radius) - 4px); overflow: hidden; }
+  .grid-thumb :global(img) { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.3s ease; }
+  .card:hover .grid-thumb :global(img) { transform: scale(1.03); }
+  .childgrid__card { display: flex; flex-direction: column; }
+  .childgrid__card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .childgrid__card h3 a { text-decoration: none; color: var(--color-primary); }
+  .childgrid__card h3 a:hover { color: var(--color-accent-dark); }
+  .childgrid__card p { color: var(--color-muted); flex: 1; }
+</style>

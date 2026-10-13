@@ -1,0 +1,110 @@
+{
+  "slug": "nettoyage-gouttieres-bruxelles",
+  "name": "Nettoyage de gouttières",
+  "metaTitle": "Nettoyage de gouttières Bruxelles | Entretien et débouchage",
+  "metaDescription": "Gouttière bouchée ? Nettoyage de gouttières à Bruxelles : feuilles et mousse enlevées, descentes débouchées, mur au sec. Devis gratuit : +32 460 22 99 60.",
+  "h1": "Nettoyage de gouttières à Bruxelles : feuilles et mousse enlevées, évacuations débouchées avant l'automne",
+  "heroSubheadline": "Une gouttière pleine de feuilles ne retient plus rien : l'eau déborde, coule sur la façade et imbibe la corniche. Nous la vidons, débouchons les descentes et vérifions joints et crochets pendant que nous y sommes.",
+  "opening": [
+    "Toiture Veryroof nettoie corniches, gouttières et descentes à Bruxelles : à la main depuis le toit, avec contrôle des soudures, des crochets et de la pente. Avant l'hiver, après les feuilles."
+  ],
+  "problems": {
+    "h2": "Vos gouttières débordent ? Nous les nettoyons",
+    "items": [
+      {
+        "problem": "Des feuilles et de la terre noire plein la corniche chaque automne ?",
+        "solution": "Nous vidons à la main, rinçons à l'eau et contrôlons l'écoulement jusqu'à l'égout."
+      },
+      {
+        "problem": "Une descente bouchée qui fait déborder à l'étage ?",
+        "solution": "Nous débouchons au furet ou à l'eau sous pression modérée, et posons une crapaudine."
+      },
+      {
+        "problem": "De la mousse qui tombe du toit dans la gouttière ?",
+        "solution": "Nous proposons un [[Démoussage et traitement hydrofuge]] pour réduire la fréquence des nettoyages."
+      },
+      {
+        "problem": "Une façade à trois niveaux où l'échelle ne suffit pas ?",
+        "solution": "Nous travaillons depuis le toit avec harnais et ligne de vie, ou depuis une nacelle quand la façade l'impose."
+      },
+      {
+        "problem": "Un défaut découvert pendant le nettoyage ?",
+        "solution": "Nous le photographions et vous remettons un devis séparé : [[Réparation de gouttières]]."
+      },
+      {
+        "problem": "L'envie de ne plus y penser ?",
+        "solution": "Nous programmons un passage par an, en fin d'automne, avec rappel."
+      }
+    ]
+  },
+  "tech": {
+    "h2": "Méthodes et matériel de nettoyage",
+    "items": [
+      {
+        "label": "À la main",
+        "text": "débris retirés et évacués, pas de rinçage vers la descente avant d'avoir vidé."
+      },
+      {
+        "label": "Furet et jet",
+        "text": "descente débouchée au furet, jet à pression modérée, jamais de haute pression sur le zinc."
+      },
+      {
+        "label": "Crapaudines et grilles",
+        "text": "posées sur chaque naissance de descente, contrôlées à chaque passage."
+      },
+      {
+        "label": "Sécurité",
+        "text": "travail depuis le toit avec harnais, ou nacelle quand la façade l'impose."
+      },
+      {
+        "label": "Contrôle",
+        "text": "soudures, crochets, pente et bois de corniche vérifiés, photos remises."
+      }
+    ]
+  },
+  "cost": {
+    "h2": "Ce qui fait varier le prix d'un nettoyage de gouttières à Bruxelles",
+    "items": [
+      "La longueur de corniche et le nombre de descentes.",
+      "La hauteur de la façade et le moyen d'accès : échelle, toit ou nacelle.",
+      "Le degré d'encrassement et les bouchons de descente.",
+      "Tarif annoncé avant le passage, devis gratuit pour tout défaut relevé ; TVA à 6 % pour un logement de plus de dix ans."
+    ]
+  },
+  "faq": [
+    {
+      "question": "À quelle saison faut-il nettoyer ses corniches ?",
+      "answer": "Après la chute des feuilles, en fin d'automne, et une seconde fois au printemps si vous avez des arbres proches ou de la mousse sur le toit. Un nettoyage juste avant l'hiver évite le bouchon qui gèle et fait déborder l'eau sur la façade."
+    },
+    {
+      "question": "Les filtres de descente ou crapaudines suffisent-ils à éviter le nettoyage ?",
+      "answer": "Non, ils protègent la descente du bouchon mais retiennent les débris dans la gouttière, qu'il faut toujours vider. Un filtre jamais nettoyé fait déborder plus vite qu'une gouttière sans filtre. Nous les vérifions et les remplaçons à chaque passage."
+    },
+    {
+      "question": "D'où vient la terre noire au fond de ma gouttière ?",
+      "answer": "De la mousse qui se détache du toit et se décompose, mêlée aux poussières de la ville. Cette terre retient l'eau, alourdit la corniche et attaque le zinc. Si le toit en produit beaucoup, un [[Démoussage et traitement hydrofuge]] réduit la fréquence des nettoyages."
+    },
+    {
+      "question": "Puis-je nettoyer mes gouttières moi-même avec une échelle ?",
+      "answer": "Sur un rez-de-chaussée ou une annexe, oui, avec quelqu'un qui tient l'échelle. Sur une façade bruxelloise à trois niveaux, la chute reste la première cause d'accident des bricoleurs. Nous travaillons depuis le toit, harnachés, ou en nacelle quand l'accès le justifie."
+    },
+    {
+      "question": "Le nettoyage comprend-il un contrôle de la corniche ?",
+      "answer": "Oui, nous profitons du passage pour vérifier les soudures, les crochets, la pente et l'état du bois de la corniche. Vous recevez des photos et, si un défaut apparaît, un devis séparé pour la [[Réparation de gouttières]]. Sans défaut, la facture se limite au nettoyage."
+    }
+  ],
+  "finalCta": {
+    "paragraphs": [
+      "Des gouttières pleines avant l'hiver ? Appelez le +32 460 22 99 60 : nous passons les vider et vérifier, prix annoncé à l'avance."
+    ]
+  },
+  "parentLink": "Le nettoyage n'est qu'une des interventions de notre service [[Zinguerie et gouttières]], qui couvre aussi la pose, la réparation et les chéneaux.",
+  "summary": "Feuilles, mousse et terre retirées à la main, descentes débouchées et rincées, joints et crochets contrôlés dans la foulée, idéalement avant l'automne.",
+  "sources": [
+    {
+      "label": "Homegrade — conseils gratuits pour rénover à Bruxelles (permis, aides, techniques)",
+      "url": "https://homegrade.brussels/"
+    }
+  ],
+  "updated": "2026-10-13"
+}
