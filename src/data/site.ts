@@ -42,9 +42,9 @@ export const pending = {
   /** Forme juridique, ex. 'SRL' → mentions légales. */
   legalForm: '',
   /** Nom et adresse de l'hébergeur, ex. 'Netlify, Inc., 512 2nd Street, San Francisco, CA 94107, États-Unis' → mentions légales et politique de confidentialité. */
-  host: '',
+  host: 'Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis — netlify.com',
   /** Phrase sur les garanties en cas de transfert hors Union européenne (politique de confidentialité), à rédiger avec l'hébergeur retenu. */
-  hostTransferNote: '',
+  hostTransferNote: "L'hébergeur Netlify, Inc. est établi aux États-Unis. Les transferts de données hors Union européenne qu'il réalise sont encadrés par les clauses contractuelles types de la Commission européenne, reprises dans son accord de traitement des données.",
   /** Durée de conservation (en mois) des demandes de devis sans suite ; 0 = formulation par critères. */
   retentionMonths: 0,
   /** Horaires du bureau, ex. 'Lundi–vendredi, 8h–18h' → Contact et accueil. */
