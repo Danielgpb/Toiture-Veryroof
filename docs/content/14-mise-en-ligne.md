@@ -57,7 +57,13 @@ Montage DNS retenu — identique aux autres sites du client : **Netlify DNS**.
 - Serveurs de noms posés chez Hostinger (Domaines → toiture-veryroof.be → DNS / Nameservers → Change nameservers) :
   `dns1.p04.nsone.net`, `dns2.p04.nsone.net`, `dns3.p04.nsone.net`, `dns4.p04.nsone.net`.
 
-Propagation : de quinze minutes à vingt-quatre heures. Le certificat HTTPS Let's Encrypt est émis automatiquement par Netlify dès que la délégation est visible ; si après vingt-quatre heures il manque toujours, cliquer « Verify DNS configuration » puis « Renew certificate » dans Domain management → HTTPS.
+**Blocage constaté le 13/10/2026 au soir** : quarante minutes après le changement, aucune délégation visible. Le whois du registre en donne la raison :
+
+> « We only activate this domain name once the contact details of the domain name holder have been validated. For more information, contact verification@dnsbelgium.be. »
+
+DNS Belgium exige la validation des coordonnées du titulaire avant de publier les serveurs de noms. Un e-mail de validation part vers l'adresse du titulaire (`borenxdaniel@gmail.com`), envoyé par DNS Belgium ou relayé par Realtime Register / Hostinger. Tant que le lien n'est pas cliqué, le domaine ne résout pas, quel que soit le réglage DNS — et passé le délai (quinze jours environ), le domaine est suspendu. Le panneau Hostinger affiche « Active », mais c'est son statut de facturation à lui, pas l'activation au registre : ne pas s'y fier.
+
+Une fois le lien cliqué, la délégation apparaît en quelques minutes à quelques heures, puis la propagation prend de quinze minutes à vingt-quatre heures. Le certificat HTTPS Let's Encrypt est émis automatiquement par Netlify dès que la délégation est visible ; si après vingt-quatre heures il manque toujours, cliquer « Verify DNS configuration » puis « Renew certificate » dans Domain management → HTTPS.
 
 ### Reste à faire côté client
 
