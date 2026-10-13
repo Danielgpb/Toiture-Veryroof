@@ -9,3 +9,6 @@ photos-a-trier/*
 
 # Archives de photos livrées par WhatsApp (lourdes, non versionnées)
 *.zip
+
+# Local Netlify folder
+.netlify

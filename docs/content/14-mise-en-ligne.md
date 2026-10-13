@@ -35,3 +35,21 @@ Les 31 pages services ont été réécrites au format « problème → nous le r
 - Lighthouse mobile du 13/10/2026 (aperçu local) : accueil, Rénovation, Uccle, Braine-l'Alleud = 100 / 100 / 100 / 100 (performance, accessibilité, bonnes pratiques, SEO), LCP ≈ 0,9–1,1 s, CLS 0. Un défaut d'accessibilité (liste `<dl>` mal structurée sur les pages communes) a été corrigé le jour même.
 - Lighthouse mobile : garder le hero en WebP préchargé, images en chargement différé.
 - Après quelques semaines : Search Console → requêtes « couvreur / toiturier / toiture + commune », ajuster titres si une variante domine.
+
+## Mise en ligne effectuée le 13/10/2026 (soir)
+
+- Dépôt GitHub : https://github.com/Danielgpb/Toiture-Veryroof (branche `main`). `.gitignore` exclut `node_modules`, `dist`, `.astro`, `photos-a-trier/*` et les `*.zip` WhatsApp.
+- Site Netlify : projet `toiture-veryroof` (ID `2a3cbd30-0c00-4357-8004-1ea0e22b1db5`), équipe bcdd. URL de production provisoire : https://toiture-veryroof.netlify.app
+- Déploiement par le CLI (`netlify deploy --prod --build`). Le dépôt GitHub n'est PAS encore raccordé en déploiement continu (l'autorisation OAuth GitHub doit être donnée par le client dans l'interface Netlify : Project configuration → Build & deploy → Link repository).
+- `pending.host` et `pending.hostTransferNote` renseignés (Netlify, Inc. + clauses contractuelles types).
+- Variables d'environnement posées : `LEADAPP_URL`, `LEADAPP_SITE` (`s-toiture`), `LEADAPP_TYPE` (`t-toiture`). **`LEADAPP_SECRET` reste à poser par le client** (même valeur que sur les autres sites, à copier depuis Netlify → Environment variables d'un site existant). Tant qu'elle manque, le relais vers l'app Suivi Leads ne part pas, mais Netlify Forms enregistre quand même les demandes.
+- Détection de formulaires activée, formulaire `devis` reconnu après redéploiement. Notification par e-mail encore à créer (Forms → Add notification).
+
+### Domaine — point bloquant
+
+`toiture-veryroof.be` n'est PAS enregistré (whois : AVAILABLE au 13/10/2026). Or le `canonical`, le sitemap et le schema pointent tous vers ce domaine. Tant qu'il n'est pas acheté et raccordé :
+- ne pas soumettre le site à la Search Console ;
+- ne pas diffuser l'adresse `.netlify.app` (les moteurs y verraient un canonical mort) ;
+- l'adresse e-mail `contact@toiture-veryroof.be` n'existe pas non plus.
+
+Après achat du domaine : Netlify → Domain management → Add domain, puis pointer les DNS chez le registrar.
