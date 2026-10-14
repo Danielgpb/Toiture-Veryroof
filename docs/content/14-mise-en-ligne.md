@@ -121,3 +121,19 @@ Réglages serveur, pour « Send mail as » dans Gmail ou tout client :
 | Identifiant | l'adresse complète `contact@toiture-veryroof.be` |
 
 **Piège à retenir** : `dig` renvoie par moments « Message parser reports malformed message packet » sur cette zone, et les MX semblent alors absents alors qu'ils répondent. Vérifier sur plusieurs résolveurs avant de conclure à une panne — ou mieux, faire le test SMTP ci-dessus, qui est la seule preuve qui compte.
+
+
+## Icônes du site (14/10/2026)
+
+En place et servies depuis le domaine : `favicon.svg` (la marque du site, toiture orange sur fond bleu nuit), `favicon-192.png`, `favicon-512.png`, `apple-touch-icon.png` (180 px) et `site.webmanifest` avec la couleur de thème.
+
+Deux défauts corrigés le 14/10 :
+
+1. **`/favicon.ico` renvoyait 404.** Les navigateurs anciens, certains lecteurs de flux et plusieurs robots demandent ce fichier directement à la racine sans lire le HTML. Un vrai `.ico` multi-tailles (16, 32, 48, 64) a été généré depuis le PNG 512. Il n'est **volontairement pas déclaré** dans le `<head>` : laissé en découverte automatique, il sert de repli sans jamais prendre le pas sur le SVG, que les navigateurs modernes préfèrent.
+2. **Le manifeste était servi en `application/octet-stream`**, ce qui pousse certains navigateurs à refuser de le lire. Un bloc `[[headers]]` dans `netlify.toml` force `application/manifest+json`, et met les icônes en cache une semaine.
+
+## Déploiement du 14/10/2026
+
+Rappel important : le dépôt GitHub n'est **pas** raccordé en déploiement continu. Tout le travail de la journée (carrousels, bandeau des marques, bouton « Devis gratuit » de l'en-tête, formulaire descendu à mi-page) était commité mais absent du site en ligne. Publier demande toujours `npx netlify-cli deploy --prod --build` depuis le dossier du projet.
+
+Vérifié en ligne après déploiement : les sections `realisations` et `marques` sont présentes, le bouton de devis est dans l'en-tête, et l'ordre est bien `hero → categories → services-phares → realisations → marques → devis → zones`.
