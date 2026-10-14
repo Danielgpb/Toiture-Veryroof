@@ -105,6 +105,10 @@ const duration = `${items.length * 5}s`;
   }
   .brands__viewport:hover .brands__item :global(img) { filter: none; opacity: 1; }
 
+  /*
+   * Les noms écrits portent la même retenue que les logos ramenés au gris : sans cela, un bandeau
+   * mélangeant les deux donnerait beaucoup plus de poids aux marques dont le logo manque.
+   */
   .brands__name {
     display: flex;
     flex-direction: column;
@@ -114,8 +118,11 @@ const duration = `${items.length * 5}s`;
     font-size: clamp(1.15rem, 2.2vw, 1.4rem);
     line-height: 1.1;
     color: var(--color-primary);
+    opacity: 0.65;
+    transition: opacity 0.2s;
     white-space: nowrap;
   }
+  .brands__viewport:hover .brands__name { opacity: 1; }
   .brands__category {
     font-size: 0.72rem;
     font-weight: 600;
