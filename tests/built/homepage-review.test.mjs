@@ -27,7 +27,7 @@ test('le formulaire poste vers la page qui le contient, jamais vers la racine re
   assert.match(form, /action="\/couvreur-bruxelles"/);
   assert.match(form, /method="POST"/i);
   assert.match(form, /data-netlify="true"/);
-  const sec = slice('devis', 'categories');
+  const sec = slice('devis', 'zones');
   assert.match(sec, /<input[^>]*type="hidden"[^>]*name="form-name"[^>]*value="devis"/);
   assert.match(sec, /<input[^>]*name="bot-field"/);
   assert.ok(!/fetch\(\s*["']\/["']/.test(scripts), 'le script ne doit pas poster vers "/"');
@@ -53,7 +53,7 @@ test('le hero a une vraie image de fond et les textes annexes viennent du JSON v
   assert.equal((core.match(/<img[^>]*loading="lazy"[^>]*>/g) || []).length, 2, 'une photo par service phare');
   for (const img of [...html.matchAll(/<img[^>]*>/g)].map((m) => m[0])) assert.match(img, /alt="[^"]{25,}"/, `alt trop court : ${img.slice(0, 80)}`);
   assert.ok(text(hero).includes(accueil.hero.eyebrow));
-  const lead = slice('devis', 'categories');
+  const lead = slice('devis', 'zones');
   for (const p of accueil.leadFormPoints) assert.ok(text(lead).includes(p), `puce manquante : ${p}`);
   const about = slice('a-propos', 'faq');
   for (const b of accueil.about.badges) assert.ok(text(about).includes(b), `badge manquant : ${b}`);

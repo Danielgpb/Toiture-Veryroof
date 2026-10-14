@@ -59,3 +59,16 @@ Six logos sur dix sont en place. Les fichiers viennent **uniquement du site offi
 ### Piège d'accessibilité à ne pas réintroduire
 
 Les noms de marque écrits sont colorés avec `--color-primary`, **jamais** avec une opacité réduite. Une opacité sur du texte éclaircit sa couleur effective : la première version, à `opacity: 0.65`, tombait à un contraste de 3,18 pour 4,5 requis, et faisait chuter le score d'accessibilité à 97.
+
+
+## Ordre des sections de l'accueil (modifié le 14/10/2026)
+
+Le Prompt 3 de la méthode Core 30 plaçait le formulaire juste après les étapes, soit à environ 22 % de la hauteur de page. Le client l'a trouvé trop haut : le visiteur était sollicité avant d'avoir vu ce que l'entreprise fait.
+
+Nouvel ordre, le formulaire descendant après les services **et** les preuves :
+
+`hero → intro → pourquoi-nous → etapes → categories → services-phares → realisations → marques → devis → zones → a-propos → faq → sources → zones-liste → cta-final`
+
+Le formulaire est désormais à **50 %** de la page, juste après le carrousel des chantiers et le bandeau des marques. L'ancre `#devis` (quatre liens, dont le bouton du hero) continue de fonctionner et atterrit sous l'en-tête collant.
+
+C'est un écart assumé par rapport à l'ordre du Prompt 3 : le test `homepage.test.mjs` a été mis à jour en conséquence, ainsi que les bornes de découpe des tests qui s'appuyaient sur `#devis` et `#marques`.

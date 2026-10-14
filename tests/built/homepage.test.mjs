@@ -14,7 +14,9 @@ before(async () => { html = await readFile(file, 'utf8'); });
 
 const decode = (s) => s.replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const text = (s) => decode(s.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
-const SECTION_IDS = ['hero', 'pourquoi-nous', ...(pending.reviewsEmbed ? ['avis'] : []), 'devis', 'categories', 'services-phares', 'zones', 'a-propos', 'faq', 'zones-liste', 'cta-final'];
+// Ordre du Prompt 3, avec une adaptation demandée par le client le 14/10/2026 : le formulaire ne vient plus
+// juste après les étapes, mais après les services et les réalisations, une fois le visiteur convaincu.
+const SECTION_IDS = ['hero', 'pourquoi-nous', ...(pending.reviewsEmbed ? ['avis'] : []), 'categories', 'services-phares', 'realisations', 'marques', 'devis', 'zones', 'a-propos', 'faq', 'zones-liste', 'cta-final'];
 
 test('title, meta description et canonique viennent du contenu validé', () => {
   assert.equal(text(html.match(/<title>([^<]*)<\/title>/)[1]), accueil.metaTitle);
@@ -29,7 +31,7 @@ test('un seul H1, exactement le H1 rédigé, avec couvreur + toiture + Bruxelles
   for (const kw of ['Couvreur', 'toiture', 'Bruxelles']) assert.ok(h1s[0].includes(kw), `H1 sans « ${kw} »`);
 });
 
-test('les 11 sections sont présentes dans l’ordre imposé par le Prompt 3', () => {
+test('les sections sont présentes dans l’ordre retenu pour l’accueil', () => {
   const positions = SECTION_IDS.map((id) => html.indexOf(`id="${id}"`));
   positions.forEach((p, i) => assert.ok(p > -1, `section manquante : ${SECTION_IDS[i]}`));
   for (let i = 1; i < positions.length; i++) assert.ok(positions[i] > positions[i - 1], `${SECTION_IDS[i]} doit suivre ${SECTION_IDS[i - 1]}`);
@@ -67,7 +69,7 @@ test('la section avis Google : emplacement commenté, affichée seulement avec u
 });
 
 test('le formulaire de devis a les bons champs, la liste des services et la réassurance', () => {
-  const sec = html.slice(html.indexOf('id="devis"'), html.indexOf('id="categories"'));
+  const sec = html.slice(html.indexOf('id="devis"'), html.indexOf('id="zones"'));
   for (const name of ['nom', 'telephone', 'email']) assert.match(sec, new RegExp(`<input[^>]*name="${name}"[^>]*required`), `champ ${name} requis manquant`);
   assert.match(sec, /<select[^>]*name="service"[^>]*required/);
   assert.match(sec, /<textarea[^>]*name="message"/);
@@ -82,7 +84,7 @@ test('le formulaire de devis a les bons champs, la liste des services et la réa
 
 test('cartes catégories et services phares pointent vers les bonnes URL', () => {
   const cat = html.slice(html.indexOf('id="categories"'), html.indexOf('id="services-phares"'));
-  const core = html.slice(html.indexOf('id="services-phares"'), html.indexOf('id="zones"'));
+  const core = html.slice(html.indexOf('id="services-phares"'), html.indexOf('id="realisations"'));
   assert.ok(text(cat).includes(accueil.categories.heading));
   assert.ok(text(core).includes(accueil.coreServices.heading));
   for (const it of accueil.categories.items) { assert.ok(cat.includes(`href="${it.slug}"`), `lien manquant ${it.slug}`); assert.ok(text(cat).includes(it.description)); }
@@ -143,7 +145,7 @@ test('performance : chaque <img> a width, height et loading="lazy" ; l’image d
   // Seule exception au chargement différé : les logos du bandeau défilant. Le chargement différé ne se
   // redéclenche pas quand une marque entre par la droite, le logo resterait blanc. Ils sont donc immédiats,
   // mais en priorité basse pour ne pas concurrencer l'image LCP du hero.
-  const marques = html.slice(html.indexOf('id="marques"'), html.indexOf('id="zones"'));
+  const marques = html.slice(html.indexOf('id="marques"'), html.indexOf('id="devis"'));
   const imgs = [...html.matchAll(/<img[^>]*>/g)].map((m) => m[0]);
   assert.ok(imgs.length >= 1);
   for (const img of imgs) {
@@ -169,7 +171,7 @@ test('carrousel des réalisations : vraies photos légendées, flèches masquée
 });
 
 test('bandeau des marques : piste dupliquée pour la boucle, la copie masquée aux lecteurs d’écran', () => {
-  const brands = html.slice(html.indexOf('id="marques"'), html.indexOf('id="zones"'));
+  const brands = html.slice(html.indexOf('id="marques"'), html.indexOf('id="devis"'));
   assert.ok(brands.length > 0, 'section marques absente');
   const tracks = brands.match(/<ul[^>]*class="brands__track"/g) || [];
   assert.equal(tracks.length, 2, 'il faut exactement deux pistes : l’originale et sa copie');
