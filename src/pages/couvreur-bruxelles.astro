@@ -22,6 +22,8 @@ import Sources from '../components/service/Sources.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import LocationsCompact from '../components/home/LocationsCompact.astro';
 import FinalCta from '../components/home/FinalCta.astro';
+import WorkCarousel from '../components/home/WorkCarousel.astro';
+import BrandCarousel from '../components/home/BrandCarousel.astro';
 
 const orgId = `${site.domain}/#organisation`;
 
@@ -38,6 +40,7 @@ const withPhoto = (items: { slug: string }[], map: Record<string, string>) => it
 const categories = withPhoto(accueil.categories.items, homePhotos.categories);
 const cores = withPhoto(accueil.coreServices.items, homePhotos.core);
 const aboutPhoto = getPhoto(homePhotos.about);
+const carouselPhotos = homePhotos.carousel.map(getPhoto);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -100,6 +103,8 @@ const schema = {
   <LeadForm heading={accueil.leadFormHeading} reassurance={accueil.leadFormReassurance} points={accueil.leadFormPoints} />
   <CategoryCards heading={accueil.categories.heading} items={categories} />
   <CoreServices heading={accueil.coreServices.heading} items={cores} />
+  <WorkCarousel items={carouselPhotos} />
+  <BrandCarousel />
   <ServiceArea heading={accueil.serviceAreaHeading} paragraph={accueil.serviceAreaParagraph} />
   <About heading={accueil.about.heading} paragraph={accueil.about.paragraph} badges={accueil.about.badges} photo={aboutPhoto} />
   <Faq heading={accueil.faqHeading} items={accueil.faq} />

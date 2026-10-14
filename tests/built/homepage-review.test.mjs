@@ -49,7 +49,7 @@ test('le hero a une vraie image de fond et les textes annexes viennent du JSON v
   assert.match(hero, /<picture[^>]*>[\s\S]*?<img[^>]*fetchpriority="high"/, 'photo du hero en <picture>');
   const cat = slice('categories', 'services-phares');
   assert.equal((cat.match(/<img[^>]*loading="lazy"[^>]*>/g) || []).length, 3, 'une photo par carte catégorie');
-  const core = slice('services-phares', 'zones');
+  const core = slice('services-phares', 'realisations');
   assert.equal((core.match(/<img[^>]*loading="lazy"[^>]*>/g) || []).length, 2, 'une photo par service phare');
   for (const img of [...html.matchAll(/<img[^>]*>/g)].map((m) => m[0])) assert.match(img, /alt="[^"]{25,}"/, `alt trop court : ${img.slice(0, 80)}`);
   assert.ok(text(hero).includes(accueil.hero.eyebrow));

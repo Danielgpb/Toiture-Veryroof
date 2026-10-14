@@ -149,3 +149,28 @@ test('performance : chaque <img> a width, height et loading="lazy" ; l’image d
   }
   assert.match(html, /<link rel="preload" as="image" href="\/_astro\/[^"]+\.webp"[^>]*imagesrcset=/, 'préchargement de la photo du hero');
 });
+
+test('carrousel des réalisations : vraies photos légendées, flèches masquées tant que le script ne tourne pas', () => {
+  const work = html.slice(html.indexOf('id="realisations"'), html.indexOf('id="marques"'));
+  assert.ok(work.length > 0, 'section réalisations absente');
+  const slides = work.match(/<li[^>]*class="work__slide"/g) || [];
+  assert.ok(slides.length >= 6 && slides.length <= 12, `6 à 12 chantiers attendus, ${slides.length} trouvés`);
+  assert.equal((work.match(/<figcaption/g) || []).length, slides.length, 'une légende par chantier');
+  // La piste reste défilable au doigt et au clavier même sans JavaScript ; les flèches, elles, n'apparaissent qu'avec.
+  assert.match(work, /data-work-track[^>]*tabindex="0"/, 'piste non focalisable au clavier');
+  assert.match(work, /role="region"[^>]*aria-label="[^"]{10,}"/, 'zone défilante sans nom accessible');
+  assert.match(work, /data-work-nav[^>]*hidden/, 'les flèches doivent être masquées dans le HTML servi');
+  for (const label of work.match(/<button[^>]*aria-label="([^"]*)"/g) || []) assert.ok(label.length > 20, `bouton sans libellé : ${label}`);
+});
+
+test('bandeau des marques : piste dupliquée pour la boucle, la copie masquée aux lecteurs d’écran', () => {
+  const brands = html.slice(html.indexOf('id="marques"'), html.indexOf('id="zones"'));
+  assert.ok(brands.length > 0, 'section marques absente');
+  const tracks = brands.match(/<ul[^>]*class="brands__track"/g) || [];
+  assert.equal(tracks.length, 2, 'il faut exactement deux pistes : l’originale et sa copie');
+  assert.equal((brands.match(/aria-hidden="true"/g) || []).length, 1, 'la copie, et elle seule, doit être masquée aux lecteurs d’écran');
+  const items = brands.match(/<li[^>]*class="brands__item"/g) || [];
+  assert.ok(items.length >= 6 && items.length % 2 === 0, 'les deux pistes doivent porter le même nombre de marques');
+  // Aucune affirmation de partenariat : le bandeau dit seulement ce que nous posons.
+  assert.doesNotMatch(brands, /partenaire|certifi|agréé|agree|officiel/i, 'le bandeau ne doit revendiquer ni partenariat ni agrément');
+});

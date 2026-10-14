@@ -131,6 +131,23 @@ export const homePhotos = {
     'renovation-toiture-bruxelles': 'toiture-tuiles-anthracite-cheminee',
     'toiture-plate-bruxelles': 'toit-plat-roofing-vue-clocher',
   } as Record<string, string>,
+  /**
+   * Carrousel « Des toits que nous avons refaits » de l'accueil. Uniquement de vraies photos de chantier,
+   * choisies pour couvrir tous les métiers (tuiles, sarking, zinguerie, toit plat, charpente) et dont
+   * aucune n'est déjà employée ailleurs sur l'accueil.
+   */
+  carousel: [
+    'toiture-tuiles-rouges-neuve-velux-vue-drone',
+    'renovation-toiture-pose-tuiles-anthracite-echafaudage',
+    'sarking-contre-lattes-panneaux-vue-drone',
+    'gouttiere-zinc-neuve-descente-detail-rive',
+    'toit-plat-panneaux-solaires-vue-drone',
+    'villa-renovee-tuiles-grises-garage',
+    'noue-zinc-soudure-detail-chantier',
+    'charpente-lattage-neuf-ancienne-maison-drone',
+    'maison-toit-tuiles-noires-panneaux-apres-drone',
+    'equipe-couvreurs-sur-chantier-sarking',
+  ],
 };
 
 /** Visuel de hero de chaque page (catégories, services phares, services enfants, services généraux, communes). */

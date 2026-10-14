@@ -1,0 +1,133 @@
+---
+/**
+ * Bandeau défilant des marques posées. Défilement en CSS pur (translation d'une piste dupliquée),
+ * sans JavaScript : rien à charger, rien à hydrater, aucun décalage de mise en page.
+ * Le défilement s'arrête au survol et au focus clavier, et disparaît si le visiteur a demandé
+ * à réduire les animations : la liste devient alors une grille fixe, entièrement lisible.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { brands } from '../../data/brands';
+
+interface Props {
+  heading?: string;
+  lead?: string;
+}
+const {
+  heading = 'Les marques que nous posons',
+  lead = 'Nous travaillons avec les fabricants reconnus du métier. Le choix se fait avec vous, selon le toit et le budget.',
+} = Astro.props;
+
+const logoFiles = import.meta.glob<{ default: ImageMetadata }>('../../assets/logos/*.{svg,png}', { eager: true });
+
+const items = brands.map((brand) => {
+  const mod = brand.logo ? logoFiles[`../../assets/logos/${brand.logo}`] : undefined;
+  if (brand.logo && !mod) throw new Error(`Logo manquant : src/assets/logos/${brand.logo} (voir src/data/brands.ts)`);
+  return { ...brand, image: mod?.default };
+});
+
+// La piste est dupliquée pour que la boucle se referme sans saut. La copie est masquée aux lecteurs d'écran.
+const tracks = [false, true];
+// Durée proportionnelle au nombre de marques : une vitesse de lecture constante quel que soit le nombre.
+const duration = `${items.length * 5}s`;
+---
+
+{items.length > 0 && (
+  <section id="marques" class="section brands" aria-labelledby="brands-title">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Matériaux</p>
+        <h2 class="section-title" id="brands-title">{heading}</h2>
+        <p class="section-lead">{lead}</p>
+      </div>
+    </div>
+
+    <div class="brands__viewport">
+      {tracks.map((isClone) => (
+        <ul class="brands__track" aria-hidden={isClone ? 'true' : undefined} style={`--brands-duration:${duration}`}>
+          {items.map((item) => (
+            <li class="brands__item">
+              {item.image ? (
+                <Image src={item.image} alt={`${item.name} — ${item.category}`} height={44} width={140} densities={[1, 2]} />
+              ) : (
+                <span class="brands__name">
+                  {item.name}
+                  <span class="brands__category">{item.category}</span>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .brands__viewport {
+    display: flex;
+    overflow: hidden;
+    /* Les extrémités s'effacent pour que les marques entrent et sortent sans être coupées net. */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6rem, #000 calc(100% - 6rem), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 6rem, #000 calc(100% - 6rem), transparent);
+    --brands-gap: clamp(2rem, 5vw, 4rem);
+  }
+  .brands__track {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--brands-gap);
+    margin: 0;
+    padding: 0 0 0 var(--brands-gap);
+    list-style: none;
+    animation: brands-scroll var(--brands-duration) linear infinite;
+  }
+  @keyframes brands-scroll {
+    /*
+     * Chaque piste porte son écart à gauche et rien à droite : les deux pistes mises bout à bout
+     * gardent donc le même espacement entre marques, y compris à la jonction. Décaler d'exactement
+     * une largeur de piste amène la copie là où était l'originale — la boucle ne se voit pas.
+     */
+    to { transform: translateX(-100%); }
+  }
+  .brands__viewport:hover .brands__track,
+  .brands__viewport:focus-within .brands__track { animation-play-state: paused; }
+
+  .brands__item { display: flex; align-items: center; justify-content: center; min-height: 64px; }
+  .brands__item :global(img) {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    /* Les logos sont ramenés au gris du site pour que le bandeau reste calme ; couleur d'origine au survol. */
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: filter 0.2s, opacity 0.2s;
+  }
+  .brands__viewport:hover .brands__item :global(img) { filter: none; opacity: 1; }
+
+  .brands__name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    line-height: 1.1;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+  .brands__category {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Plus de défilement : une seule piste, qui revient à la ligne et se lit d'un coup d'œil. */
+    .brands__viewport { mask-image: none; overflow: visible; width: min(100% - 2rem, var(--container)); margin-inline: auto; }
+    .brands__track { animation: none; flex-wrap: wrap; justify-content: center; padding-left: 0; }
+    .brands__track[aria-hidden='true'] { display: none; }
+  }
+</style>

@@ -1,0 +1,160 @@
+---
+/**
+ * Carrousel des chantiers réalisés. La piste est une zone défilante native avec accrochage (scroll-snap) :
+ * elle se fait glisser au doigt sur mobile, à la molette ou au clavier sur ordinateur, et fonctionne
+ * entièrement sans JavaScript. Le script n'ajoute que les flèches, qui restent masquées s'il ne s'exécute pas.
+ */
+import { Image } from 'astro:assets';
+import type { SitePhoto } from '../../lib/photos';
+
+interface Props {
+  heading?: string;
+  lead?: string;
+  eyebrow?: string;
+  items: SitePhoto[];
+}
+const {
+  heading = 'Des toits que nous avons refaits',
+  lead = 'Photos prises sur nos chantiers, à Bruxelles et en périphérie. Faites défiler pour les parcourir.',
+  eyebrow = 'Nos réalisations',
+  items,
+} = Astro.props;
+---
+
+<section id="realisations" class="section section--alt work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="work__head">
+      <div class="section-head work__intro">
+        <p class="eyebrow">{eyebrow}</p>
+        <h2 class="section-title" id="work-title">{heading}</h2>
+        <p class="section-lead">{lead}</p>
+      </div>
+      <div class="work__nav" data-work-nav hidden>
+        <button type="button" class="work__btn" data-work-prev aria-label="Voir les chantiers précédents">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="work__btn" data-work-next aria-label="Voir les chantiers suivants">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="work__viewport">
+    {/*
+      La zone défilante est un conteneur à part : poser role="region" sur le <ul> lui ferait perdre
+      son rôle de liste, et les <li> ne seraient plus annoncés comme des éléments de liste.
+    */}
+    <div
+      class="work__scroller"
+      data-work-track
+      tabindex="0"
+      role="region"
+      aria-label="Chantiers réalisés par Toiture Veryroof"
+    >
+    <ul class="work__track">
+      {items.map((item) => (
+        <li class="work__slide">
+          <figure class="work__fig">
+            {/* Section très au-dessous de la ligne de flottaison : tout est différé, rien ne concurrence l'image LCP du hero. */}
+            <Image src={item.image} alt={item.alt} width={760} height={570} format="webp" quality={76} loading="lazy" decoding="async" />
+            <figcaption>{item.caption ?? item.alt}</figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .work__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+  .work__intro { margin-bottom: 1.5rem; }
+  .work__nav { display: flex; gap: 0.6rem; flex-shrink: 0; padding-top: 0.5rem; }
+  .work__btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    border: 1px solid var(--color-line); border-radius: 50%;
+    background: #fff; color: var(--color-primary); cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .work__btn:hover:not(:disabled) { border-color: var(--color-accent); color: var(--color-accent-dark); box-shadow: var(--shadow); }
+  .work__btn:disabled { opacity: 0.35; cursor: default; }
+
+  /* La piste déborde volontairement du conteneur centré pour que la photo suivante soit amorcée au bord de l'écran. */
+  .work__viewport { --work-edge: max(1rem, (100vw - var(--container)) / 2); }
+  .work__scroller {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--work-edge);
+    /* L'adoucissement est confié au CSS : les flèches n'ont plus qu'à déplacer scrollLeft. */
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .work__scroller::-webkit-scrollbar { display: none; }
+  .work__scroller:focus-visible { outline: 3px solid var(--color-accent); outline-offset: -3px; border-radius: var(--radius); }
+  .work__track {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0.25rem var(--work-edge) 1rem;
+    list-style: none;
+  }
+
+  .work__slide { flex: 0 0 min(85vw, 380px); scroll-snap-align: start; }
+  .work__fig {
+    margin: 0; height: 100%;
+    background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .work__fig :global(img) { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+  .work__fig figcaption { padding: 0.85rem 1rem; font-size: 0.95rem; color: var(--color-muted); }
+
+  @media (max-width: 640px) {
+    .work__head { display: block; }
+    .work__nav { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .work__track { scroll-behavior: auto; }
+  }
+</style>
+
+<script>
+  // Flèches du carrousel : ajoutées seulement si le script tourne, pour ne jamais afficher un bouton inerte.
+  document.querySelectorAll<HTMLElement>('[data-work-track]').forEach((track) => {
+    const section = track.closest('section');
+    const nav = section?.querySelector<HTMLElement>('[data-work-nav]');
+    const prev = section?.querySelector<HTMLButtonElement>('[data-work-prev]');
+    const next = section?.querySelector<HTMLButtonElement>('[data-work-next]');
+    if (!nav || !prev || !next) return;
+
+    const step = () => {
+      const slide = track.querySelector<HTMLElement>('li');
+      // L'écart est porté par la liste, pas par la zone défilante : c'est là qu'il faut le lire.
+      const list = slide?.parentElement;
+      if (!slide || !list) return track.clientWidth;
+      const gap = parseFloat(getComputedStyle(list).columnGap || '0') || 0;
+      return slide.offsetWidth + gap;
+    };
+
+    // Déplacement par simple affectation : pris en charge par tous les navigateurs,
+    // là où la forme `scrollBy({ behavior })` est ignorée en silence par les plus anciens.
+    const move = (dir: number) => { track.scrollLeft += dir * step(); };
+
+    prev.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+
+    const sync = () => {
+      // 2 px de tolérance : les navigateurs arrondissent scrollLeft et la fin n'est jamais atteinte au pixel près.
+      const max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+      nav.hidden = max <= 2;
+    };
+
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  });
+</script>
