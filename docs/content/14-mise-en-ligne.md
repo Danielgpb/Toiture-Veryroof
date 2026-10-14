@@ -72,3 +72,21 @@ Une fois le lien cliqué, la délégation apparaît en quelques minutes à quelq
 3. Une fois le domaine résolu : créer la boîte `contact@toiture-veryroof.be` et rebasculer la notification de formulaire dessus.
 4. Search Console + sitemap, fiche Google Business Profile, annuaires.
 5. Facultatif : raccorder le dépôt GitHub en déploiement continu (Project configuration → Build & deploy → Link repository), ce qui évite de déployer depuis le dossier iCloud.
+
+## Search Console (14/10/2026)
+
+Propriété **Domaine** `toiture-veryroof.be` créée dans le compte Google **borenxdaniel@gmail.com**, celui qui porte déjà les autres sites (abd-depannage, ali-ka, avocat-penaliste-bruxelles, bruxelles-car-depannage, dmt-autogroup…).
+
+Validation par enregistrement DNS TXT, ajouté dans la zone Netlify :
+
+```
+toiture-veryroof.be  3600  IN  TXT  google-site-verification=BCI4yeZpjb3F-KeJsIjun1QrpxcBdTIkfeHzhwZThQA
+```
+
+**Ne jamais supprimer cet enregistrement** : Google revalide périodiquement, et sa disparition fait perdre la propriété. Pour sécuriser, ajouter une seconde méthode de validation depuis Paramètres → Validation de la propriété.
+
+Sitemap `https://toiture-veryroof.be/sitemap.xml` soumis le 14/10/2026 : état « Opération effectuée », **43 pages découvertes**.
+
+Pourquoi une propriété **Domaine** et non « Préfixe d'URL » : elle couvre d'un coup le `www`, le non-`www`, le `http` et le `https`. Une propriété de préfixe aurait demandé quatre déclarations séparées.
+
+Note : le CLI Netlify refuse la création d'enregistrement DNS (`createDnsRecord` → 422 Unprocessable Entity, quelle que soit la forme du corps). Passer par l'interface : Team → DNS → la zone → Add new record.
