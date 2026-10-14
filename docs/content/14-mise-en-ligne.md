@@ -90,3 +90,34 @@ Sitemap `https://toiture-veryroof.be/sitemap.xml` soumis le 14/10/2026 : état �
 Pourquoi une propriété **Domaine** et non « Préfixe d'URL » : elle couvre d'un coup le `www`, le non-`www`, le `http` et le `https`. Une propriété de préfixe aurait demandé quatre déclarations séparées.
 
 Note : le CLI Netlify refuse la création d'enregistrement DNS (`createDnsRecord` → 422 Unprocessable Entity, quelle que soit la forme du corps). Passer par l'interface : Team → DNS → la zone → Add new record.
+
+## Messagerie contact@toiture-veryroof.be (14/10/2026)
+
+La boîte est un plan **Starter Business Email** Hostinger. Elle était marquée « Email is not working » : les enregistrements mail que Hostinger pose automatiquement n'existaient pas, puisque la zone DNS a été déplacée chez **Netlify** lors du raccordement du domaine. Ils ont été ajoutés à la main dans la zone Netlify :
+
+| Type | Nom | Valeur | Priorité | TTL |
+|---|---|---|---|---|
+| MX | @ | mx1.hostinger.com | 5 | 14400 |
+| MX | @ | mx2.hostinger.com | 10 | 14400 |
+| TXT | @ | `v=spf1 include:_spf.mail.hostinger.com ~all` | — | 3600 |
+| TXT | _dmarc | `v=DMARC1; p=none` | — | 3600 |
+| CNAME | hostingermail-a._domainkey | hostingermail-a.dkim.mail.hostinger.com | — | 300 |
+| CNAME | hostingermail-b._domainkey | hostingermail-b.dkim.mail.hostinger.com | — | 300 |
+| CNAME | hostingermail-c._domainkey | hostingermail-c.dkim.mail.hostinger.com | — | 300 |
+
+Le TXT de validation Google et les deux enregistrements NETLIFY du site sont intacts : dix enregistrements au total, le site répond toujours en 200.
+
+**Réception vérifiée par un vrai échange SMTP** (sans envoyer de message, en coupant avant les données) : `mx1.hostinger.com` répond `250 Ok` pour `contact@toiture-veryroof.be` et `550` pour une adresse inventée du même domaine — la boîte existe et n'est pas un attrape-tout.
+
+Redirection créée vers `borenxdaniel@gmail.com`, **copies conservées** dans la boîte Hostinger. Elle demande une confirmation par e-mail envoyée à l'adresse de destination.
+
+Réglages serveur, pour « Send mail as » dans Gmail ou tout client :
+
+| | |
+|---|---|
+| SMTP sortant | `smtp.hostinger.com`, port **465**, SSL |
+| IMAP entrant | `imap.hostinger.com`, port 993 |
+| POP3 | `pop.hostinger.com`, port 995 (déconseillé) |
+| Identifiant | l'adresse complète `contact@toiture-veryroof.be` |
+
+**Piège à retenir** : `dig` renvoie par moments « Message parser reports malformed message packet » sur cette zone, et les MX semblent alors absents alors qu'ils répondent. Vérifier sur plusieurs résolveurs avant de conclure à une panne — ou mieux, faire le test SMTP ci-dessus, qui est la seule preuve qui compte.
