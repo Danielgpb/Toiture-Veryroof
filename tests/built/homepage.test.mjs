@@ -140,11 +140,16 @@ test('mobile : barre CTA collante sur l’accueil (à la place du bouton flottan
 
 test('performance : chaque <img> a width, height et loading="lazy" ; l’image du hero est préchargée', () => {
   const hero = html.slice(html.indexOf('id="hero"'), html.indexOf('id="pourquoi-nous"'));
+  // Seule exception au chargement différé : les logos du bandeau défilant. Le chargement différé ne se
+  // redéclenche pas quand une marque entre par la droite, le logo resterait blanc. Ils sont donc immédiats,
+  // mais en priorité basse pour ne pas concurrencer l'image LCP du hero.
+  const marques = html.slice(html.indexOf('id="marques"'), html.indexOf('id="zones"'));
   const imgs = [...html.matchAll(/<img[^>]*>/g)].map((m) => m[0]);
   assert.ok(imgs.length >= 1);
   for (const img of imgs) {
     assert.match(img, /width="\d+"/, img); assert.match(img, /height="\d+"/, img); assert.match(img, /alt="/, img);
     if (hero.includes(img)) { assert.match(img, /fetchpriority="high"/, 'image LCP : fetchpriority="high"'); assert.doesNotMatch(img, /loading="lazy"/, 'image LCP jamais en lazy'); }
+    else if (marques.includes(img)) assert.match(img, /fetchpriority="low"/, `logo de marque sans priorité basse : ${img}`);
     else assert.match(img, /loading="lazy"/, img);
   }
   assert.match(html, /<link rel="preload" as="image" href="\/_astro\/[^"]+\.webp"[^>]*imagesrcset=/, 'préchargement de la photo du hero');

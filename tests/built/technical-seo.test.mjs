@@ -124,7 +124,9 @@ test('images : alt, dimensions, chargement différé sauf l’image du hero', ()
       assert.match(tag, /\balt="/, `${slug} : alt manquant ${tag.slice(0, 90)}`);
       assert.match(tag, /\bwidth="\d+"/, `${slug} : width ${tag.slice(0, 90)}`);
       assert.match(tag, /\bheight="\d+"/, `${slug} : height ${tag.slice(0, 90)}`);
-      if (!/fetchpriority="high"/.test(tag)) assert.match(tag, /loading="lazy"/, `${slug} : lazy ${tag.slice(0, 90)}`);
+      // fetchpriority="high" = image LCP du hero ; "low" = logos du bandeau défilant, qui ne peuvent pas
+      // être différés sans rester blancs quand la marque entre par la droite. Tout le reste est différé.
+      if (!/fetchpriority="(high|low)"/.test(tag)) assert.match(tag, /loading="lazy"/, `${slug} : lazy ${tag.slice(0, 90)}`);
     }
   }
 });

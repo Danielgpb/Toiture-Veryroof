@@ -23,12 +23,38 @@ Composant `src/components/home/BrandCarousel.astro`, liste dans `src/data/brands
 - Le défilement s'arrête au survol et au focus clavier.
 - Sous `prefers-reduced-motion: reduce`, l'animation disparaît : la copie est masquée et la liste devient une grille centrée, lisible d'un coup d'œil.
 
-### Logos
+### Logos (relevé du 14/10/2026)
 
-Tant qu'aucun fichier n'est fourni, le nom de la marque s'affiche en toutes lettres avec sa spécialité en dessous. C'est volontaire : mieux vaut un nom propre qu'un logo basse définition récupéré n'importe où. Pour poser un vrai logo : déposer le fichier dans `src/assets/logos/` (SVG de préférence, sinon PNG à fond transparent) et renseigner `logo` dans `brands.ts`. Le build échoue si le fichier est absent. N'utiliser que les fichiers officiels du fabricant ou de son espace presse : les logos restent la propriété de leurs titulaires.
+Six logos sur dix sont en place. Les fichiers viennent **uniquement du site officiel du fabricant** — jamais d'un agrégateur type seeklogo ou worldvectorlogo, dont les licences ne sont pas fiables. Chacun a été détourné de son cadre transparent et ramené à 88 px de haut (deux fois la hauteur d'affichage).
 
-### Règle de contenu
+| Marque | Logo | Source | Droit d'usage par un poseur tiers |
+|---|---|---|---|
+| Velux | ✅ | salle de presse officielle | **Autorisé par écrit**, sous conditions (voir ci-dessous) |
+| Recticel | ✅ | médiathèque officielle | **Autorisé** : fichiers « for marketing purposes on behalf of our trade partners » |
+| Wienerberger | ✅ | page media service | Usage éditorial seulement → accord à demander (communications@wienerberger.com) |
+| VMZINC | ✅ | habillage du site | **Interdit sans autorisation écrite** (informations légales) → info@vmbuildingsolutions.com |
+| Derbigum | ✅ | médiathèque WordPress | Aucune condition publiée, donc ni autorisé ni interdit → +32 2 334 87 00 |
+| Elevate | ✅ | habillage du site | Aucune condition publiée → holcimelevate.com/benelux-fr/contactez-nous |
+| Eternit | ❌ | — | Etex ne publie qu'un logo **blanc**, invisible sur fond clair |
+| Rheinzink | ❌ | — | Idem, version blanche seulement ; accord écrit préalable exigé |
+| Rockwool | ❌ | — | Logo diffusé en EPS d'impression uniquement, pas de fichier web |
+| Isover | ❌ | — | Rien de public, et le logo a changé en 2023 : tout fichier trouvé ailleurs risque d'être périmé |
 
-Le bandeau est une information factuelle — « les marques que nous posons » — et **jamais** une affirmation de partenariat, d'agrément ou de certification. Un test construit refuse les mots « partenaire », « certifié », « agréé » et « officiel » dans cette section.
+**Décision du client (14/10/2026)** : afficher les logos sans attendre les accords écrits, au motif qu'il pose ces marques quotidiennement. Le risque a été exposé et assumé. Les demandes d'autorisation restent à envoyer, idéalement couplées à une adhésion aux réseaux de poseurs (VMZINC at Work, applicateur agréé Derbigum), qui transforme la tolérance en droit explicite.
 
-**À CONFIRMER PAR LE CLIENT** : seule la pose de fenêtres de toit Velux est établie par le contenu du site. Les neuf autres marques de `brands.ts` sont les marques courantes du métier en Belgique, proposées pour relecture. Retirer celles qui ne sont pas posées avant la mise en ligne.
+**Condition Velux à ne jamais retirer** : sa charte pour installateurs impose la mention « VELUX and the VELUX logo are registered trademarks of VKR Holding A/S. ». Elle est portée par le champ `notice` dans `brands.ts` et s'affiche sous le bandeau. Supprimer le logo Velux supprime la mention automatiquement.
+
+### Corrections de marques appliquées
+
+- **Firestone → Elevate.** Firestone Building Products a été racheté par Holcim et rebaptisé **Elevate** en juin 2022 ; la gamme EPDM reste RubberGard. Afficher un logo Firestone reviendrait à montrer une marque que le fabricant n'utilise plus.
+- **Eternit / Cedral à vérifier.** Chez Etex, `eternit.be` ne couvre plus que les plaques ondulées fibres-ciment ; l'ardoise de toiture belge francophone est vendue sous la marque **Cedral**. En Belgique « ardoises Eternit » reste l'usage courant dans le métier, le nom est donc gardé, mais à confirmer avec le client.
+- **Koramic** n'a pas de logo propre : Wienerberger a réuni ses marques sous l'ombrelle wienerberger en octobre 2024. Attention, `koramic.be` est un family office courtraisien sans lien avec Wienerberger.
+
+### Deux pièges techniques résolus
+
+1. **Chargement différé impossible dans un bandeau animé.** Le `loading="lazy"` ne se redéclenche pas quand une marque entre par la droite sous l'effet d'une translation CSS : les logos restaient blancs. Ils sont donc en `loading="eager"` avec `fetchpriority="low"`, seule exception du site à la règle du chargement différé, inscrite comme telle dans `technical-seo.test.mjs` et `homepage.test.mjs`.
+2. **Équilibre optique.** À hauteur égale, un logo empilé comme Recticel paraît deux fois plus petit qu'un logotype large comme Wienerberger. La hauteur d'affichage est donc calculée par logo à partir de la racine du rapport largeur/hauteur (32 px minimum, 56 px maximum), ce qui égalise les surfaces occupées.
+
+### Piège d'accessibilité à ne pas réintroduire
+
+Les noms de marque écrits sont colorés avec `--color-muted`, **jamais** avec une opacité réduite. Une opacité sur du texte éclaircit sa couleur effective : la première version, à `opacity: 0.65`, tombait à un contraste de 3,18 pour 4,5 requis, et faisait chuter le score d'accessibilité à 97.
