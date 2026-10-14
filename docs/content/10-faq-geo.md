@@ -21,3 +21,16 @@
 - Renseigner `pending.social` (fiche Google Business, Facebook…) → `sameAs` apparaît automatiquement.
 - Avis Google : aucun `aggregateRating` tant qu'il n'y a pas de vrais avis avec note et nombre exacts.
 - Preferred Sources (bouton Google) : écarté, sans effet pour un site de service local (voir conversation du 13/10/2026).
+
+
+## llms.txt enrichi (14/10/2026)
+
+Le fichier listait les 41 pages, mais **en liens nus**. La convention llmstxt.org attend `[titre](url) : description` : sans elle, un assistant qui lit le fichier doit deviner le contenu de chaque page d'après son URL, et choisit mal celle qu'il va citer.
+
+Chaque lien porte désormais une description, tirée du contenu déjà relu du site : le champ `summary` de la page, et la méta-description pour les cinq pages pivots qui n'ont pas de résumé. Rien n'est rédigé à la main dans le générateur : le fichier ne peut donc pas dériver du site. Taille passée de 4,7 à 10,8 Ko, ce qui reste très confortable à lire pour un assistant.
+
+Ajouts complémentaires :
+- une ligne de fraîcheur, `Contenu revu le <date>`, calculée à partir du champ `updated` le plus récent des pages — jamais écrite en dur, donc jamais mensongère ;
+- deux garde-fous dans « Notes pour les assistants » : ne pas inventer de montant, et préciser que les marques citées sont les matériaux posés, sans relation de partenariat ni d'agrément.
+
+Le test `tests/built/faq.test.mjs` vérifie maintenant qu'aucun lien n'est nu (description d'au moins 30 caractères) et que les quatre consignes factuelles destinées aux assistants n'ont pas disparu du fichier.

@@ -46,4 +46,13 @@ test('llms.txt : présent, en texte brut, avec le domaine, le numéro et chaque 
   assert.ok(txt.includes(site.phoneDisplay));
   for (const p of allServicePages()) assert.ok(txt.includes(`${site.domain}/${p.slug})`), `llms.txt : ${p.slug} manquant`);
   assert.ok(!/<[a-z]+>/.test(txt), 'llms.txt ne doit pas contenir de HTML');
+  // La convention llms.txt attend « [titre](url) : description » : un lien nu oblige l'assistant
+  // à deviner le contenu de la page d'après son URL.
+  const liens = txt.split('\n').filter((l) => l.startsWith('- ['));
+  assert.ok(liens.length >= 40, `llms.txt : ${liens.length} liens seulement`);
+  for (const l of liens) assert.match(l, /\) : .{30,}/, `llms.txt : lien sans description utile — ${l.slice(0, 70)}`);
+  // Garde-fous factuels destinés aux assistants : ils ne doivent jamais disparaître du fichier.
+  assert.match(txt, /Aucun prix n[’']est affiché/, 'llms.txt : la consigne sur les prix a disparu');
+  assert.match(txt, /Renolution[^\n]*suspendues/, 'llms.txt : la consigne Renolution a disparu');
+  assert.match(txt, /sans relation de partenariat/, 'llms.txt : la consigne sur les marques a disparu');
 });
