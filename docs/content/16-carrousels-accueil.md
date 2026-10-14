@@ -21,6 +21,7 @@ Composant `src/components/home/BrandCarousel.astro`, liste dans `src/data/brands
 
 - Défilement infini en CSS pur, sans JavaScript : deux pistes identiques, la seconde masquée aux lecteurs d'écran (`aria-hidden`), translation d'exactement une largeur de piste. Chaque piste porte son écart **à gauche uniquement**, sinon la jonction entre les deux montrerait un trou deux fois plus large.
 - Le défilement s'arrête au survol et au focus clavier.
+- Les logos s'affichent **en couleur en permanence** (demande du client du 14/10/2026) : pas de passage en gris ni d'atténuation au repos. Les noms écrits prennent donc le bleu foncé de la marque, pour tenir le même poids visuel que les logos colorés.
 - Sous `prefers-reduced-motion: reduce`, l'animation disparaît : la copie est masquée et la liste devient une grille centrée, lisible d'un coup d'œil.
 
 ### Logos (relevé du 14/10/2026)
@@ -57,4 +58,4 @@ Six logos sur dix sont en place. Les fichiers viennent **uniquement du site offi
 
 ### Piège d'accessibilité à ne pas réintroduire
 
-Les noms de marque écrits sont colorés avec `--color-muted`, **jamais** avec une opacité réduite. Une opacité sur du texte éclaircit sa couleur effective : la première version, à `opacity: 0.65`, tombait à un contraste de 3,18 pour 4,5 requis, et faisait chuter le score d'accessibilité à 97.
+Les noms de marque écrits sont colorés avec `--color-primary`, **jamais** avec une opacité réduite. Une opacité sur du texte éclaircit sa couleur effective : la première version, à `opacity: 0.65`, tombait à un contraste de 3,18 pour 4,5 requis, et faisait chuter le score d'accessibilité à 97.

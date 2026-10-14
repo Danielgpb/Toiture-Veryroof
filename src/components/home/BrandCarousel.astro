@@ -132,12 +132,7 @@ const duration = `${items.length * 5}s`;
     /* La hauteur est calculée par logo pour équilibrer les surfaces : elle est portée par l'attribut. */
     width: auto;
     object-fit: contain;
-    /* Les logos sont ramenés au gris du site pour que le bandeau reste calme ; couleur d'origine au survol. */
-    filter: grayscale(1);
-    opacity: 0.65;
-    transition: filter 0.2s, opacity 0.2s;
   }
-  .brands__viewport:hover .brands__item :global(img) { filter: none; opacity: 1; }
 
   /*
    * Les noms écrits portent la même retenue que les logos ramenés au gris : sans cela, un bandeau
@@ -152,14 +147,13 @@ const duration = `${items.length * 5}s`;
     font-size: clamp(1.15rem, 2.2vw, 1.4rem);
     line-height: 1.1;
     /*
-     * Couleur atténuée choisie explicitement, jamais une opacité : baisser l'opacité d'un texte
-     * éclaircit sa couleur effective et fait tomber le contraste sous le seuil accessible.
+     * Les logos s'affichant en couleur, les noms écrits prennent le bleu foncé de la marque pour
+     * tenir le même poids visuel. Couleur choisie explicitement, jamais une opacité : baisser
+     * l'opacité d'un texte éclaircit sa couleur effective et fait tomber le contraste.
      */
-    color: var(--color-muted);
-    transition: color 0.2s;
+    color: var(--color-primary);
     white-space: nowrap;
   }
-  .brands__viewport:hover .brands__name { color: var(--color-primary); }
   .brands__category {
     font-size: 0.72rem;
     font-weight: 600;
