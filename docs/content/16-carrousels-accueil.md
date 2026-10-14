@@ -72,3 +72,13 @@ Nouvel ordre, le formulaire descendant après les services **et** les preuves :
 Le formulaire est désormais à **50 %** de la page, juste après le carrousel des chantiers et le bandeau des marques. L'ancre `#devis` (quatre liens, dont le bouton du hero) continue de fonctionner et atterrit sous l'en-tête collant.
 
 C'est un écart assumé par rapport à l'ordre du Prompt 3 : le test `homepage.test.mjs` a été mis à jour en conséquence, ainsi que les bornes de découpe des tests qui s'appuyaient sur `#devis` et `#marques`.
+
+## Appels à l'action de l'en-tête (14/10/2026)
+
+L'en-tête collant ne portait que le numéro de téléphone. Les visiteurs qui n'appellent pas — ceux qui regardent le soir, ou qui préfèrent écrire — n'avaient rien à cliquer avant d'arriver au formulaire, désormais à mi-page.
+
+Un second bouton **« Devis gratuit »** a été ajouté à côté du numéro, en contour et non en plein, pour que l'appel reste l'action principale. Il pointe sur `#devis` quand la page porte le formulaire (accueil et Contact) et sur `/contact` partout ailleurs : aucune ancre morte, ce que vérifie déjà `technical-seo.test.mjs`.
+
+Seuils : les deux boutons disparaissent sous 900 px, où la barre collante du bas porte déjà les mêmes actions ; entre 900 et 1100 px, seul le numéro reste, pour que l'en-tête ne se tasse pas.
+
+**Pourquoi pas une bulle flottante en bureau**, comme envisagé : le numéro est déjà visible en permanence dans l'en-tête collant, une bulle ferait doublon ; et une pastille ronde en bas à droite est lue comme un chat, donc soit ignorée par réflexe, soit cliquée par des visiteurs qui s'attendent à écrire et tombent sur un appel.

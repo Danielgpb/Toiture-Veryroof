@@ -2,6 +2,11 @@
 import { site } from '../data/site';
 import { cleanPath } from '../lib/paths';
 const current = cleanPath(Astro.url.pathname);
+/*
+ * Seules l'accueil et la page Contact portent le formulaire : ailleurs, le bouton « Devis gratuit »
+ * renvoie à la page Contact plutôt que vers une ancre qui n'existe pas.
+ */
+const quoteHref = current === `/${site.homeSlug}` || current === '/contact' ? '#devis' : '/contact';
 ---
 <div class="topbar">
   <div class="container topbar__inner">
@@ -27,10 +32,14 @@ const current = cleanPath(Astro.url.pathname);
         <li class="nav__mobile-cta"><a class="btn btn--accent" href={site.phoneHref}>Appeler le {site.phoneDisplay}</a></li>
       </ul>
     </nav>
-    <a class="btn btn--accent header__cta" href={site.phoneHref}>
-      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
-      <span>{site.phoneDisplay}</span>
-    </a>
+    <div class="header__ctas">
+      {/* Second appel à l'action pour qui n'ose pas téléphoner : contour, pour ne pas concurrencer le numéro. */}
+      <a class="btn header__quote" href={quoteHref}>Devis gratuit</a>
+      <a class="btn btn--accent header__cta" href={site.phoneHref}>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+        <span>{site.phoneDisplay}</span>
+      </a>
+    </div>
     <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
       <span></span><span></span><span></span>
     </button>
@@ -51,13 +60,19 @@ const current = cleanPath(Astro.url.pathname);
   .nav__list { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.75rem; }
   .nav__list a { text-decoration: none; font-weight: 600; color: var(--color-text); padding: 0.5rem 0; border-bottom: 2px solid transparent; }
   .nav__list a:hover, .nav__list a[aria-current="page"] { color: var(--color-primary); border-bottom-color: var(--color-accent); }
+  .header__ctas { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+  /* Contour plutôt que plein : le numéro reste l'action principale, le devis la seconde porte. */
+  .header__quote { border-color: var(--color-primary); color: var(--color-primary); background: transparent; padding-inline: 1.1rem; }
+  .header__quote:hover { background: var(--color-primary); color: #fff; }
   .nav__mobile-cta { display: none; }
   .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 48px; height: 48px; padding: 0; background: none; border: 0; cursor: pointer; }
   .burger span { display: block; width: 26px; height: 3px; margin-inline: auto; background: var(--color-primary); border-radius: 2px; }
+  @media (max-width: 1100px) { .header__quote { display: none; } }
   @media (max-width: 900px) {
     .topbar__text { display: none; }
     .topbar__inner { justify-content: center; }
-    .header__cta { display: none; }
+    /* Sur mobile, la barre collante du bas porte déjà les deux actions. */
+    .header__ctas { display: none; }
     .burger { display: flex; }
     .nav { position: absolute; top: 100%; left: 0; right: 0; display: none; background: #fff; border-bottom: 1px solid var(--color-line); box-shadow: var(--shadow); }
     .nav.is-open { display: block; }
