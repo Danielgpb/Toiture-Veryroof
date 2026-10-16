@@ -14,7 +14,7 @@ CITY: Bruxelles
 STATE: Région de Bruxelles-Capitale, Belgique
 STATE ABBREVIATION: — (sans objet en Belgique : aucune abréviation dans les URL, titres ou H1. Dans le schema : `addressRegion` = « Bruxelles-Capitale », `addressCountry` = « BE »)
 ZIP CODE: 1000
-STREET ADDRESS: Chaussée de La Hulpe 254, 1000 Bruxelles (code postal à vérifier : cette chaussée traverse aussi Watermael-Boitsfort 1170 et Uccle 1180)
+STREET ADDRESS: Chaussée de La Hulpe 264, 1000 Bruxelles (code postal à vérifier : cette chaussée traverse aussi Watermael-Boitsfort 1170 et Uccle 1180)
 PHONE NUMBER: +32 460 22 99 60 (fourni par le client le 12/10/2026 — format tel: `+32460229960`)
 EMAIL: info@toiture-veryroof.be (placeholder aligné sur le domaine — à confirmer)
 DOMAIN: toiture-veryroof.be (fourni par le client le 12/10/2026 ; canonique sans www : https://toiture-veryroof.be — faire rediriger www vers la racine chez l'hébergeur)
@@ -167,7 +167,7 @@ TOP BAR :
 FOOTER LINKS :
 Colonne « Liens rapides » : Accueil, Services, À propos, Contact, Zones d'intervention
 Colonne « Nos services » : Réparation de toiture, Rénovation de toiture, Toiture plate, Isolation de toiture, Zinguerie et gouttières, Dépannage d'urgence 24h/24, Pose de Velux, Démoussage, Inspection de toiture, Copropriétés et syndics
-Colonne « Coordonnées » : Toiture Veryroof · Chaussée de La Hulpe 254, 1000 Bruxelles · [TÉLÉPHONE] · [EMAIL] · [N° BCE / TVA]
+Colonne « Coordonnées » : Toiture Veryroof · Chaussée de La Hulpe 264, 1000 Bruxelles · [TÉLÉPHONE] · [EMAIL] · [N° BCE / TVA]
 Colonne « Zones » : liens vers les pages communes existantes (Uccle, Watermael-Boitsfort, Rhode-Saint-Genèse, Waterloo) + « Toutes nos zones d'intervention » (lien vers /zones-d-intervention)
 Bas de page : icônes Facebook et Google (placeholders) · Mentions légales · Politique de confidentialité · © 2026 Toiture Veryroof
 
