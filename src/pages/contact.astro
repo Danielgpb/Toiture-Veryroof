@@ -19,14 +19,14 @@ const schema = {
       '@type': 'RoofingContractor',
       '@id': orgId,
       name: site.name,
-      url: `${site.domain}/${site.homeSlug}`,
+      url: `${site.domain}${site.homeHref}`,
       telephone: site.phoneHref.replace('tel:', ''),
       email: site.email,
       address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country },
       contactPoint: { '@type': 'ContactPoint', telephone: site.phoneHref.replace('tel:', ''), contactType: 'customer service', availableLanguage: 'fr', areaServed: 'BE' },
     },
     { '@type': 'ContactPage', '@id': `${site.domain}/contact#page`, url: `${site.domain}/contact`, name: title, mainEntity: { '@id': orgId } },
-    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}/${site.homeSlug}` }, { '@type': 'ListItem', position: 2, name: 'Contact', item: `${site.domain}/contact` }] },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}${site.homeHref}` }, { '@type': 'ListItem', position: 2, name: 'Contact', item: `${site.domain}/contact` }] },
   ],
 };
 ---
@@ -36,7 +36,7 @@ const schema = {
   </Fragment>
   <section id="hero" class="page-head contact-head">
     <div class="container">
-      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={`/${site.homeSlug}`}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">Contact</span></li></ol></nav>
+      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={site.homeHref}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">Contact</span></li></ol></nav>
       <h1>Contactez Toiture Veryroof</h1>
       <p class="contact-head__sub">Prêts à vous aider : appelez-nous ou envoyez-nous un message.</p>
       <a class="contact-head__phone" href={site.phoneHref}><Icon name="phone" size={30} /> {site.phoneDisplay}</a>

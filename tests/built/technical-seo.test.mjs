@@ -15,13 +15,15 @@ const pages = new Map();
 before(async () => {
   for (const f of (await readdir(dist)).filter((f) => f.endsWith('.html'))) pages.set(f.replace(/\.html$/, ''), await readFile(join(dist, f), 'utf8'));
 });
-const indexable = () => [...pages].filter(([slug]) => slug !== 'index' && slug !== '404');
+// L'accueil est désormais index.html et compte parmi les pages indexables. Sortent du lot : la 404
+// et couvreur-bruxelles.html, qui n'est plus qu'une page de redirection vers la racine.
+const indexable = () => [...pages].filter(([slug]) => slug !== '404' && slug !== 'couvreur-bruxelles');
 const withSchema = new Set([site.homeSlug, 'services', 'a-propos', 'contact', ...allServicePages().map((p) => p.slug)]);
 
 test('sitemap.xml : toutes les pages indexables, une seule fois, avec lastmod, changefreq et priorité par type de page', async () => {
   const xml = await readFile(join(dist, 'sitemap.xml'), 'utf8');
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  const expected = [site.homeSlug, ...allServicePages().map((p) => p.slug), ...staticPages.map((s) => s.slug), ...activeZones.map((z) => z.slug)].map((s) => `${site.domain}/${s}`);
+  const expected = [`${site.domain}${site.homeHref}`, ...[...allServicePages().map((p) => p.slug), ...staticPages.map((s) => s.slug), ...activeZones.map((z) => z.slug)].map((s) => `${site.domain}/${s}`)];
   assert.deepEqual([...locs].sort(), [...expected].sort());
   assert.equal(new Set(locs).size, locs.length, 'URL en double');
   assert.equal(locs.length, indexable().length, 'autant d’URL que de pages HTML indexables (hors 404 et redirection racine)');
@@ -31,7 +33,7 @@ test('sitemap.xml : toutes les pages indexables, une seule fois, avec lastmod, c
     assert.match(u, /<priority>(1\.0|0\.[3-8])<\/priority>/);
   }
   const entry = (slug) => xml.match(new RegExp(`<loc>${site.domain}/${slug}</loc>[\\s\\S]*?</url>`))[0];
-  assert.match(entry(site.homeSlug), /<changefreq>weekly<\/changefreq>[\s\S]*<priority>1\.0<\/priority>/);
+  assert.match(entry(''), /<changefreq>weekly<\/changefreq>[\s\S]*<priority>1\.0<\/priority>/);
   for (const g of serviceGroups) { assert.match(entry(g.slug), /<priority>0\.8<\/priority>/, g.slug); for (const ch of g.children) assert.match(entry(ch.slug), /<priority>0\.6<\/priority>/, ch.slug); }
   assert.match(entry('services'), /<priority>0\.7<\/priority>/);
   assert.match(entry('a-propos'), /<priority>0\.5<\/priority>/);
@@ -57,9 +59,11 @@ test('chaque page : lang fr, viewport, canonique auto-référente, title ≤ 60 
     assert.ok(desc.length > 0 && desc.length <= 160, `${slug} : description ${desc.length} car.`);
     assert.ok(!descs.has(desc), `${slug} : description identique à ${descs.get(desc)}`); descs.set(desc, slug);
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${slug} : un seul H1`);
-    assert.ok(html.includes(`<link rel="canonical" href="${site.domain}/${slug}"`), `${slug} : canonique auto-référente`);
+    // L'accueil vit à la racine : sa canonique est le domaine nu, pas le domaine suivi d'un slug.
+    const self = slug === site.homeSlug ? `${site.domain}${site.homeHref}` : `${site.domain}/${slug}`;
+    assert.ok(html.includes(`<link rel="canonical" href="${self}"`), `${slug} : canonique auto-référente`);
     for (const p of ['og:type', 'og:site_name', 'og:locale', 'og:title', 'og:description', 'og:url', 'og:image']) assert.match(html, new RegExp(`<meta property="${p}" content="[^"]+"`), `${slug} : ${p}`);
-    assert.ok(html.includes(`<meta property="og:url" content="${site.domain}/${slug}"`), `${slug} : og:url = canonique`);
+    assert.ok(html.includes(`<meta property="og:url" content="${self}"`), `${slug} : og:url = canonique`);
     assert.match(html, new RegExp(`<meta property="og:image" content="${site.domain}/[^"]+\\.(jpg|webp|png)"`), `${slug} : og:image absolue`);
     assert.match(html, /<meta name="twitter:card" content="summary_large_image"/, slug);
     assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/, slug);
@@ -102,9 +106,9 @@ test('maillage : accueil → hubs/services/à propos/contact, services → toute
   for (const g of serviceGroups) {
     const hub = pages.get(g.slug); const hubMain = hub.slice(hub.indexOf('<main'), hub.indexOf('</main>'));
     for (const ch of g.children) { assert.ok(hubMain.includes(`href="/${ch.slug}"`), `${g.slug} → ${ch.slug}`); const c = pages.get(ch.slug); assert.ok(c.slice(c.indexOf('<main'), c.indexOf('</main>')).includes(`href="/${g.slug}"`), `${ch.slug} → parent`); }
-    assert.ok(hubMain.includes(`href="/${site.homeSlug}"`), `${g.slug} → accueil dans le contenu`);
+    assert.ok(hubMain.includes(`href="${site.homeHref}"`), `${g.slug} → accueil dans le contenu`);
   }
-  for (const [slug, html] of indexable()) for (const h of [`/${site.homeSlug}`, '/services', '/a-propos', '/contact']) assert.ok(html.includes(`href="${h}"`), `${slug} : navigation → ${h}`);
+  for (const [slug, html] of indexable()) for (const h of [site.homeHref, '/services', '/a-propos', '/contact']) assert.ok(html.includes(`href="${h}"`), `${slug} : navigation → ${h}`);
 });
 
 test('mobile : numéro cliquable, menu burger, bouton d’appel flottant ou barre collante, aucune ancre # hors liens intentionnels', () => {
@@ -135,7 +139,7 @@ test('page 404 : design du site, message utile, liens accueil / services / hubs,
   const html = pages.get('404');
   assert.ok(html.includes('<header') && html.includes('<footer'), 'en-tête et pied de page');
   assert.match(html, /<h1[^>]*>Page introuvable<\/h1>/);
-  for (const h of [`/${site.homeSlug}`, '/services', '/contact', ...serviceGroups.map((g) => `/${g.slug}`)]) assert.ok(html.includes(`href="${h}"`), `404 → ${h}`);
+  for (const h of [site.homeHref, '/services', '/contact', ...serviceGroups.map((g) => `/${g.slug}`)]) assert.ok(html.includes(`href="${h}"`), `404 → ${h}`);
   assert.ok(html.includes(`href="${site.phoneHref}"`));
   assert.ok(!/\b(404|erreur serveur)\b/i.test(text(html.slice(html.indexOf('<main'), html.indexOf('</main>')))), 'pas de code d’erreur affiché');
 });

@@ -47,7 +47,7 @@ export const GET: APIRoute = () => {
     updated ? `Contenu revu le ${updated}. Langue : français de Belgique.` : '',
     '',
     '## Pages principales',
-    `- [Accueil – Couvreur à Bruxelles](${url(site.homeSlug)}) : ${accueil.metaDescription}`,
+    `- [Accueil – Couvreur et toiture à Bruxelles](${site.domain}${site.homeHref}) : ${accueil.metaDescription}`,
     `- [Tous les services](${url('services')}) : les prestations de couverture, zinguerie, isolation et étanchéité, classées par famille.`,
     `- [À propos](${url('a-propos')}) : l'entreprise, l'équipe et la façon dont nous travaillons.`,
     `- [Contact et devis](${url('contact')}) : formulaire de demande de devis, téléphone et coordonnées.`,

@@ -45,7 +45,7 @@ test('chaque commune : hero illustré, H1 « Couvreur à <commune> », H2 dans l
 test('chaque commune : fil d’Ariane vers le hub des zones, lien accueil, au moins 4 pages services liées, autres communes en grille, numéro cliquable, schema (organisation, FAQPage, areaServed)', () => {
   for (const [slug, { html, zone }] of Object.entries(pages)) {
     assert.match(html, /aria-label="Fil d'Ariane"[\s\S]*?href="\/zones-d-intervention"/, `${slug} : hub des zones dans le fil d'Ariane`);
-    assert.ok(html.includes(`href="/${site.homeSlug}"`), `${slug} : lien accueil`);
+    assert.ok(html.includes(`href="${site.homeHref}"`), `${slug} : lien accueil`);
     const serviceLinks = new Set([...html.matchAll(/href="\/([a-z-]+-bruxelles)"/g)].map((m) => m[1]));
     assert.ok(serviceLinks.size >= 4, `${slug} : ${serviceLinks.size} pages services liées (min 4)`);
     for (const other of activeZones.filter((z) => z.slug !== slug)) assert.ok(html.includes(`href="/${other.slug}"`), `${slug} : lien vers ${other.slug}`);

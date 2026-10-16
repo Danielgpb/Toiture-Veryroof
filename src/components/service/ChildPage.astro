@@ -57,7 +57,7 @@ const relatedHeading = group ? `Dans la même famille : ${group.name.charAt(0).t
 const orgId = `${site.domain}/#organisation`;
 const pageUrl = `${site.domain}/${c.slug}`;
 const crumbs = [
-  { label: 'Accueil', href: `/${site.homeSlug}` },
+  { label: 'Accueil', href: site.homeHref },
   { label: 'Services', href: '/services' },
   ...(group ? [{ label: group.name, href: `/${group.slug}` }] : []),
   { label: page.name },
@@ -65,7 +65,7 @@ const crumbs = [
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}/${site.homeSlug}`, telephone: site.phoneHref.replace('tel:', ''), address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country } },
+    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}${site.homeHref}`, telephone: site.phoneHref.replace('tel:', ''), address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country } },
     { '@type': 'Service', '@id': `${pageUrl}#service`, name: page.name, serviceType: page.name, url: pageUrl, description: c.metaDescription, provider: { '@id': orgId }, areaServed: [{ '@type': 'City', name: site.city }, { '@type': 'AdministrativeArea', name: site.address.region }], ...(group ? { isRelatedTo: { '@type': 'Service', name: group.name, url: `${site.domain}/${group.slug}` } } : {}) },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.label, item: b.href ? `${site.domain}${b.href}` : pageUrl })) },
     // FAQ : mêmes questions et réponses que la section visible (texte sans balises de lien)

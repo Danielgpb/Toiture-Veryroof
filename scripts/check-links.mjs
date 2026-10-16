@@ -44,7 +44,12 @@ let checked = 0;
 for (const file of files) {
   const page = '/' + relative(dist, file);
   const html = await readFile(file, 'utf8');
-  if (page !== '/index.html' && page !== '/404.html') {
+  // index.html porte la canonique de la racine ; couvreur-bruxelles.html n'est qu'une redirection.
+  if (page === '/index.html') {
+    const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
+    const attendu = `${site.domain}${site.homeHref}`;
+    if (canonical !== attendu) errors.push(`${page}: canonical "${canonical}" ≠ "${attendu}"`);
+  } else if (page !== '/404.html' && page !== '/couvreur-bruxelles.html') {
     const expectedCanonical = `${site.domain}/${basename(file, '.html')}`;
     const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
     if (canonical !== expectedCanonical) errors.push(`${page}: canonical "${canonical}" ≠ "${expectedCanonical}"`);
@@ -81,13 +86,14 @@ if (files.length !== expected) errors.push(`Nombre de pages HTML : ${files.lengt
 
 for (const file of files) {
   const page = '/' + relative(dist, file);
-  if (page === '/index.html' || page === '/404.html') continue;
+  // index.html = l'accueil ; 404 ; couvreur-bruxelles.html = la page de redirection vers la racine.
+  if (page === '/index.html' || page === '/404.html' || page === '/couvreur-bruxelles.html') continue;
   if (!inbound.get(page)) errors.push(`page orpheline : ${page}`);
 }
 
 const redirects = join(dist, '_redirects');
-if (!(await exists(redirects)) || !/^\/\s+\/couvreur-bruxelles\s+301!\s*$/m.test(await readFile(redirects, 'utf8'))) {
-  errors.push('_redirects : règle forcée "/  /couvreur-bruxelles  301!" manquante (sans "!", Netlify sert index.html en 200)');
+if (!(await exists(redirects)) || !/^\/couvreur-bruxelles\s+\/\s+301!\s*$/m.test(await readFile(redirects, 'utf8'))) {
+  errors.push('_redirects : règle forcée "/couvreur-bruxelles  /  301!" manquante (l\'ancienne adresse de l\'accueil doit renvoyer vers la racine)');
 }
 
 console.log(`${files.length} pages HTML, ${checked} liens internes vérifiés`);

@@ -1,4 +1,4 @@
-// Garde-fous issus de la revue du Prompt 3 (page construite : dist/couvreur-bruxelles.html + bundles _astro).
+// Garde-fous issus de la revue du Prompt 3 (page construite : dist/index.html + bundles _astro).
 import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
@@ -11,7 +11,7 @@ let html = '';
 let css = '';
 let scripts = '';
 before(async () => {
-  html = await readFile(join(dist, 'couvreur-bruxelles.html'), 'utf8');
+  html = await readFile(join(dist, 'index.html'), 'utf8');
   const assets = await readdir(join(dist, '_astro'));
   const read = (ext) => Promise.all(assets.filter((f) => f.endsWith(ext)).map((f) => readFile(join(dist, '_astro', f), 'utf8')));
   css = (await read('.css')).join('\n');
@@ -24,7 +24,7 @@ const slice = (fromId, toMarker) => html.slice(html.indexOf(`id="${fromId}"`), h
 
 test('le formulaire poste vers la page qui le contient, jamais vers la racine redirigée', () => {
   const form = html.match(/<form[^>]*name="devis"[^>]*>/)[0];
-  assert.match(form, /action="\/couvreur-bruxelles"/);
+  assert.match(form, /action="\/"/);
   assert.match(form, /method="POST"/i);
   assert.match(form, /data-netlify="true"/);
   const sec = slice('devis', 'zones');

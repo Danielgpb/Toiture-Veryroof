@@ -88,7 +88,7 @@ test('Contact : schema ContactPage lié à l’organisation avec point de contac
 });
 
 test('RGPD et conversion : lien vers la politique de confidentialité près de chaque formulaire, champ source, CTA #devis sur Contact', async () => {
-  const home = await readFile(join(dist, 'couvreur-bruxelles.html'), 'utf8');
+  const home = await readFile(join(dist, 'index.html'), 'utf8');
   for (const [name, html] of [['accueil', home], ['contact', contact]]) {
     const form = html.slice(html.indexOf('<form'), html.indexOf('</form>'));
     assert.ok(form.includes('href="/politique-de-confidentialite"'), `${name} : lien politique de confidentialité dans le formulaire`);
@@ -100,7 +100,7 @@ test('RGPD et conversion : lien vers la politique de confidentialité près de c
 });
 
 test('liaison Suivi Leads : le script du formulaire (accueil et contact) poste vers le relais /.netlify/functions/lead avec le piège _piege et le service', async () => {
-  const home = await readFile(join(dist, 'couvreur-bruxelles.html'), 'utf8');
+  const home = await readFile(join(dist, 'index.html'), 'utf8');
   for (const [name, html] of [['accueil', home], ['contact', contact]]) {
     // Astro inline les petits scripts dans la page ; on lit aussi les éventuels fichiers externes
     const inline = [...html.matchAll(/<script type="module">([\s\S]*?)<\/script>/g)].map((m) => m[1]);

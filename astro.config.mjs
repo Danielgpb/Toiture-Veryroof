@@ -5,5 +5,5 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },
-  redirects: { '/': '/couvreur-bruxelles' },
+  redirects: { '/couvreur-bruxelles': '/' },
 });

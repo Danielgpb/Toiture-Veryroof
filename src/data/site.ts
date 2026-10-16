@@ -15,10 +15,16 @@ export const site = {
   },
   /** Numéro d'entreprise (BCE) et de TVA, ex. 'BE 0123.456.789'. Vide tant que le client ne l'a pas communiqué : la ligne n'est alors affichée nulle part. */
   vat: '',
-  homeSlug: 'couvreur-bruxelles',
+  /**
+   * Identifiant interne de l'accueil : nom de son fichier construit (dist/index.html) et clé
+   * dans keywords.ts. Son ADRESSE publique est `homeHref` — l'accueil vit à la racine.
+   */
+  homeSlug: 'index',
+  /** Adresse publique de l'accueil : la racine du domaine. /couvreur-bruxelles y redirige en 301. */
+  homeHref: '/',
   city: 'Bruxelles',
   nav: [
-    { label: 'Accueil', href: '/couvreur-bruxelles' },
+    { label: 'Accueil', href: '/' },
     { label: 'Services', href: '/services' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Contact', href: '/contact' },

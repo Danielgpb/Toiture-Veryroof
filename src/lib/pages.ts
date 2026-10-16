@@ -138,5 +138,5 @@ export function getPageContent(slug: string): PageContent | undefined {
 export function richContext(): RichContext {
   const pages: Record<string, string> = {};
   for (const p of allServicePages()) pages[p.name] = `/${p.slug}`;
-  return { pages, homeHref: `/${site.homeSlug}`, phoneDisplay: site.phoneDisplay, phoneHref: site.phoneHref };
+  return { pages, homeHref: site.homeHref, phoneDisplay: site.phoneDisplay, phoneHref: site.phoneHref };
 }

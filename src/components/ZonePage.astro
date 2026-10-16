@@ -42,14 +42,14 @@ const others = activeZones.filter((z) => z.slug !== c.slug).map((z) => {
 const orgId = `${site.domain}/#organisation`;
 const pageUrl = `${site.domain}/${c.slug}`;
 const crumbs = [
-  { label: 'Accueil', href: `/${site.homeSlug}` },
+  { label: 'Accueil', href: site.homeHref },
   { label: "Zones d'intervention", href: '/zones-d-intervention' },
   { label: `Couvreur ${zone.name}` },
 ];
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}/${site.homeSlug}`, telephone: site.phoneHref.replace('tel:', ''), address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country }, areaServed: { '@type': 'City', name: zone.name } },
+    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}${site.homeHref}`, telephone: site.phoneHref.replace('tel:', ''), address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.city, postalCode: site.address.postalCode, addressRegion: site.address.region, addressCountry: site.address.country }, areaServed: { '@type': 'City', name: zone.name } },
     { '@type': 'Service', '@id': `${pageUrl}#service`, name: `Couvreur à ${zone.name}`, serviceType: 'Travaux de toiture', url: pageUrl, description: c.metaDescription, provider: { '@id': orgId }, areaServed: { '@type': 'City', name: zone.name } },
     { '@type': 'BreadcrumbList', itemListElement: crumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.label, item: b.href ? `${site.domain}${b.href}` : pageUrl })) },
     { '@type': 'FAQPage', '@id': `${pageUrl}#faq`, mainEntity: c.faq.map((q) => ({ '@type': 'Question', name: q.question, acceptedAnswer: { '@type': 'Answer', text: plain(q.answer) } })) },

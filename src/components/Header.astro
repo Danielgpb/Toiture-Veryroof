@@ -6,7 +6,7 @@ const current = cleanPath(Astro.url.pathname);
  * Seules l'accueil et la page Contact portent le formulaire : ailleurs, le bouton « Devis gratuit »
  * renvoie à la page Contact plutôt que vers une ancre qui n'existe pas.
  */
-const quoteHref = current === `/${site.homeSlug}` || current === '/contact' ? '#devis' : '/contact';
+const quoteHref = current === site.homeHref || current === '/contact' ? '#devis' : '/contact';
 ---
 <div class="topbar">
   <div class="container topbar__inner">
@@ -16,7 +16,7 @@ const quoteHref = current === `/${site.homeSlug}` || current === '/contact' ? '#
 </div>
 <header class="header" id="site-header">
   <div class="container header__inner">
-    <a class="logo" href={`/${site.homeSlug}`} aria-label={`${site.name} — accueil`}>
+    <a class="logo" href={site.homeHref} aria-label={`${site.name} — accueil`}>
       <svg class="logo__icon" width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
         <path d="M4 19 18 6l14 13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M9 17v12h18V17" fill="none" stroke="#1B2A41" stroke-width="3" stroke-linejoin="round" />

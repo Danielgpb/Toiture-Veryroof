@@ -1,4 +1,4 @@
-// Test de la page d'accueil CONSTRUITE (dist/couvreur-bruxelles.html). Lancer `npm run build` avant.
+// Test de la page d'accueil CONSTRUITE (dist/index.html). Lancer `npm run build` avant.
 import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -8,7 +8,7 @@ import { site, pending } from '../../src/data/site.ts';
 import { serviceGroups, generalServices } from '../../src/data/services.ts';
 import { activeZones } from '../../src/data/zones.ts';
 
-const file = fileURLToPath(new URL('../../dist/couvreur-bruxelles.html', import.meta.url));
+const file = fileURLToPath(new URL('../../dist/index.html', import.meta.url));
 let html = '';
 before(async () => { html = await readFile(file, 'utf8'); });
 
@@ -21,7 +21,7 @@ const SECTION_IDS = ['hero', 'pourquoi-nous', ...(pending.reviewsEmbed ? ['avis'
 test('title, meta description et canonique viennent du contenu validé', () => {
   assert.equal(text(html.match(/<title>([^<]*)<\/title>/)[1]), accueil.metaTitle);
   assert.equal(decode(html.match(/<meta name="description" content="([^"]*)"/)[1]), accueil.metaDescription);
-  assert.match(html, new RegExp(`<link rel="canonical" href="${site.domain}/${site.homeSlug}"\\s*/?>`));
+  assert.match(html, new RegExp(`<link rel="canonical" href="${site.domain}${site.homeHref}"\\s*/?>`));
 });
 
 test('un seul H1, exactement le H1 rédigé, avec couvreur + toiture + Bruxelles', () => {

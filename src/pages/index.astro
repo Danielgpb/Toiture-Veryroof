@@ -49,7 +49,7 @@ const schema = {
       '@type': 'RoofingContractor',
       '@id': orgId,
       name: site.name,
-      url: `${site.domain}/${site.homeSlug}`,
+      url: `${site.domain}${site.homeHref}`,
       telephone: '+32460229960',
       email: site.email,
       description: accueil.metaDescription,

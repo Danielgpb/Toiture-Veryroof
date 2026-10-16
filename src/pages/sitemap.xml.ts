@@ -9,7 +9,7 @@ export interface SitemapEntry { loc: string; priority: string; changefreq: 'week
 /** Liste ordonnée des URL du sitemap (exportée pour les tests). */
 export function sitemapEntries(): SitemapEntry[] {
   const url = (slug: string) => `${site.domain}/${slug}`;
-  const entries: SitemapEntry[] = [{ loc: url(site.homeSlug), priority: '1.0', changefreq: 'weekly' }];
+  const entries: SitemapEntry[] = [{ loc: `${site.domain}${site.homeHref}`, priority: '1.0', changefreq: 'weekly' }];
   for (const p of allServicePages()) entries.push({ loc: url(p.slug), priority: p.kind === 'category' || p.kind === 'core' ? '0.8' : '0.6', changefreq: 'monthly' });
   for (const s of staticPages) {
     const legal = s.slug.startsWith('mentions') || s.slug.startsWith('politique');

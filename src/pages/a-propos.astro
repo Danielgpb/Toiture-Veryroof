@@ -31,7 +31,7 @@ const schema = {
       '@type': 'RoofingContractor',
       '@id': orgId,
       name: site.name,
-      url: `${site.domain}/${site.homeSlug}`,
+      url: `${site.domain}${site.homeHref}`,
       telephone: site.phoneHref.replace('tel:', ''),
       email: site.email,
       priceRange: '€€',
@@ -39,7 +39,7 @@ const schema = {
       areaServed: Object.values(serviceAreas).flat().map((name) => ({ '@type': 'City', name })),
       ...(manager ? { founder: { '@type': 'Person', name: manager.name, jobTitle: manager.role } } : {}),
     },
-    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}/${site.homeSlug}` }, { '@type': 'ListItem', position: 2, name: 'À propos', item: `${site.domain}/a-propos` }] },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}${site.homeHref}` }, { '@type': 'ListItem', position: 2, name: 'À propos', item: `${site.domain}/a-propos` }] },
   ],
 };
 const trust = [
@@ -55,7 +55,7 @@ const trust = [
   </Fragment>
   <section id="hero" class="page-head about-head">
     <div class="container">
-      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={`/${site.homeSlug}`}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">À propos</span></li></ol></nav>
+      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={site.homeHref}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">À propos</span></li></ol></nav>
       <h1>À propos de Toiture Veryroof : votre couvreur à Bruxelles</h1>
       <p class="about-head__sub">Entreprise locale, assurée, là quand vous en avez besoin.</p>
       <div class="about-head__cta">

@@ -68,7 +68,7 @@ test('hero, 4 H2 dans l’ordre, 600 à 1 000 mots (interface comprise), lien re
       assert.ok(related.includes(`href="/${page.parentSlug}"`), `${slug} : parent dans les services liés`);
       assert.match(html, new RegExp(`aria-label="Fil d'Ariane"[\\s\\S]*?href="/${page.parentSlug}"`), `${slug} : parent dans le fil d'Ariane`);
     } else {
-      const home = [...cta.matchAll(/<a href="\/couvreur-bruxelles">([^<]+)<\/a>/g)].map((m) => decode(m[1]));
+      const home = [...cta.matchAll(/<a href="\/">([^<]+)<\/a>/g)].map((m) => decode(m[1]));
       assert.ok(home.some((a) => ANCHORS.includes(a)), `${slug} : lien accueil avec ancre autorisée (${home.join(' | ')})`);
       for (const g of serviceGroups) assert.ok(related.includes(`href="/${g.slug}"`), `${slug} : hub ${g.slug} dans les services liés`);
     }

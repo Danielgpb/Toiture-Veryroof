@@ -137,3 +137,32 @@ Deux défauts corrigés le 14/10 :
 Rappel important : le dépôt GitHub n'est **pas** raccordé en déploiement continu. Tout le travail de la journée (carrousels, bandeau des marques, bouton « Devis gratuit » de l'en-tête, formulaire descendu à mi-page) était commité mais absent du site en ligne. Publier demande toujours `npx netlify-cli deploy --prod --build` depuis le dossier du projet.
 
 Vérifié en ligne après déploiement : les sections `realisations` et `marques` sont présentes, le bouton de devis est dans l'en-tête, et l'ordre est bien `hero → categories → services-phares → realisations → marques → devis → zones`.
+
+## L'accueil passe à la racine (16/10/2026)
+
+La méthode Core 30 plaçait l'accueil sur `/couvreur-bruxelles`, la racine y redirigeant en 301. Mauvais choix, corrigé trois jours après la mise en ligne, pendant que l'indexation était encore quasi nulle :
+
+- **L'URL la plus forte était sacrifiée.** Carte de visite, camionnette, fiche Google, annuaires, bouche-à-oreille : tout vise la racine, et tout partait en redirection.
+- **Le gain était nul.** Le mot-clé dans l'URL est un signal très faible, et il était déjà porté trois fois : par le nom de domaine, par le title et par le H1.
+- **Un saut de redirection sur l'entrée la plus fréquente du site.**
+
+Montage inversé : `/` sert l'accueil, `/couvreur-bruxelles` renvoie en **301 définitif** vers la racine.
+
+### Ce que ça a demandé
+
+`homeSlug` servait à deux choses à la fois — l'adresse publique de l'accueil **et** la clé de son fichier construit. Les deux ont été séparées dans `src/data/site.ts` :
+
+| Champ | Rôle |
+|---|---|
+| `homeSlug: 'index'` | identifiant interne : `dist/index.html`, clé dans `keywords.ts`, clé dans les tests |
+| `homeHref: '/'` | adresse publique, utilisée pour tous les liens et toutes les URL absolues |
+
+Fichiers touchés : `src/pages/couvreur-bruxelles.astro` renommé en `index.astro`, les deux déclarations de redirection (`astro.config.mjs` et `public/_redirects`, inversées), le sitemap, le llms.txt, le fil d'Ariane et le schema de chaque gabarit, `scripts/check-links.mjs` et huit fichiers de tests.
+
+### Pièges rencontrés
+
+- **`dist/couvreur-bruxelles.html` existe toujours** : c'est la page de redirection générée par Astro (`<meta refresh>` + `noindex` + canonique vers la racine). Elle doit être exclue des tests qui balaient les pages indexables, et du contrôle de page orpheline — sinon elle est comptée comme une page sans contenu.
+- **La canonique de l'accueil est le domaine nu**, `https://toiture-veryroof.be/`, pas `domaine + slug`. Les contrôles de canonique auto-référente et d'`og:url` ont dû traiter ce cas à part.
+- **`check-links.mjs` figeait l'ancienne règle `_redirects`** dans une expression régulière : à inverser aussi, sinon le garde-fou protège le mauvais montage.
+
+Vérifié en ligne : racine 200 avec la bonne canonique, `/couvreur-bruxelles` en 301, `www` et `http` toujours redirigés, sitemap et llms.txt pointant sur la racine. Lighthouse 100/100/100/100 en bureau et en mobile. Aucune action requise dans la Search Console : la propriété est de type Domaine, elle couvre les deux adresses, et la 301 transmet l'historique.

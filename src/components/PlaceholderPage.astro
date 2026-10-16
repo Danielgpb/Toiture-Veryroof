@@ -27,7 +27,7 @@ const subheadline = `${h1} : réparation, rénovation, isolation et dépannage d
 ---
 <BaseLayout title={title} description={description} preloads={preloads} ogImage={hero?.src}>
   {hero && photo ? (
-    <ServiceHero h1={h1} subheadlineHtml={linkPhone(subheadline, site.phoneDisplay, site.phoneHref)} image={hero} imageAlt={photo.alt} trustStrip={accueil.trustStrip} breadcrumb={[{ label: 'Accueil', href: `/${site.homeSlug}` }, ...breadcrumb, { label: h1 }]} />
+    <ServiceHero h1={h1} subheadlineHtml={linkPhone(subheadline, site.phoneDisplay, site.phoneHref)} image={hero} imageAlt={photo.alt} trustStrip={accueil.trustStrip} breadcrumb={[{ label: 'Accueil', href: site.homeHref }, ...breadcrumb, { label: h1 }]} />
   ) : (
     <section class="page-head">
       <div class="container"><h1>{h1}</h1></div>

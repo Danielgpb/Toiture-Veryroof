@@ -21,7 +21,7 @@ const { heading, reassurance, points } = Astro.props;
         {points.map((p) => <li>{p}</li>)}
       </ul>
     </div>
-    <QuoteForm action={`/${site.homeSlug}`} />
+    <QuoteForm action={site.homeHref} />
   </div>
 </section>
 

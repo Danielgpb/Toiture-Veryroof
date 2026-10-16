@@ -15,7 +15,7 @@ const text = (s) => decode(s.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim
 const fold = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, ' ');
 const pages = new Map();
 before(async () => {
-  for (const f of (await readdir(dist)).filter((f) => f.endsWith('.html') && !['index.html', '404.html'].includes(f))) {
+  for (const f of (await readdir(dist)).filter((f) => f.endsWith('.html') && !['404.html', 'couvreur-bruxelles.html'].includes(f))) {
     const html = await readFile(join(dist, f), 'utf8');
     pages.set(f.replace(/\.html$/, ''), { title: text(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? ''), h1: text(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? ''), desc: decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '') });
   }

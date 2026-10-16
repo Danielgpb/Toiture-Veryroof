@@ -20,7 +20,8 @@ export interface PageKeywords {
 }
 
 export const keywords: Record<string, PageKeywords> = {
-  'couvreur-bruxelles': { primary: 'couvreur Bruxelles', secondary: ['toiture Bruxelles', 'toiturier Bruxelles', 'entreprise de toiture Bruxelles', 'roofing Bruxelles'] },
+  // Accueil : seule page à viser les deux têtes de requête, « couvreur » et « toiture ».
+  index: { primary: 'couvreur Bruxelles', secondary: ['toiture Bruxelles', 'toiturier Bruxelles', 'entreprise de toiture Bruxelles', 'roofing Bruxelles'] },
   'services': { primary: 'services de toiture Bruxelles', secondary: ['couvreur services'] },
   'a-propos': { primary: 'Toiture Veryroof couvreur', secondary: ['à propos'] },
   'contact': { primary: 'contact Toiture Veryroof', secondary: ['devis toiture Bruxelles', 'toiture Bruxelles devis gratuit'] },

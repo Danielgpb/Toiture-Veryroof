@@ -28,9 +28,9 @@ const orgId = `${site.domain}/#organisation`;
 const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}/${site.homeSlug}`, telephone: site.phoneHref.replace('tel:', '') },
+    { '@type': 'RoofingContractor', '@id': orgId, name: site.name, url: `${site.domain}${site.homeHref}`, telephone: site.phoneHref.replace('tel:', '') },
     { '@type': 'ItemList', name: 'Services de toiture à Bruxelles', itemListElement: [...serviceGroups.flatMap((g) => [g, ...g.children]), ...generalServices].map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, url: `${site.domain}/${s.slug}` })) },
-    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}/${site.homeSlug}` }, { '@type': 'ListItem', position: 2, name: 'Services', item: `${site.domain}/services` }] },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: `${site.domain}${site.homeHref}` }, { '@type': 'ListItem', position: 2, name: 'Services', item: `${site.domain}/services` }] },
   ],
 };
 ---
@@ -40,7 +40,7 @@ const schema = {
   </Fragment>
   <section id="hero" class="page-head services-head">
     <div class="container">
-      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={`/${site.homeSlug}`}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">Services</span></li></ol></nav>
+      <nav class="crumbs" aria-label="Fil d'Ariane"><ol><li><a href={site.homeHref}>Accueil</a><span class="crumbs__sep" aria-hidden="true">›</span></li><li><span aria-current="page">Services</span></li></ol></nav>
       <h1>Services de toiture à Bruxelles : un couvreur pour chaque intervention</h1>
       <p class="services-head__sub">Trouvez le service qu'il vous faut, ou appelez-nous : nous verrons ensemble ce dont votre toit a besoin.</p>
       <div class="services-head__cta">

@@ -49,7 +49,7 @@ test('hero : photo LCP préchargée, fil d’Ariane, sous-titre, CTA appel + dev
   for (const [slug, { html }] of Object.entries(pages)) {
     assert.match(html, /<img[^>]*class="shero__bg"[^>]*fetchpriority="high"[^>]*alt="[^"]{25,}"/, `${slug} : image du hero`);
     assert.match(html, /<link rel="preload" as="image" href="\/_astro\/[^"]+\.webp"/, `${slug} : préchargement`);
-    assert.match(html, /aria-label="Fil d'Ariane"[\s\S]*?href="\/couvreur-bruxelles"[\s\S]*?href="\/services"/, `${slug} : fil d'Ariane`);
+    assert.match(html, /aria-label="Fil d'Ariane"[\s\S]*?href="\/"[\s\S]*?href="\/services"/, `${slug} : fil d'Ariane`);
     const hero = html.slice(html.indexOf('id="hero"'), html.indexOf('id="contenu"'));
     assert.ok(hero.includes(`href="${site.phoneHref}"`) && hero.includes('href="/contact"'), `${slug} : CTA du hero`);
     for (const t of accueil.trustStrip) assert.ok(text(hero).includes(t), `${slug} : signal « ${t} »`);
@@ -80,7 +80,7 @@ test('contenu : 1 000 à 1 300 mots (+ interface), 4 H2 (5 pour un service phare
       assert.ok(article.includes(`<a href="/${child.slug}">${child.name.replace(/'/g, '&#39;')}</a>`) || article.includes(`<a href="/${child.slug}">${child.name}</a>`), `${slug} : [[${child.name}]] non lié dans le texte`);
       assert.ok(grid.includes(`href="/${child.slug}"`), `${slug} : ${child.slug} absent de la grille`);
     }
-    const home = [...cta.matchAll(/<a href="\/couvreur-bruxelles">([^<]+)<\/a>/g)].map((m) => decode(m[1]));
+    const home = [...cta.matchAll(/<a href="\/">([^<]+)<\/a>/g)].map((m) => decode(m[1]));
     assert.ok(home.some((a) => ANCHORS.includes(a)), `${slug} : lien accueil avec ancre autorisée manquant (${home.join(' | ')})`);
     assert.ok(!/href="[^"]*#/.test(article + grid + cta), `${slug} : lien avec ancre # interdit`);
     assert.ok(cta.includes(`href="${site.phoneHref}"`), `${slug} : téléphone dans le CTA final`);
