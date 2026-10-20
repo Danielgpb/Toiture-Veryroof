@@ -4,7 +4,7 @@ Texte intégral des prompts collés par le client au début du projet Toiture Ve
 
 Consigne d’ouverture du client : « on va creer un site de toiture couvreur basé a bruxelles mais qui fera tout la péripheire , mais pas encore la fiche google qui va avec, je te transmet un pompte du core 30 vierge il faudra prendre un compte sans qu'il soit personalisé , j'ai le nom de Toiture Veryroof et l'adresse (254 chaussee de la hulpe. 1000) voici Core 30 prompte du cab »
 
-> Note du 16/10/2026 : le numéro donné dans cette consigne d'ouverture était erroné. La bonne adresse est **Chaussée de La Hulpe 264**, corrigée partout dans le site. La citation ci-dessus est laissée telle quelle : c'est le message d'origine du client, pas une source à réutiliser.
+> Note du 16/10/2026 : le numéro donné dans cette consigne d'ouverture était erroné. La bonne adresse est **Avenue Franklin Roosevelt 264, 1000 Bruxelles** (corrigée le 20/10/2026 : ni le numéro ni le nom de rue de la consigne d'ouverture n'étaient bons). La citation ci-dessus est laissée telle quelle : c'est le message d'origine du client, pas une source à réutiliser.
 
 ---
 

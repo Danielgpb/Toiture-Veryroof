@@ -344,7 +344,7 @@ async function checkZonePage(slug, c, zone) {
   const all = [c.heroSubheadline, ...Object.values(blocks).flat(), c.homeLink, c.summary, c.metaDescription, c.h1, c.problems.h2, ...faqTexts].join('\n');
   const low = all.toLowerCase();
   for (const b of BANNED) must(!low.includes(b), `formule interdite : « ${b} »`);
-  for (const b of ['nous venons de bruxelles', 'chaussée de la hulpe', 'notre siège est', 'minutes de camionnette']) must(!low.includes(b), `formule à éviter sur une page commune : « ${b} »`);
+  for (const b of ['nous venons de bruxelles', 'franklin roosevelt', 'notre siège est', 'minutes de camionnette']) must(!low.includes(b), `formule à éviter sur une page commune : « ${b} »`);
   must(!/€|euro/i.test(all), 'aucun prix ni mention d’euros');
   for (const m of all.matchAll(/\d+(?:[.,]\d+)?/g)) must(ZONE_NUMBERS.has(m[0]), `chiffre non autorisé : « ${m[0]} » (…${all.slice(Math.max(0, m.index - 30), m.index + 20).replace(/\n/g, ' ')}…)`);
   must(!/%/.test(all.replace(/6 %/g, '')), 'pourcentage non autorisé');

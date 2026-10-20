@@ -224,7 +224,7 @@ test('les titres H1 suivent « [Service] Bruxelles »', () => {
 
 test('les données NAP sont présentes', () => {
   assert.equal(site.name, 'Toiture Veryroof');
-  assert.equal(site.address.street, 'Chaussée de La Hulpe 264');
+  assert.equal(site.address.street, 'Avenue Franklin Roosevelt 264');
   assert.equal(site.address.postalCode, '1000');
   assert.ok(site.phoneHref.startsWith('tel:'));
   assert.equal(site.nav.length, 4);
@@ -251,7 +251,7 @@ export const site = {
   // [EMAIL] — placeholder
   email: 'info@veryroof.be',
   address: {
-    street: 'Chaussée de La Hulpe 264',
+    street: 'Avenue Franklin Roosevelt 264',
     postalCode: '1000',
     city: 'Bruxelles',
     region: 'Bruxelles-Capitale',

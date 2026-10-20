@@ -7,7 +7,7 @@ export const site = {
   // Confirmé par le client le 13/10/2026 : contact@ + nom de domaine
   email: 'contact@toiture-veryroof.be',
   address: {
-    street: 'Chaussée de La Hulpe 264',
+    street: 'Avenue Franklin Roosevelt 264',
     postalCode: '1000',
     city: 'Bruxelles',
     region: 'Bruxelles-Capitale',

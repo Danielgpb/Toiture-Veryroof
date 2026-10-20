@@ -109,7 +109,7 @@ const schema = {
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Nous trouver</p>
-        <h2 class="section-title">Chaussée de La Hulpe, Bruxelles</h2>
+        <h2 class="section-title">{site.address.street.replace(/\s+\d+\s*$/, '')}, {site.address.city}</h2>
       </div>
       <!-- COLLER ICI LE CODE D’INTÉGRATION GOOGLE MAPS (iframe) : pour une entreprise qui se déplace, le centre de Bruxelles ou le siège conviennent. Attention au RGPD : une carte intégrée charge des cookies Google ; prévoir le consentement ou garder le lien ci-dessous. -->
       <div class="card map-placeholder">

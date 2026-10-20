@@ -49,7 +49,7 @@ test('les titres H1 suivent « [Service] Bruxelles »', () => {
 
 test('les données NAP sont présentes', () => {
   assert.equal(site.name, 'Toiture Veryroof');
-  assert.equal(site.address.street, 'Chaussée de La Hulpe 264');
+  assert.equal(site.address.street, 'Avenue Franklin Roosevelt 264');
   assert.equal(site.address.postalCode, '1000');
   assert.equal(site.phoneHref, 'tel:+32460229960');
   assert.equal(site.phoneDisplay, '+32 460 22 99 60');
