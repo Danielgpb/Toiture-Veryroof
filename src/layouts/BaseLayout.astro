@@ -43,6 +43,13 @@ const fontsHref = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wg
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+    {/*
+      Le .ico est déclaré EN PREMIER et explicitement : les navigateurs qui ne gèrent pas l'icône
+      vectorielle n'avaient à se mettre sous la dent qu'un SVG et un PNG de 192 px, trop gros pour
+      un onglet — ils n'affichaient donc rien. Ceux qui gèrent le SVG le préfèrent malgré l'ordre,
+      grâce au type déclaré.
+    */}
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
