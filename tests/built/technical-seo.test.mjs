@@ -152,3 +152,13 @@ test('porte de publication : aucun placeholder visible ([…], photo à remplace
     for (const m of html.matchAll(/mailto:([^"]+)"/g)) assert.equal(m[1], site.email, `${slug} : e-mail ${m[1]}`);
   }
 });
+
+test('aucune fuite du montage interne dans le code source public', () => {
+  // Les pages servies sont lisibles par tout le monde : ni le nom de l'outil de suivi des demandes,
+  // ni sa base de données, ni les noms de variables d'environnement ne doivent y apparaître.
+  for (const [slug, html] of pages) {
+    for (const fuite of ['Suivi Leads', 'supabase', 'LEADAPP_', 'FORMULAIRE_SECRET', 'BRANCHER LE FORMULAIRE']) {
+      assert.ok(!html.toLowerCase().includes(fuite.toLowerCase()), `${slug} : « ${fuite} » visible dans le HTML servi`);
+    }
+  }
+});

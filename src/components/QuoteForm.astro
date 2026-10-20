@@ -14,7 +14,6 @@ const categories = serviceGroups.filter((g) => g.kind === 'category');
 const cores = serviceGroups.filter((g) => g.kind === 'core');
 ---
 <form class="form card" name="devis" method="POST" action={action} data-netlify="true" netlify-honeypot="bot-field" data-phone-href={site.phoneHref} data-phone-display={site.phoneDisplay}>
-  <!-- BRANCHER LE FORMULAIRE : Netlify Forms (actif tel quel sur Netlify) + relais /.netlify/functions/lead vers l'app Suivi Leads (variables LEADAPP_* sur Netlify) -->
   <input type="hidden" name="form-name" value="devis" />
   <input type="hidden" name="source" value={action} />
   <p class="hidden-field" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
@@ -70,7 +69,7 @@ const cores = serviceGroups.filter((g) => g.kind === 'core');
 </style>
 
 <script>
-  // Double envoi : Netlify Forms (copie e-mail de secours) + relais serveur vers l'app Suivi Leads.
+  // Double envoi : Netlify Forms (copie e-mail de secours) + relais serveur.
   // La demande est considérée envoyée dès qu'un des deux canaux a répondu correctement ;
   // l'erreur ne s'affiche que si les deux échouent.
   const RELAIS = '/.netlify/functions/lead';

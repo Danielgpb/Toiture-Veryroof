@@ -74,7 +74,8 @@ test('Contact : formulaire complet qui poste vers /contact, liste des services, 
   for (const s of generalServices) assert.ok(options.includes(s.name), `option ${s.name}`);
   assert.ok(options.includes('Autre / je ne sais pas'));
   assert.match(contact, /<button[^>]*type="submit"/);
-  assert.ok(contact.includes('<!-- BRANCHER LE FORMULAIRE'));
+  // Le code source des pages est public : aucun commentaire ne doit y nommer l'outil de suivi interne.
+  assert.ok(!contact.includes('BRANCHER LE FORMULAIRE'), 'commentaire de montage laissé dans le HTML servi');
   assert.ok(contact.includes('role="status"'));
 });
 

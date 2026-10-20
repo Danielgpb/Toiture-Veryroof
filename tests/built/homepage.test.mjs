@@ -79,7 +79,8 @@ test('le formulaire de devis a les bons champs, la liste des services et la réa
   for (const s of generalServices) assert.ok(options.includes(s.name), `option manquante : ${s.name}`);
   assert.ok(options.includes('Autre / je ne sais pas'));
   assert.ok(text(sec).includes(accueil.leadFormReassurance));
-  assert.ok(sec.includes('<!-- BRANCHER LE FORMULAIRE : Netlify Forms (actif tel quel sur Netlify) + relais /.netlify/functions/lead vers l\'app Suivi Leads'));
+  // Idem sur l'accueil : le montage technique ne doit pas être lisible dans le code source.
+  assert.ok(!sec.includes('BRANCHER LE FORMULAIRE'), 'commentaire de montage laissé dans le HTML servi');
 });
 
 test('cartes catégories et services phares pointent vers les bonnes URL', () => {
